@@ -71,13 +71,13 @@ class SearchForm extends React.Component {
                     <label for="100-300">$100-300</label>
 
                     <input type="radio" id="tier1" name="price" value="300-500" />
-                    <label for="100-300">$300-500</label>
+                    <label for="300-500">$300-500</label>
 
                     <input type="radio" id="tier2" name="price" value="500-1000" />
-                    <label for="100-300">$500-1000</label>
+                    <label for="500-1000">$500-1000</label>
 
                     <input type="radio" id="tier3" name="price" value="1000+" />
-                    <label for="100-300">$1000+</label>
+                    <label for="1000+">$1000+</label>
                     <br />
                     <input type="submit" value="Submit" />
                     {this.renderErrors()}
