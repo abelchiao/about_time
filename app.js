@@ -6,6 +6,7 @@ const app = express();
 const db = require("./config/keys").mongoURI;
 
 const users = require("./routes/api/users");
+const watches = require("./routes/api/watches");
 
 const passport = require("passport");
 
@@ -24,6 +25,7 @@ app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/users", users);
+app.use('/api/watches', watches);
 
 const port = process.env.PORT || 5000;
 
