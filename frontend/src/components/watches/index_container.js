@@ -4,13 +4,13 @@ import Index from './index';
 
 const mapStateToProps = (state) => {
     return {
-        watches: Object.values(state.watches.all)
+        errors: state.errors.session
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchSearch: () => dispatch(fetchSearch())
+        fetchSearch: (data) => dispatch(fetchSearch(data))
     };
 };
 

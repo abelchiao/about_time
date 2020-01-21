@@ -1,5 +1,4 @@
 import React from 'react';
-
 class Index extends React.Component {
     constructor(props) {
         super(props);
@@ -10,14 +9,23 @@ class Index extends React.Component {
 
     componentDidMount() {
         this.props.fetchSearch()
-            .then(res => this.setState)
+            .then(res => this.setState({ watches: res.watches}))
     }
 
     render() {
+        const watches = Object.values(this.state.subjects);
         return (
             <div className='search-result-index'>
-
+                <ul>
+                        {
+                            watches.map((watch, idx) => 
+                                <li key={idx}>{watch.brand}</li>
+                            )
+                        }
+                </ul>
             </div>
         )
     }
 }
+
+export default Index;
