@@ -3,6 +3,9 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch } from 'react-router-dom';
 const path = require('path');
 
+import MainPage from './main/main_page';
+import SearchFormContainer from './search/search_container';
+
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static('frontend/build'));
     app.get('/', (req, res) => {
@@ -13,8 +16,7 @@ const App = () => (
     <div>
         <Switch>
             <AuthRoute exact path="/" component={MainPage} />
-            <AuthRoute exact path="/login" component={LoginFormContainer} />
-            <AuthRoute exact path="/signup" component={SignupFormContainer} />
+            <ProtectedRoute exact path="/search" component={SearchFormContainer} />
         </Switch>
     </div>
 );
