@@ -25,7 +25,11 @@ export const fetchUserSearches = (id) => dispatch => (
         .catch(err => console.log(err))
 );
 
-export const fetchSearch 
+export const fetchSearch = (data) => dispatch => (
+    getSearch(data)
+        .then(search => dispatch(receiveSearch(search)))
+        .catch(err => console.log(err))
+)
 
 export const newSearch = (data) => dispatch => (
     newSearch(data)
