@@ -4,8 +4,8 @@ export const createSearch = data => {
     return axios.post('/api/searches', data)
 }
 
-export const getSearch = data => {
-    return axios.get(`/api/searches/${id}`, data)
+export const getSearch = id => {
+    return axios.get(`/api/searches/${id}`)
 }
 
 export const getUserSearches = id => {
