@@ -24,13 +24,8 @@ class SearchForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-
-        let search = {
-            brand: this.state.brand,
-            model: this.state.model,
-            price: this.state.price
-        }
-        // this.props.receiveSearch(search)
+        const search = Object.assign({}, this.state);
+        this.props.fetchWatches(search)
     }
 
     renderErrors() {
@@ -62,11 +57,7 @@ class SearchForm extends React.Component {
                     />
                     <br />
                     <p>Select a price range:</p>
-                    {/* <input type="text"
-                        value={this.state.price}
-                        onChange={this.update('price')}
-                        placeholder="price"
-                    /> */}
+
                     <input type="radio" id="tier0" name="price" value="100-300" />
                     <label for="100-300">$100-300</label>
 
