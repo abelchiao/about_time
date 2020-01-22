@@ -1,5 +1,6 @@
 import * as SearchApiUtil from '../util/search_api_util';
 
+
 export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
 export const RECEIVE_NEW_SEARCH = "RECEIVE_NEW_SEARCH";
 export const RECEIVE_USER_SEARCHES = "RECEIVE_USER_SEARCHES";
@@ -35,7 +36,7 @@ export const fetchSearch = (data) => dispatch => (
     SearchApiUtil.getSearch(data)
         .then(search => dispatch(receiveSearch(search)))
         .catch(err => console.log(err))
-)
+);
 
 export const newSearch = (data) => dispatch => (
     SearchApiUtil.createSearch(data)
