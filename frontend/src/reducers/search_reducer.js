@@ -1,6 +1,6 @@
 import { RECEIVE_SEARCH, RECEIVE_NEW_SEARCH } from '../actions/search_actions';
 
-const SearchReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+const SearchReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch (action.type) {
