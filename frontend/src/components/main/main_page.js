@@ -5,10 +5,14 @@ class MainPage extends React.Component {
     render() {
         return (
             <div>
-                <h1>About Time</h1>
-                <footer>
-                    Watch recommendations
-        </footer>
+                <section className="intro">
+                    <header className="banner">
+                        <h1>About Time</h1>
+                    </header>
+                </section>
+            <footer>
+                Watch recommendations
+            </footer>
             </div>
         );
     }
