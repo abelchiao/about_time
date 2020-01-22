@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 
-import SessionErrorsReducer from './session_errors_reducer';
-import SearchErrorsReducer from './search_errors_reducer';
+import sessionErrorsReducer from './session_errors_reducer';
+import searchErrorsReducer from './search_errors_reducer';
 
 export default combineReducers({
-    search: SearchErrorsReducer,
-    session: SessionErrorsReducer
+    search: searchErrorsReducer,
+    session: sessionErrorsReducer
 });
