@@ -1,15 +1,16 @@
 import { connect } from 'react-redux';
-import { fetchSearch } from '../../actions/search_actions';
+import { fetchSearch, newSearch } from '../../actions/search_actions';
 import ResultsShow from './results_show';
 
 const mapStateToProps = (state) => {
     return {
-        errors: state.errors.session
+        errors: state.errors.search
     };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
+        newSearch: (data) => dispatch(newSearch(data)),
         fetchSearch: (data) => dispatch(fetchSearch(data))
     };
 };
