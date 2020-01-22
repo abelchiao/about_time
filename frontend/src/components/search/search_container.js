@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchSearch } from '../../actions/search_actions';
+import { fetchWatches } from '../../actions/watch_actions';
 import SearchForm from './search_form';
 
 const mapStateToProps = (state) => {
@@ -10,7 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchSearch: search => dispatch(fetchSearch(search))
+        fetchSearch: data => dispatch(fetchSearch(data)),
+        fetchWatches: search => dispatch(fetchWatches(search))
     };
 }
 
