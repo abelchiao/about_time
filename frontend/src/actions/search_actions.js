@@ -1,4 +1,5 @@
-import { getSearch, getUserSearches, createSearch } from '../util/search_api_util';
+import * as SearchApiUtil from '../util/search_api_util';
+
 
 export const RECEIVE_SEARCH = "RECEIVE_SEARCH";
 export const RECEIVE_NEW_SEARCH = "RECEIVE_NEW_SEARCH";
@@ -26,19 +27,19 @@ export const receiveErrors = errors => ({
 })
 
 export const fetchUserSearches = (id) => dispatch => (
-    getUserSearches(id)
+    SearchApiUtil.getUserSearches(id)
         .then(searches => dispatch(receiveUserSearches(searches)))
         .catch(err => console.log(err))
 );
 
 export const fetchSearch = (data) => dispatch => (
-    getSearch(data)
+    SearchApiUtil.getSearch(data)
         .then(search => dispatch(receiveSearch(search)))
         .catch(err => console.log(err))
-)
+);
 
 export const newSearch = (data) => dispatch => (
-    createSearch(data)
+    SearchApiUtil.createSearch(data)
         .then(search => dispatch(receiveNewSearch(search)))
         .catch(err => console.log(err))
 );
