@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchSearch } from '../../actions/search_actions';
-import Index from './index';
+import ResultsShow from './results_show';
 
 const mapStateToProps = (state) => {
     return {
@@ -14,4 +14,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Index);
+export default connect(mapStateToProps, mapDispatchToProps)(ResultsShow);

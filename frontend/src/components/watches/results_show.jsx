@@ -1,9 +1,9 @@
 import React from 'react';
-class Index extends React.Component {
+class ResultsShow extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            watches = ''
+            watches = {}
         }
     }
 
@@ -13,9 +13,9 @@ class Index extends React.Component {
     }
 
     render() {
-        const watches = Object.values(this.state.subjects);
+        const watches = Object.values(this.state.watches);
         return (
-            <div className='search-result-index'>
+            <div className='search-result-show'>
                 <ul>
                         {
                             watches.map((watch, idx) => 
@@ -28,4 +28,4 @@ class Index extends React.Component {
     }
 }
 
-export default Index;
+export default ResultsShow;
