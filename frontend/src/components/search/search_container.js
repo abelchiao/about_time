@@ -5,13 +5,13 @@ import SearchForm from './search_form';
 
 const mapStateToProps = (state) => {
     return {
-        fetchSearch: state.fetchSearch,
         errors: state.errors.session
     };
 }
 
 const mapDispatchToProps = (dispatch) => {
     return {
+        fetchSearch: data => dispatch(fetchSearch(data)),
         fetchWatches: search => dispatch(fetchWatches(search))
     };
 }
