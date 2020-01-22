@@ -8,6 +8,8 @@ import configureStore from './store/store';
 import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
+import { createSearch } from './util/search_api_util'
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
@@ -28,6 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore({});
     }
+
+    window.getState = store.getState;
+    window.createSearch = createSearch;
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);
