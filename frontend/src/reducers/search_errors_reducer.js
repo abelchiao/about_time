@@ -5,7 +5,7 @@ import {
 
 const _nullErrors = [];
 
-const SearchErrorsReducer = (state = _nullErrors, action) => {
+const searchErrorsReducer = (state = _nullErrors, action) => {
     Object.freeze(state);
     switch (action.type) {
         case RECEIVE_SEARCH:
@@ -17,4 +17,4 @@ const SearchErrorsReducer = (state = _nullErrors, action) => {
     }
 };
 
-export default SearchErrorsReducer;
+export default searchErrorsReducer;
