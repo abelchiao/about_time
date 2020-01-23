@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
-const Review = require("../../models/Review");
+// const Review = require("../../models/Review");
 const User = require('../../models/User');
 const passport = require("passport");
 const Watch = require('../../models/Watch');
@@ -12,49 +12,86 @@ const Watch = require('../../models/Watch');
 //     .catch(err => res.status(404).json({ noreviewsfound: "No reviews found" }));
 // });
 
+// router.post("/", passport.authenticate("jwt", { session: false }), (req, res) => {
+//   Watch.findById(req.body.watchId).then(watch => {
+//     let reviews = watch.reviews;
+//     let err
+//     reviews.forEach(review => {
+//       if (review.userId === req.user.id) {
+//         err = "You have already reviewed this watch"
+//         // return res.status(403).json("You have already reviewed this watch");
+//       }
+//     });
+//     if (err) return res.status(403).json(err);
+//     // need to coordinate what req.body will look like w/ FE
+//     let newReview = {
+//       userId: req.user.id,
+//       text: req.body.text
+//     }
+//     watch.reviews.push(newReview);
+//     watch.save()
+//       .then(watch => res.json(watch))
+//       .catch(err => res.status(403).json(err))
+//   });
+// });
+
 router.post("/", passport.authenticate("jwt", { session: false }), (req, res) => {
-  // return res.json(req.body.watchId)
   Watch.findById(req.body.watchId).then(watch => {
     let reviews = watch.reviews;
-    // let err = reviews[1].user
+    let err
     reviews.forEach(review => {
-      // err = review
-      if (review.userId === req.user.id) {
-        // err = review.user
-        // errors.handle = "You have already reviewed this watch";
+      console.log(review)
+      // err = "inside loop"
+      if (review.userId.toString() === req.user.id) {
+        err = "You have already reviewed this watch"
         return res.status(403).json("You have already reviewed this watch");
       }
     });
-    // return res.json(watch)
+    if (err) return res.status(403).json(err);
+    // return res.json(reviews)
     // need to coordinate what req.body will look like w/ FE
-    let newReview = {
+    let newReview = ({
       userId: req.user.id,
       text: req.body.text
-    }
+    })
     watch.reviews.push(newReview);
     watch.save()
       .then(watch => res.json(watch))
       .catch(err => res.status(403).json(err))
-  });
+  }).catch(err => res.status(403).json(err));
 });
 
+// router.post("/edit", passport.authenticate("jwt", { session: false }), (req, res) => {
+//   Watch.findById(req.body.watchId).then(watch => {
+//     let reviews = watch.reviews;
+//     reviews.forEach(review => {
+//       if (review.userId === req.user.id) {
+//         let updatedReview = {
+//           userId: req.user.id,
+//           text: req.body.text
+//         }
+//         review = updatedReview
+//       }
+//     });
+//     watch.save()
+//       .then(watch => res.json(watch))
+//       .catch(err => res.status(403).json(err));
+//   })
+// });
+
 router.post("/edit", passport.authenticate("jwt", { session: false }), (req, res) => {
-  Watch.findById(req.body.watchId).then(watch => {
-    let reviews = watch.reviews;
-    reviews.forEach(review => {
-      if (review.userId === req.user.id) {
-        let updatedReview = {
-          userId: req.user.id,
-          text: req.body.text
-        }
-        
-      }
-    });
+  Watch.findById(req.body.watchId, (err, watch) => {
+    let review = watch.reviews.id(req.body.reviewId);
+    review.set({
+      // userId: req.user.id,
+      text: req.body.text
+    })
     watch.save()
       .then(watch => res.json(watch))
       .catch(err => res.status(403).json(err));
   })
 });
+
 
 // router.post("/test", passport.authenticate("jwt", { session: false }), (req, res) => {
 //   Watch.findById(req.body.watchId)
