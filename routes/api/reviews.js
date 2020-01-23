@@ -6,11 +6,11 @@ const User = require('../../models/User');
 const passport = require("passport");
 const Watch = require('../../models/Watch');
 
-router.get("/", (req, res) => {
-  Review.find()
-    .then(reviews => res.json(reviews))
-    .catch(err => res.status(404).json({ noreviewsfound: "No reviews found" }));
-});
+// router.get("/", (req, res) => {
+//   Review.find()
+//     .then(reviews => res.json(reviews))
+//     .catch(err => res.status(404).json({ noreviewsfound: "No reviews found" }));
+// });
 
 router.post("/", passport.authenticate("jwt", { session: false }), (req, res) => {
   // return res.json(req.body.watchId)
@@ -19,7 +19,7 @@ router.post("/", passport.authenticate("jwt", { session: false }), (req, res) =>
     // let err = reviews[1].user
     reviews.forEach(review => {
       // err = review
-      if (review.user === req.user.id) {
+      if (review.userId === req.user.id) {
         // err = review.user
         // errors.handle = "You have already reviewed this watch";
         return res.status(403).json("You have already reviewed this watch");
@@ -27,11 +27,33 @@ router.post("/", passport.authenticate("jwt", { session: false }), (req, res) =>
     });
     // return res.json(watch)
     // need to coordinate what req.body will look like w/ FE
-    watch.reviews.push(req.body.review);
+    let newReview = {
+      userId: req.user.id,
+      text: req.body.text
+    }
+    watch.reviews.push(newReview);
     watch.save()
       .then(watch => res.json(watch))
-    //   .catch(err => res.status(403).json(err))
+      .catch(err => res.status(403).json(err))
   });
+});
+
+router.post("/edit", passport.authenticate("jwt", { session: false }), (req, res) => {
+  Watch.findById(req.body.watchId).then(watch => {
+    let reviews = watch.reviews;
+    reviews.forEach(review => {
+      if (review.userId === req.user.id) {
+        let updatedReview = {
+          userId: req.user.id,
+          text: req.body.text
+        }
+        
+      }
+    });
+    watch.save()
+      .then(watch => res.json(watch))
+      .catch(err => res.status(403).json(err));
+  })
 });
 
 // router.post("/test", passport.authenticate("jwt", { session: false }), (req, res) => {
