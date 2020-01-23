@@ -13,6 +13,9 @@ const WatchSchema = new Schema({
   price: {
     type: Number,
     required: true
+  },
+  reviews: {
+    type: Array
   }
 });
 
