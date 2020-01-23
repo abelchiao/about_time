@@ -17,38 +17,37 @@ const Watch = require('../../models/Watch');
 //     let reviews = watch.reviews;
 //     let err
 //     reviews.forEach(review => {
-//       if (review.userId === req.user.id) {
+//       console.log(review)
+//       if (review.userId.toString() === req.user.id) {
 //         err = "You have already reviewed this watch"
-//         // return res.status(403).json("You have already reviewed this watch");
+//         return res.status(403).json("You have already reviewed this watch");
 //       }
 //     });
 //     if (err) return res.status(403).json(err);
 //     // need to coordinate what req.body will look like w/ FE
-//     let newReview = {
+//     let newReview = ({
 //       userId: req.user.id,
 //       text: req.body.text
-//     }
+//     })
 //     watch.reviews.push(newReview);
 //     watch.save()
 //       .then(watch => res.json(watch))
 //       .catch(err => res.status(403).json(err))
-//   });
+//   }).catch(err => res.status(403).json(err));
 // });
 
 router.post("/", passport.authenticate("jwt", { session: false }), (req, res) => {
-  Watch.findById(req.body.watchId).then(watch => {
+  Watch.findById(req.body.watchId, (err, watch) => {
     let reviews = watch.reviews;
-    let err
+    let error
     reviews.forEach(review => {
       console.log(review)
-      // err = "inside loop"
       if (review.userId.toString() === req.user.id) {
-        err = "You have already reviewed this watch"
-        return res.status(403).json("You have already reviewed this watch");
+        error = "You have already reviewed this watch"
+        // return res.status(403).json("You have already reviewed this watch");
       }
     });
-    if (err) return res.status(403).json(err);
-    // return res.json(reviews)
+    if (error) return res.status(403).json(error);
     // need to coordinate what req.body will look like w/ FE
     let newReview = ({
       userId: req.user.id,
@@ -58,7 +57,7 @@ router.post("/", passport.authenticate("jwt", { session: false }), (req, res) =>
     watch.save()
       .then(watch => res.json(watch))
       .catch(err => res.status(403).json(err))
-  }).catch(err => res.status(403).json(err));
+  });
 });
 
 // router.post("/edit", passport.authenticate("jwt", { session: false }), (req, res) => {
