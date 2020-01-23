@@ -5,10 +5,10 @@ const watchesReducer = (state = {}, action) => {
     let nextState = Object.assign({}, state);
     switch (action.type) {
         case RECEIVE_WATCH:
-            newState[action.watch.id] = action.watch;
+            nextState = action.watch.data;
             return nextState;
         case RECEIVE_WATCHES:
-            return action.watches;
+            return action.watches.data;
         default:
             return state;
     }
