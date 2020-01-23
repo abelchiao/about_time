@@ -10,6 +10,12 @@ import { logout } from './actions/session_actions';
 
 import { createSearch } from './util/search_api_util'
 
+// import watch utils for testing
+// import { getWatch, getWatches, createWatch } from './util/watch_api_util';
+
+// import thunk action creates for testing
+// import { createWatch, fetchWatch, fetchWatches } from './actions/watch_actions';
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
@@ -31,8 +37,21 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore({});
     }
 
+
+    // set watch utils to window for testing
+    // window.getWatch = getWatch
+    // window.getWatches = getWatches
+    // window.createWatch = createWatch
+
+    window.dispatch = store.dispatch;
     window.getState = store.getState;
     window.createSearch = createSearch;
+
+    // set watch thunk actions to window to test - need to dispatch
+    // window.createWatch = createWatch
+    // window.fetchWatch = fetchWatch
+    // window.fetchWatches = fetchWatches
+
     const root = document.getElementById('root');
 
     ReactDOM.render(<Root store={store} />, root);
