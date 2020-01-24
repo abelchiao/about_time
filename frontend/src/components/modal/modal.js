@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import LoginFormContainer from '../session/login_form_container'
 import SignupFormContainer from "../session/signup_form_container";
 
-function Modal({ modal, closeModal }) {
+function Modal({ modal, closeModal, currentWatch }) {
   if (!modal) {
     return null;
   }
@@ -15,7 +15,7 @@ function Modal({ modal, closeModal }) {
       // component = 'hello! this will be the login container'
       break;
     case "signup":
-      component = <SignupFormContainer  />;
+      component = <SignupFormContainer currentWatch={currentWatch} />;
       // component = 'hello! this will be the signup form container'
       break;
     default:
@@ -33,7 +33,7 @@ function Modal({ modal, closeModal }) {
 const mapStateToProps = state => {
   return {
     modal: state.ui.modal,
-    watchId: state.ui.currentWatch
+    currentWatch: state.watches[state.ui.currentWatch]
   };
 };
 

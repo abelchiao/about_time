@@ -29,6 +29,10 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
+      .then(() => this.props.login({
+        email: this.state.email,
+        password: this.state.password
+      }))
   };
 
   renderErrors() {
@@ -77,6 +81,7 @@ class SignupForm extends React.Component {
           />
           <button>Sign Up</button>
         </form>
+        
       </div>
     );
   };
