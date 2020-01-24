@@ -1,6 +1,7 @@
 body {
     display: block;
     background-image: url("http://drive.google.com/uc?exportview&id=1s5R4g3L-JOjEe2ltMYsD13sqcKR530gv");
+    background-repeat: no-repeat;
 }
 
 footer {
@@ -12,6 +13,7 @@ footer {
     padding-left: 25%;
     padding: 0 10% 10em 30%;
 }
+
 .banner h1 {
     display: block;
     font-size: 4.8rem;
@@ -35,4 +37,11 @@ footer {
     text-align: right;
 }
 
+.transparent {
+    background-color: lightsteelblue;
+    margin: 2em;
+    border: 2px solid black;
+    opacity: 0.6;
+    filter: alpha(opacity=60);
+}
 
