@@ -11,7 +11,6 @@ class SearchForm extends React.Component {
             price: '',
             errors: {}
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
@@ -21,6 +20,7 @@ class SearchForm extends React.Component {
             [field]: e.currentTarget.value
         });
     }
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -40,52 +40,59 @@ class SearchForm extends React.Component {
         );
     }
 
-    render () {
+    render() {     
         return (
-            <div id="splash">
-                <div id="splash-form">
-                    <form onSubmit={this.handleSubmit}>
-                        <div className="flash-question">
-                            <input type="text"
-                                value={this.state.brand}
-                                onChange={this.update('brand')}
-                                placeholder="Brand, e.g. 'Casio'"
-                                />
-                            <br />
-                            <input type="text"
-                                value={this.state.model}
-                                onChange={this.update('model')}
-                                placeholder="Model"
-                            />
-                        </div>
-                        <br />
-                        <div className="flash-question">
-                            <p>Select a price range:</p>
-                        
-                            <label>$100-300
-                                <input type="radio" id="tier0" name="price" value="100-300" />
+            <div className="splash ui top attached tabular menu">
+                <h1>Start your search:</h1>
+                <form className="splash-form" onSubmit={this.handleSubmit}>
+                    <div className="price input">
+                        <h2>How much are you looking to spend?</h2>
+                        <div className="price-inputs">
+                            <label>
+                                <input type="radio" name="tier0" value="100-300" />
+                                $100 - 300
                             </label>
 
-                            <label>$300-500
-                                <input type="radio" id="tier1" name="price" value="300-500" />
+                            <label>
+                                <input type="radio" name="tier1" value="300-500" />
+                                $300 - 500
                             </label>
 
-                            <label>$500-1000
-                                <input type="radio" id="tier2" name="price" value="500-1000" />
+                            <label> 
+                                <input type="radio" name="tier2" value="500-1000" />
+                                $500 - 1000
                             </label>
 
-                            <label>$1000+
-                                <input type="radio" id="tier3" name="price" value="1000+" />
+                            <label>
+                                <input type="radio" name="tier3" value="1000+" />
+                                $1000 +
                             </label>
                         </div>
-                        <br />
-                        <input type="submit" value="Submit" />
-                        {this.renderErrors()}
-                    </form>
-                    
-                </div>
+                    </div>
+
+                    <div className="brand input">
+                        <h2>Enter preferred brand & model (or leave blank if no preference)</h2>
+                        <input type="text"
+                            value={this.state.brand}
+                            onChange={this.update('brand')}
+                            placeholder="Brand, e.g. 'Casio'"
+                        />
+                    </div>
+
+                    <div className="model input">
+                        <input type="text"
+                            value={this.state.model}
+                            onChange={this.update('model')}
+                            placeholder="Model"
+                        />
+                    </div>
+
+                    <br />
+                    <input type="submit" value="Submit" className="splash-form-submit"/>
+                    {this.renderErrors()}
+                </form>
             </div>
-        )
+        );
     }
 }
 
