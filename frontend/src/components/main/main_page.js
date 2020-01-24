@@ -14,8 +14,11 @@ class MainPage extends React.Component {
                     </div>
                 </section>
             <footer>
-                Watch recommendations
+                footer
             </footer>
+                <section className="search">
+                    {/* <MainSearchComponent /> */}
+                </section>
             </div>
         );
     }
