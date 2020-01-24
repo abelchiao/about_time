@@ -14,8 +14,12 @@ class MainPage extends React.Component {
                     </div>
                 </section>
             <footer>
-                Watch recommendations
+                footer
             </footer>
+                <section className="search transparent">
+                    This is the transparency box
+                    {/* <MainSearchComponent /> */}
+                </section>
             </div>
         );
     }

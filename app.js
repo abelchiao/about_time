@@ -8,6 +8,7 @@ const db = require("./config/keys").mongoURI;
 const users = require("./routes/api/users");
 const watches = require("./routes/api/watches");
 const reviews = require("./routes/api/reviews");
+const searches = require("./routes/api/searches");
 
 const passport = require("passport");
 
@@ -30,6 +31,8 @@ require("./config/passport")(passport);
 app.use("/api/users", users);
 app.use('/api/watches', watches);
 app.use('/api/reviews', reviews);
+app.use("/api/searches", searches);
+
 
 // path under which assets are available
 app.use(express.static('public'));
