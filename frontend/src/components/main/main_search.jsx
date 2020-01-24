@@ -1,5 +1,4 @@
 import React from 'react';
-import '../../css/splash.css';
 
 class MainSearch extends React.Component {
     constructor(props) {
