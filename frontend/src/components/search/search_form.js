@@ -11,6 +11,7 @@ class SearchForm extends React.Component {
             price: '',
             errors: {}
         };
+
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
@@ -20,7 +21,6 @@ class SearchForm extends React.Component {
             [field]: e.currentTarget.value
         });
     }
-
 
     handleSubmit(e) {
         e.preventDefault();
@@ -40,7 +40,7 @@ class SearchForm extends React.Component {
         );
     }
 
-    render() {     
+   render() {     
         return (
             <div className="splash ui top attached tabular menu">
                 <h1>Start your search:</h1>
