@@ -1,10 +1,12 @@
 import React from 'react';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 // const path = require('path');
 
 import MainPage from './main/main_page';
 import SearchFormContainer from './search/search_container';
+import Modal from './modal/modal';
+import ModalTestPageContainer from './modal/modal-test-page-container'
 
 // if (process.env.NODE_ENV === 'production') {
 //     app.use(express.static('frontend/build'));
@@ -14,7 +16,9 @@ import SearchFormContainer from './search/search_container';
 // }
 const App = () => (
     <div>
+        <Modal />
         <Switch>
+            <Route exact path='/modal-test' component={ModalTestPageContainer} />
             <AuthRoute exact path="/" component={MainPage} />
             <ProtectedRoute exact path="/search" component={SearchFormContainer} />
         </Switch>
