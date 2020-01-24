@@ -37,4 +37,35 @@ router.post(
   }
 );
 
+router.delete(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    User.findById(req.user.id, (err, user) => {
+      
+      // TODO revert code if only search label is passed in (without search object id)
+      // let searches = user.searches;
+      // let targetSearch;
+      // searches.forEach(search => {
+      //   if (search.label === req.body.label) {
+      //     targetSearch = search;
+      //   }
+      // });
+      // if (targetSearch) {
+      //   user.searches.pull(targetSearch._id)
+      // }
+
+      // no errors returned if target searchId does not exist
+      user.searches.pull(req.body.searchId)
+
+      user
+        .save()
+        .then(user => res.json(user))
+        .catch(err => res.status(403).json(err))
+    });
+  }
+);
+
 module.exports = router;
+
+
