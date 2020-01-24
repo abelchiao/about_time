@@ -15,15 +15,12 @@ class SearchForm extends React.Component {
         this.renderErrors = this.renderErrors.bind(this);
     }
 
-    componentDidMount() {
-    }
-
     update(field) {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
     }
-    
+
 
     handleSubmit(e) {
         e.preventDefault();
@@ -32,7 +29,6 @@ class SearchForm extends React.Component {
     }
 
     renderErrors() {
-
         return (
             <ul>
                 {Object.keys(this.state.errors).map((error, i) => (
