@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 export const getWatch = (id) => {
     return axios.get(`/api/watches/${id}`)
 }
