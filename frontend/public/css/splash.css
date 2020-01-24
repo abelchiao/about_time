@@ -1,0 +1,26 @@
+body {
+    background-image: "http://drive.google.com/uc?exportview&id=1tXu1SabkFIGGOjzolIBNR5rHVLEJtNfh";
+}
+
+.banner h1 {
+    display: block;
+    font-size: 4.8rem;
+    letter-spacing: 0;
+    line-height: 0.8;
+    padding: 1em 0 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #182e4f;
+    text-align: right;
+}
+
+.summary p {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0 0 1.5em;
+    text-align: right;
+}
+
