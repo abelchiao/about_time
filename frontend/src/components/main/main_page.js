@@ -1,12 +1,10 @@
 import React from 'react';
-import MainSearchComponent from './main_seach_component';
 
 class MainPage extends React.Component {
 
     render() {
         return (
             <div>
-                <MainSearchComponent />
                 <section className="intro">
                     <header className="banner">
                         <h1>About Time</h1>
