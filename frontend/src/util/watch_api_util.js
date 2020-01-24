@@ -4,7 +4,7 @@ export const getWatch = (id) => {
 }
 
 export const getWatches = (search) => {
-    return axios.get(`/api/watches`, search)
+    return axios.post(`/api/watches/search`, search)
 }
 
 export const createWatch = (data) => {

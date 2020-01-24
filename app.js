@@ -7,6 +7,7 @@ const db = require("./config/keys").mongoURI;
 
 const users = require("./routes/api/users");
 const watches = require("./routes/api/watches");
+const reviews = require("./routes/api/reviews");
 
 const passport = require("passport");
 
@@ -20,12 +21,18 @@ mongoose
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
+mongoose.set('useFindAndModify', false);
+
 // app.get("/", (req, res) => res.send("Hello World0"));
 app.use(passport.initialize());
 require("./config/passport")(passport);
 
 app.use("/api/users", users);
 app.use('/api/watches', watches);
+app.use('/api/reviews', reviews);
+
+// path under which assets are available
+app.use(express.static('public'));
 
 const port = process.env.PORT || 5000;
 

@@ -1,6 +1,18 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
+const reviewSchema = new Schema({
+  userId: {
+    type: Schema.Types.ObjectId,
+    ref: "users",
+    required: true
+  },
+  text: {
+    type: String,
+    required: true
+  }
+});
+
 const WatchSchema = new Schema({
   brand: {
     type: String,
@@ -13,7 +25,11 @@ const WatchSchema = new Schema({
   price: {
     type: Number,
     required: true
-  }
+  },
+  reviews: [ reviewSchema ]
+  // reviews: {
+  //   type: Array
+  // }
 });
 
 module.exports = Watch = mongoose.model("Watch", WatchSchema);

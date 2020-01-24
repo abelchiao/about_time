@@ -1,0 +1,38 @@
+body {
+    display: block;
+    background-image: url("http://drive.google.com/uc?exportview&id=1s5R4g3L-JOjEe2ltMYsD13sqcKR530gv");
+}
+
+footer {
+    text-align: right;
+    padding: 0 10% 10em 30%;
+}
+
+.intro {
+    padding-left: 25%;
+    padding: 0 10% 10em 30%;
+}
+.banner h1 {
+    display: block;
+    font-size: 4.8rem;
+    letter-spacing: 0;
+    line-height: 0.8;
+    padding: 0;
+    text-transform: uppercase;
+    font-weight: 900;
+    color: #182e4f;
+    text-align: right;
+}
+
+
+.summary p {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.6;
+    margin: 0 0 1.5em;
+    text-align: right;
+}
+
+
