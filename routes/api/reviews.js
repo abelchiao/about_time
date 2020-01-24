@@ -6,6 +6,23 @@ const User = require('../../models/User');
 const passport = require("passport");
 const Watch = require('../../models/Watch');
 
+
+
+// router.get(
+//   "/",
+//   passport.authenticate("jwt", { session: false }),
+//   (req, res) => {
+//     Watch.findById(req.body.watchId, (err, watch) => {
+//       if (err) {
+//         return res.json(err);
+//       } else {
+//         let reviews = watch.reviews;
+//         return res.json(reviews);
+//       }
+//     });
+//   }
+// );
+
 // router.get("/", (req, res) => {
 //   Review.find()
 //     .then(reviews => res.json(reviews))
@@ -90,6 +107,25 @@ router.post("/edit", passport.authenticate("jwt", { session: false }), (req, res
       .catch(err => res.status(403).json(err));
   })
 });
+
+
+router.delete(
+  "/",
+  passport.authenticate("jwt", { session: false }),
+  (req, res) => {
+    Watch.findById(req.body.watchId, (err, watch) => {
+
+      // TODO match code from search delete route if review object id is not passed in
+
+      watch.reviews.pull(req.body.reviewId);
+
+      watch
+        .save()
+        .then(watch => res.json(watch))
+        .catch(err => res.status(403).json(err));
+    });
+  }
+);
 
 
 // router.post("/test", passport.authenticate("jwt", { session: false }), (req, res) => {
