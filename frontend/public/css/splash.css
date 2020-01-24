@@ -47,12 +47,12 @@ footer {
   z-index: 10;
 }
 
-.modal-child {
+/* .modal-child {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-}
+} */
 
 .transparent {
     background-color: lightsteelblue;
@@ -60,4 +60,16 @@ footer {
     border: 2px solid black;
     opacity: 0.6;
     filter: alpha(opacity=60);
+}
+
+.login-form-parent {
+  background: #fff;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 300px;
+  width: 40%;
+  max-width: 580px;
+  border-radius: 4px;
 }

@@ -12,20 +12,23 @@ class LoginForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this);
   };
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ errors: nextProps.errors })
+  };
+
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value })
-  }
+  };
 
   handleSubmit(e) {
     e.preventDefault()
     let user = {
       email: this.state.email,
       password: this.state.password
-    }
+    };
     this.props.login(user)
       // .then(this.props.closeModal())
-  }
-
+  };
   
   renderErrors() {
     return (
@@ -39,9 +42,9 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='login-form-parent'>
         <h1>Log In</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form className='login-form-main' onSubmit={this.handleSubmit}>
           {this.renderErrors()}
           <label htmlFor="login-email">Email</label>
           <input 
@@ -49,15 +52,15 @@ class LoginForm extends React.Component {
             type="text"
             value={this.state.email}
             onChange={this.update('email')}
-          />
+            />
           <label htmlFor="login-password">Password</label>
           <input 
             type="password" 
             id='login-password'
             value={this.state.password}
             onChange={this.update('password')}
-          />
-          <button>Log In</button>
+            />
+          <input type='submit' value='Log In'/>
         </form>
       </div>
     )

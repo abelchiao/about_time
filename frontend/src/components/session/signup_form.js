@@ -14,6 +14,10 @@ class SignupForm extends React.Component {
     this.renderErrors = this.renderErrors.bind(this)
   };
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({ errors: nextProps.errors })
+  }
+
   update(field) {
     return e =>
       this.setState({ [field]: e.currentTarget.value });
@@ -43,9 +47,9 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='signup-form-parent'>
         <h1>Sign Up</h1>
-        <form onSubmit={this.handleSubmit}>
+        <form className='signup-form-main' onSubmit={this.handleSubmit}>
           {this.renderErrors()}
           <label htmlFor="login-handle">Username</label>
           <input
