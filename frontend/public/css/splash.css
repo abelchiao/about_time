@@ -2,12 +2,39 @@ body {
     display: block;
     background-image: url("http://drive.google.com/uc?exportview&id=1s5R4g3L-JOjEe2ltMYsD13sqcKR530gv");
     background-repeat: no-repeat;
+    background-color: #414348;
+    font-size: 1.2rem;
 }
 
 footer {
     text-align: right;
-    padding: 0 10% 10em 30%;
+    padding: 0 10% 1em 10%;
 }
+
+form .input {
+    padding: 1em;
+    font-size: 1.2rem;
+
+}
+
+input[type="radio"] {
+    margin: 0 10px 0 10px;
+}
+
+input[type="submit"] {
+    font-size: 1.3rem;
+    padding: 0 10px;
+}
+
+input[type="text"] {
+    font-size: 1.3rem;
+}
+
+h2 {
+    font-size: 1.5rem;
+    font-weight: 400;
+}
+
 
 .intro {
     padding-left: 25%;
@@ -26,6 +53,17 @@ footer {
     text-align: right;
 }
 
+.price-inputs {
+    display: flex;
+    justify-content: space-around;
+    width: 700px;
+    font-size: 1.5rem;
+}
+
+
+.splash-form {
+    padding: 1em;
+}  
 
 .summary p {
     text-transform: uppercase;
@@ -37,11 +75,19 @@ footer {
     text-align: right;
 }
 
-.transparent {
-    background-color: lightsteelblue;
-    margin: 2em;
+.search-box {
+    display: inline-block;
+    text-align: center;
+    max-width: 70%;
+}
+
+.search-transparent {
+    background-color: lightgrey;
+    margin: 2em auto;
     border: 2px solid black;
-    opacity: 0.6;
-    filter: alpha(opacity=60);
+    opacity: 0.90;
+    filter: alpha(opacity=90);
+    text-align: center;
+    max-width: 70%;
 }
 

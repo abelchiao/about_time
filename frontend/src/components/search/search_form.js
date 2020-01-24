@@ -1,6 +1,7 @@
 import React from 'react';
+import { withRouter } from 'react-router-dom';
 
-class MainSearch extends React.Component {
+class SearchForm extends React.Component {
     constructor(props) {
         super(props);
 
@@ -10,9 +11,11 @@ class MainSearch extends React.Component {
             price: '',
             errors: {}
         };
-
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
+    }
+
+    componentDidMount() {
     }
 
     update(field) {
@@ -41,42 +44,54 @@ class MainSearch extends React.Component {
         );
     }
 
-    render() {
-        let prices = [{ id: 1, value: '$100-300' },
-                    { id: 2, value: '$300-500'},
-                    { id: 3, value: '$500-1000'},
-                    { id: 4, value: '$1000+'}]
-        let pricesList = prices.length > 0
-            && prices.map((ele, i) => {
-                return (
-                    <option key={i} 
-                            value={ele.value} 
-                            onChange={this.update('price')}>
-                                {ele.value}
-                    </option>
-                )
-            }, this);
+    render() {     
         return (
-            <div className="splash">
+            <div className="splash ui top attached tabular menu">
+                <h1>Start your search:</h1>
                 <form className="splash-form" onSubmit={this.handleSubmit}>
-                    <h1>Search for watches</h1>
-                    <div className="tab">
+                    <div className="price input">
+                        <h2>How much are you looking to spend?</h2>
+                        <div className="price-inputs">
+                            <label>
+                                <input type="radio" name="tier0" value="100-300" />
+                                $100 - 300
+                            </label>
+
+                            <label>
+                                <input type="radio" name="tier1" value="300-500" />
+                                $300 - 500
+                            </label>
+
+                            <label> 
+                                <input type="radio" name="tier2" value="500-1000" />
+                                $500 - 1000
+                            </label>
+
+                            <label>
+                                <input type="radio" name="tier3" value="1000+" />
+                                $1000 +
+                            </label>
+                        </div>
+                    </div>
+
+                    <div className="brand input">
+                        <h2>Enter preferred brand & model (or leave blank if no preference)</h2>
                         <input type="text"
                             value={this.state.brand}
                             onChange={this.update('brand')}
                             placeholder="Brand, e.g. 'Casio'"
                         />
+                    </div>
+
+                    <div className="model input">
                         <input type="text"
                             value={this.state.model}
                             onChange={this.update('model')}
                             placeholder="Model"
                         />
-                        <label>Choose a Price Bracket:
-                            <select>
-                                {pricesList}
-                            </select>
-                        </label>
                     </div>
+
+                    <br />
                     <input type="submit" value="Submit" className="splash-form-submit"/>
                     {this.renderErrors()}
                 </form>
@@ -85,4 +100,4 @@ class MainSearch extends React.Component {
     }
 }
 
-export default MainSearch;
+export default withRouter(SearchForm);

@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchContainer from '../search/search_container';
 
 class MainPage extends React.Component {
 
@@ -16,9 +17,10 @@ class MainPage extends React.Component {
             <footer>
                 footer
             </footer>
-                <section className="search transparent">
-                    This is the transparency box
-                    {/* <MainSearchComponent /> */}
+                <section className="search-transparent">
+                    <div className="search-box">
+                        <SearchContainer />
+                    </div>
                 </section>
             </div>
         );
