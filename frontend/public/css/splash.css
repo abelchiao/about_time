@@ -3,7 +3,9 @@ body {
     background-image: url("http://drive.google.com/uc?exportview&id=1s5R4g3L-JOjEe2ltMYsD13sqcKR530gv");
     background-repeat: no-repeat;
     background-color: #414348;
-    font-size: 1.2rem;
+    font-family: haboro-serif, serif;
+    font-style: normal;
+    font-weight: 300;
 }
 
 footer {
@@ -12,33 +14,25 @@ footer {
 }
 
 form .input {
-    padding: 1em;
+    padding: 0 1em 1em 1em;
     font-size: 1.2rem;
 
 }
 
 input[type="radio"] {
-    margin: 0 10px 0 10px;
+    margin: 0 8px 0 25px;
+    width: 1.4em;
+    height: 1.4em;
 }
 
 input[type="submit"] {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     padding: 0 10px;
-}
-
-input[type="text"] {
-    font-size: 1.3rem;
 }
 
 h2 {
     font-size: 1.5rem;
-    font-weight: 400;
-}
-
-
-.intro {
-    padding-left: 25%;
-    padding: 0 10% 10em 30%;
+    font-weight: 450;
 }
 
 .banner h1 {
@@ -51,28 +45,22 @@ h2 {
     font-weight: 900;
     color: #182e4f;
     text-align: right;
+    margin: 0.7em 0;
+}
+
+.intro {
+    padding-left: 25%;
+    padding: 0 10% 10em 30%;
+}
+
+#price {
+    padding-bottom: 4em;
 }
 
 .price-inputs {
     display: flex;
-    justify-content: space-around;
-    width: 700px;
+    justify-content: space-between;
     font-size: 1.5rem;
-}
-
-
-.splash-form {
-    padding: 1em;
-}  
-
-.summary p {
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    font-size: 1.8rem;
-    font-weight: 300;
-    line-height: 1.6;
-    margin: 0 0 1.5em;
-    text-align: right;
 }
 
 .search-box {
@@ -82,8 +70,66 @@ h2 {
 }
 
 .search-transparent {
-    background-color: lightgrey;
+    background-color: lightgray;
     margin: 2em auto;
+    border: 2px solid black;
+    opacity: 0.90;
+    filter: alpha(opacity=90);
+    text-align: center;
+    max-width: 70%;
+    min-width: 700px;
+    border-radius: 6px;
+}
+
+.splash > h1 {
+    font-size: 2.2rem;
+}
+.splash-form {
+    padding: 1em;
+}  
+
+.splash-form .input-select {
+    padding: 5px;
+    font-size: 1.0rem;
+    width: 50%;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.splash-form-submit {
+    box-shadow:inset 0px 1px 0px 0px #ffffff;
+	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+	border-radius:2px;
+	border:1px solid #dcdcdc;
+	display: inline-block;
+	cursor: pointer;
+	color: #182e4f;
+	font-size:12px;
+	font-weight:bold;
+	padding:4px 18px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px gray;
+}
+
+.splash-form-submit:hover {
+    background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color:#dfdfdf;
+}
+
+.splash-form-submit:active {
+    position:relative;
+	top:1px;
+}
+
+
+.summary p {
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 1.8rem;
+    font-weight: 300;
+    line-height: 1.6;
+    text-align: right;
+    text-shadow:0px 1px 0px gray;
 }
 
 .modal-background {
@@ -102,13 +148,3 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
 } */
-
-.transparent {
-    background-color: lightsteelblue;
-    margin: 2em;
-    border: 2px solid black;
-    opacity: 0.90;
-    filter: alpha(opacity=90);
-    text-align: center;
-    max-width: 70%;
-}
