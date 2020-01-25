@@ -40,9 +40,7 @@ router.post("/search", (req, res) => {
   else if (req.body.price === "500-1000") {query.price = { $gte: 500, $lte: 1000 }}
   else if (req.body.price === "1000+") {query.price = { $gte: 1000 }}
 
-// { birth: { $gt: new Date('1940-01-01'), $lt: new Date('1960-01-01') } }
-
-  console.log(query)
+  // console.log(query)
   Watch.find( query )
     .then(watches => res.json(watches))
     .catch(err => res.status(404).json({ nowatchesfound: "No watches found" }));
