@@ -40,12 +40,49 @@ class SearchForm extends React.Component {
         );
     }
 
-   render() {     
+   render() {   
+       const brands = [
+           { id: 0, value: '' },
+           { id: 1, value: 'Casio' },
+           { id: 2, value: 'Citizen' },
+           { id: 3, value: 'Omega' },
+           { id: 4, value: 'Tissot' },
+       ]
+
+       const brandsList = brands.length > 0
+        && brands.map((brand, i) => {
+           return (
+               <option key={i}
+                value={ brand.value }
+                onChange={this.update('brand')} >
+                    { brand.value }
+                </option>
+           )
+       }, this);
+
+       const styles = [
+           { id: 0, value: ''},
+           { id: 1, value: 'casual' },
+           { id: 2, value: 'formal' },
+           { id: 3, value: 'sporty' },
+       ]
+
+       const stylesList = styles.length > 0
+           && styles.map((style, i) => {
+               return (
+                   <option key={ i }
+                       value={ style.value }
+                       onChange={ this.update('style') } >
+                       { style.value }
+                   </option>
+               )
+           }, this);
+
         return (
             <div className="splash ui top attached tabular menu">
                 <h1>Start your search:</h1>
                 <form className="splash-form" onSubmit={this.handleSubmit}>
-                    <div className="price input">
+                    <div className="price input" id="price">
                         <h2>How much are you looking to spend?</h2>
                         <div className="price-inputs">
                             <label>
@@ -71,21 +108,25 @@ class SearchForm extends React.Component {
                     </div>
 
                     <div className="brand input">
-                        <h2>Enter preferred brand & model (or leave blank if no preference)</h2>
-                        <input type="text"
-                            value={this.state.brand}
-                            onChange={this.update('brand')}
-                            placeholder="Brand, e.g. 'Casio'"
-                        />
+                        <h2>Select preferred brand & style (leave blank if no preference)</h2>
+                        <select className="brand-list input-select">
+                            { brandsList }
+                        </select>
                     </div>
 
-                    <div className="model input">
+                    <div className="style input">
+                        <select className="style-list input-select">
+                            { stylesList }
+                        </select>
+                    </div>
+
+                    {/* <div className="model input input-select">
                         <input type="text"
                             value={this.state.model}
                             onChange={this.update('model')}
                             placeholder="Model"
                         />
-                    </div>
+                    </div> */}
 
                     <br />
                     <input type="submit" value="Submit" className="splash-form-submit"/>
