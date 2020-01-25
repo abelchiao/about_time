@@ -6,9 +6,9 @@ class SearchForm extends React.Component {
         super(props);
 
         this.state = {
-            brand: '',
-            model: '',
             price: '',
+            brand: '',
+            style: '',
             errors: {}
         };
 
