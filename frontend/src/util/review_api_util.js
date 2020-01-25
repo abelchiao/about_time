@@ -8,8 +8,6 @@ export const editReview = (data) => {
   return axios.post(`/api/reviews/edit`, data);
 };
 
-export const deleteReview = (data) => {
-  return axios.delete(`/api/reviews`, data);
+export const deleteReview = (reviewId) => {
+  return axios.delete(`/api/reviews`, {data: { reviewId: reviewId } });
 };
-
-
