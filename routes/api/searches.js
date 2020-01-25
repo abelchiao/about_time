@@ -5,6 +5,7 @@ const router = express.Router();
 const User = require("../../models/User");
 const passport = require("passport");
 
+// getUserSearches in search_api_util
 router.get(
   "/",
   passport.authenticate("jwt", { session: false }),
@@ -20,6 +21,7 @@ router.get(
   }
 );
 
+// createSearch in search_api_util
 router.post(
   "/",
   passport.authenticate("jwt", { session: false }),
@@ -31,12 +33,14 @@ router.post(
       };
       user.searches.push(newSearch);
       user.save()
-        .then(user => res.json(user))
+      // return res.json(newSearch);
+        .then(user => res.json(newSearch))
         .catch(err => res.status(403).json(err));
     })    
   }
 );
 
+// deleteSearch in search_api_util
 router.delete(
   "/",
   passport.authenticate("jwt", { session: false }),
