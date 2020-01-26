@@ -101,7 +101,7 @@ router.post("/edit", passport.authenticate("jwt", { session: false }), (req, res
   Watch.findById(req.body.watchId, (err, watch) => {
     let review = watch.reviews.id(req.body.reviewId);
 
-    // TODO via postman any user can delete any review
+    // TODO via postman any user can edit any review
     // so frontend should limit edit button to appear only on review which belongs to logged in user
 
     review.set({
