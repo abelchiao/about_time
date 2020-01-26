@@ -86,7 +86,7 @@ class SearchForm extends React.Component {
         }
 
         return (
-            <div className="splash ui top attached tabular menu">
+            <div className="splash-background ui top attached tabular menu">
                 <h1>Start your search:</h1>
                 <form className="splash-form" onSubmit={this.handleSubmit}>
                     <div className="price input" id="price">
