@@ -17,8 +17,8 @@ class MainPage extends React.Component {
             <footer>
                 footer
             </footer>
-                <section className="search-transparent">
-                    <div className="search-box">
+                <section className="splash-search-transparent">
+                    <div className="splash-search-box">
                         <SearchContainer />
                     </div>
                 </section>

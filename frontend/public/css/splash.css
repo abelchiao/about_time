@@ -62,24 +62,15 @@ h2 {
     font-size: 1.5rem;
 }
 
-.search-box {
-    display: inline-block;
-    text-align: center;
-    max-width: 90%;
-    margin: 5px;
-}
-
 .search-result-show {
-    display: inline-block;
-}
-.search-transparent {
+    text-align: center;
     background-color: lightgray;
     margin: 2em auto;
     border: 2px solid black;
     opacity: 0.90;
     filter: alpha(opacity=90);
     text-align: center;
-    max-width: 60%;
+    max-width: 90%;
     min-width: 700px;
     border-radius: 6px;
 }
@@ -87,6 +78,7 @@ h2 {
 .splash > h1 {
     font-size: 2.2rem;
 }
+
 .splash-form {
     padding: 1em;
 }  
@@ -123,6 +115,25 @@ h2 {
 	top:1px;
 }
 
+.splash-search-box {
+    display: inline-block;
+    text-align: center;
+    max-width: 90%;
+    margin: 5px;
+}
+
+.splash-search-transparent {
+    background-color: lightgray;
+    margin: 2em auto;
+    border: 2px solid black;
+    opacity: 0.90;
+    filter: alpha(opacity=90);
+    text-align: center;
+    max-width: 60%;
+    min-width: 700px;
+    border-radius: 6px;
+}
+
 .summary p {
     text-transform: uppercase;
     letter-spacing: 0.1em;
@@ -131,6 +142,26 @@ h2 {
     line-height: 1.6;
     text-align: right;
     text-shadow:0px 1px 0px gray;
+}
+
+.top-three-row {
+    text-align: center;
+    margin: 3em 0;
+}
+
+.top-three-row li {
+    display: inline-block;
+    background-color: linen;
+    text-align: center;
+    border: 5px solid black;
+}
+
+.top-three-row ul {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    text-align: center;
+    max-width: 80%;
 }
 
 .modal-background {

@@ -8,6 +8,14 @@ class ModalTestPage extends React.Component {
     this.openWatchModal = this.openWatchModal.bind(this);
   };
 
+  componentDidMount() {
+    this.props.fetchWatches();
+  }
+
+  componentDidUpdate() {
+    this.props.fetchWatches();
+  }
+
   openLoginModal(e) {
     this.props.openModal('login')
   };
@@ -17,7 +25,7 @@ class ModalTestPage extends React.Component {
   };
 
   openWatchModal(e) {
-
+    this.props.openModal('show-watch', '5e2a1c8184d4208edbcbef6a')
   };
 
   render() {

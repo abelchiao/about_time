@@ -3,6 +3,7 @@ import { closeModal } from "../../actions/modal_actions";
 import { connect } from "react-redux";
 import LoginFormContainer from '../session/login_form_container'
 import SignupFormContainer from "../session/signup_form_container";
+import WatchShowModalContainer from '../watches/watch_show_modal_container';
 
 function Modal({ modal, closeModal, currentWatch }) {
   if (!modal) {
@@ -15,8 +16,12 @@ function Modal({ modal, closeModal, currentWatch }) {
       // component = 'hello! this will be the login container'
       break;
     case "signup":
-      component = <SignupFormContainer currentWatch={currentWatch} />;
+      component = <SignupFormContainer />;
       // component = 'hello! this will be the signup form container'
+      break;
+    case "show-watch":
+      component = <WatchShowModalContainer currentWatch={currentWatch} />
+      // component = 'hello! this will be the watch show modal'
       break;
     default:
       return null;
@@ -31,9 +36,15 @@ function Modal({ modal, closeModal, currentWatch }) {
 }
 
 const mapStateToProps = state => {
+  let showWatch
+  state.watches.forEach(watch => {
+    if (watch._id.toString() === state.ui.currentWatch) showWatch = watch
+  })
+
   return {
     modal: state.ui.modal,
-    currentWatch: state.watches[state.ui.currentWatch]
+    currentWatch: showWatch
+    // currentWatch: state.watches[state.ui.currentWatch]
   };
 };
 

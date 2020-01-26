@@ -8,9 +8,10 @@ const receiveWatch = watch => ({
   watch
 });
 
-const receiveWatches = watches => ({
+const receiveWatches = (watches, query) => ({
   type: RECEIVE_WATCHES,
-  watches
+  watches,
+  query
 })
 
 export const createWatch = watch => dispatch => {
@@ -27,6 +28,6 @@ export const fetchWatch = watchId => dispatch => {
 
 export const fetchWatches = query => dispatch => {
   return WatchApiUtil.getWatches(query)
-    .then(watches => dispatch(receiveWatches(watches)))
+    .then(watches => dispatch(receiveWatches(watches, query)))
     .catch(err => console.log(err));
 };
