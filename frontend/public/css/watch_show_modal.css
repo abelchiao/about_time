@@ -1,0 +1,37 @@
+.watch-show-modal-parent {
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 600px;
+  width: 40%;
+  max-width: 800px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.watch-show-modal-body {
+  display: flex;
+  flex-direction: row;
+}
+
+.watch-photo {
+  max-width: 30%;
+}
+
+.watch-information {
+  width: 60%;
+}
+
+.watch-detail-item {
+  display: flex;
+}
+
+.watch-detail-item-img {
+  max-width: 50px;
+}
+
