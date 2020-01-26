@@ -5,7 +5,7 @@ class MainPage extends React.Component {
 
     render() {
         return (
-            <div>
+            <div className="splash">
                 <section className="intro">
                     <header className="banner">
                         <h1>About Time</h1>
@@ -17,8 +17,8 @@ class MainPage extends React.Component {
             <footer>
                 footer
             </footer>
-                <section className="search-transparent">
-                    <div className="search-box">
+                <section className="splash-search-transparent">
+                    <div className="splash-search-box">
                         <SearchContainer />
                     </div>
                 </section>
