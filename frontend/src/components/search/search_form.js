@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Redirect, withRouter } from 'react-router-dom';
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -9,7 +9,8 @@ class SearchForm extends React.Component {
             price: '',
             brand: '',
             style: '',
-            errors: {}
+            errors: {},
+            redirectToResults: false
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -26,6 +27,7 @@ class SearchForm extends React.Component {
         e.preventDefault();
         const search = Object.assign({}, this.state);
         this.props.fetchWatches(search)
+        .then(this.setState({ redirectToResults: true }));
     }
 
     renderErrors() {
@@ -78,6 +80,11 @@ class SearchForm extends React.Component {
                )
            }, this);
 
+        const redirectToResults = this.state.redirectToResults;
+        if (redirectToResults === true) {
+            return <Redirect to="/watches/search" />;
+        }
+
         return (
             <div className="splash ui top attached tabular menu">
                 <h1>Start your search:</h1>
@@ -119,14 +126,6 @@ class SearchForm extends React.Component {
                             { stylesList }
                         </select>
                     </div>
-
-                    {/* <div className="model input input-select">
-                        <input type="text"
-                            value={this.state.model}
-                            onChange={this.update('model')}
-                            placeholder="Model"
-                        />
-                    </div> */}
 
                     <br />
                     <input type="submit" value="Submit" className="splash-form-submit"/>

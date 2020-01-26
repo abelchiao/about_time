@@ -27,7 +27,6 @@ input[type="radio"] {
 
 input[type="submit"] {
     font-size: 1.2rem;
-    padding: 0 10px;
 }
 
 h2 {
@@ -66,9 +65,13 @@ h2 {
 .search-box {
     display: inline-block;
     text-align: center;
-    max-width: 70%;
+    max-width: 90%;
+    margin: 5px;
 }
 
+.search-result-show {
+    display: inline-block;
+}
 .search-transparent {
     background-color: lightgray;
     margin: 2em auto;
@@ -76,7 +79,7 @@ h2 {
     opacity: 0.90;
     filter: alpha(opacity=90);
     text-align: center;
-    max-width: 70%;
+    max-width: 60%;
     min-width: 700px;
     border-radius: 6px;
 }
@@ -104,7 +107,6 @@ h2 {
 	display: inline-block;
 	cursor: pointer;
 	color: #182e4f;
-	font-size:12px;
 	font-weight:bold;
 	padding:4px 18px;
 	text-decoration:none;
@@ -120,7 +122,6 @@ h2 {
     position:relative;
 	top:1px;
 }
-
 
 .summary p {
     text-transform: uppercase;
