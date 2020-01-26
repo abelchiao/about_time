@@ -124,6 +124,10 @@ mongoose.set('useFindAndModify', false);
 
 
 
+// Watch.remove({}, function(err) {
+Watch.deleteMany({}, function(err) {
+  console.log("collection removed");
+}).then( () => {
 
 const lineReader = require("line-reader");
 let itemsSeedData;
@@ -132,7 +136,8 @@ lineReader.eachLine("./data/watchesSeedRevArrMinAddLine2.json", function(line) {
   itemsSeedData = JSON.parse(line);
   Watch.insertMany(itemsSeedData);
 });
-
+}
+);
 
 
 
@@ -152,5 +157,8 @@ app.use(express.static('public'));
 const port = process.env.PORT || 5000;
 
 app.listen(port, () => console.log(`Server is running on port ${port}`));
+
+
+
 
 
