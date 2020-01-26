@@ -11,6 +11,10 @@ const reviewSchema = new Schema({
     ref: "users",
     required: true
   },
+  userHandle: {
+    type: String,
+    required: true
+  },
   text: {
     type: String,
     required: true
