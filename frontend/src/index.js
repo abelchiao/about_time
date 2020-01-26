@@ -11,8 +11,9 @@ import { logout } from './actions/session_actions';
 // import watch utils for testing
 // import { getWatch, getWatches, createWatch } from './util/watch_api_util';
 
+
 // import watch thunk action creators for testing
-import { createWatch, fetchWatch, fetchWatches } from './actions/watch_actions';
+// import { createWatch, fetchWatch, fetchWatches } from './actions/watch_actions';
 
 // import search utils for testing
 // import { 
@@ -22,7 +23,7 @@ import { createWatch, fetchWatch, fetchWatches } from './actions/watch_actions';
 // } from './util/search_api_util';
 
 // import search thunk action creators for testing
-import { fetchUserSearches, newSearch, deleteSearch } from './actions/search_actions';
+// import { fetchUserSearches, newSearch, deleteSearch } from './actions/search_actions';
 
 // import { createReview, editReview, deleteReview } from "./util/review_api_util"
 // import { createReview, updateReview, deleteReview } from './actions/review_actions'
@@ -48,6 +49,9 @@ document.addEventListener('DOMContentLoaded', () => {
         store = configureStore({});
     }
 
+    
+        window.dispatch = store.dispatch;
+        window.getState = store.getState;
 
     // set watch utils to window for testing
     // window.getWatch = getWatch
@@ -59,18 +63,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.getUserSearches = getUserSearches
     // window.deleteSearch = deleteSearch
 
-    window.dispatch = store.dispatch;
-    window.getState = store.getState;
-
     // set watch thunk actions to window to test - need to dispatch
     // window.createWatch = createWatch
     // window.fetchWatch = fetchWatch
-    window.fetchWatches = fetchWatches
+    // window.fetchWatches = fetchWatches
 
     // set search thunk actions to window to test
-    window.fetchUserSearches = fetchUserSearches
-    window.newSearch = newSearch
-    window.deleteSearch = deleteSearch
+    // window.fetchUserSearches = fetchUserSearches
+    // window.newSearch = newSearch
+    // window.deleteSearch = deleteSearch
 
     // window.createReview = createReview;
     // window.editReview = editReview;
