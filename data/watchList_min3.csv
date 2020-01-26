@@ -1,0 +1,4 @@
+brand,model,gender,price,movement,style,strap,case,reviews.userId,reviews.text,reviews.userHandle,
+Tissot,T-Touch Expert Solar,Male,1150,Quartz,Sporty,Leather,titanium,5e2d27c5b2da08467f469ca4,review text test 123,reviewtest
+Tissot,T-Touch Expert Solar 2,Male,1195,Quartz,Sporty,Silicone,titanium,5e2d27c5b2da08467f469ca4,review text test 123,reviewtest
+Tissot,T-TOUCH II TITANIUM,Male,1025,Quartz,Sporty,Polished Titanium,Polished Titanium,5e2d27c5b2da08467f469ca4,review text test 123,reviewtest
