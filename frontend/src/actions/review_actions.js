@@ -1,7 +1,7 @@
 import * as ReviewApiUtil from "../util/review_api_util"
 
 export const CREATE_REVIEW = "CREATE_REVIEW";
-export const EDIT_REVIEW = "EDIT_REVIEW";
+export const UPDATE_REVIEW = "UPDATE_REVIEW";
 export const DELETE_REVIEW = "DELETE_REVIEW";
 
 // const receiveReview = review => ({
@@ -10,35 +10,35 @@ export const DELETE_REVIEW = "DELETE_REVIEW";
 // });
 
 const createReviewAction = review => ({
-  type: types.CREATE_REVIEW,
+  type: CREATE_REVIEW,
   review
 });
 
 const updateReviewAction = review => ({
-  type: types.UPDATE_REVIEW,
+  type: UPDATE_REVIEW,
   review
 });
 
-const deleteReviewAction = review => ({
-  type: types.DELETE_REVIEW,
-  review
+const deleteReviewAction = reviewId => ({
+  type: DELETE_REVIEW,
+  reviewId
 });
 
-export function createReview(review) {
+export const createReview = review => dispatch => {
     return ReviewApiUtil.createReview(review)
     .then(review => dispatch(createReviewAction(review)))
     .catch(err => console.log(err))
 }
 
-export function updateReview(review) {
+export const updateReview = review => dispatch => {
   return ReviewApiUtil.editReview(review)
     .then(review => dispatch(updateReviewAction(review)))
     .catch(err => console.log(err))
 }
 
-export function deleteReview(review) {
+export const deleteReview = review => dispatch => {
   return ReviewApiUtil.deleteReview(review)
-    .then(review => dispatch(deleteReviewAction(review)))
+    .then( () => dispatch(deleteReviewAction(review)))
     .catch(err => console.log(err))
 }
 

@@ -16,6 +16,9 @@ import { createSearch } from './util/search_api_util'
 // import thunk action creates for testing
 // import { createWatch, fetchWatch, fetchWatches } from './actions/watch_actions';
 
+// import { createReview, editReview, deleteReview } from "./util/review_api_util"
+// import { createReview, updateReview, deleteReview } from './actions/review_actions'
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
@@ -51,6 +54,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.createWatch = createWatch
     // window.fetchWatch = fetchWatch
     // window.fetchWatches = fetchWatches
+
+    // window.createReview = createReview;
+    // window.editReview = editReview;
+    // window.updateReview = updateReview;
+    // window.deleteReview = deleteReview;
+    // window.logout = logout;
 
     const root = document.getElementById('root');
 

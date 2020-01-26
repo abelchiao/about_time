@@ -1,4 +1,4 @@
-import { CREATE_REVIEW, EDIT_REVIEW, DELETE_REVIEW } from "../actions/review_actions";
+import { CREATE_REVIEW, UPDATE_REVIEW, DELETE_REVIEW } from "../actions/review_actions";
 
 const reviewsReducer = (state = {}. action) => {
     Object.freeze(state);
@@ -7,7 +7,7 @@ const reviewsReducer = (state = {}. action) => {
         case CREATE_REVIEW:
             nextState = action.review.data;
             return nextState;
-        case EDIT_REVIEW:
+        case UPDATE_REVIEW:
             nextState = action.review.data;
             return nextState;
         case DELETE_REVIEW:
