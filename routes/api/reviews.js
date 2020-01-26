@@ -23,6 +23,7 @@ router.post("/", passport.authenticate("jwt", { session: false }), (req, res) =>
     // need to coordinate what req.body will look like w/ FE
     let newReview = ({
       userId: req.user.id,
+      userHandle: req.user.handle,
       text: req.body.text
     })
     watch.reviews.push(newReview);
