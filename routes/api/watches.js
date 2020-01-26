@@ -22,6 +22,7 @@ router.post('/', (req, res) => {
   const newWatch = new Watch({
     brand: req.body.brand,
     model: req.body.model,
+    style: req.body.style,
     price: req.body.price
   });
 
@@ -33,8 +34,8 @@ router.post('/', (req, res) => {
 router.post("/search", (req, res) => {
   let query = {}
   if (req.body.brand) query.brand = req.body.brand;
-  if (req.body.model) query.model = req.body.model;
-  if (req.body.price) query.price = req.body.price;
+  if (req.body.style) query.style = req.body.style;
+  // if (req.body.price) query.price = req.body.price;
   if (req.body.price === "100-300") {query.price = { $gte: 100, $lte: 300 }}
   else if (req.body.price === "300-500") {query.price = { $gte: 300, $lte: 500 }}
   else if (req.body.price === "500-1000") {query.price = { $gte: 500, $lte: 1000 }}

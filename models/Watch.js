@@ -26,6 +26,10 @@ const WatchSchema = new Schema({
     type: String,
     required: true
   },
+  style: {
+    type: String,
+    required: true
+  },
   price: {
     type: Number,
     required: true
