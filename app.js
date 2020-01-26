@@ -17,12 +17,29 @@ const bodyParser = require("body-parser");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+const Watch = require("./models/Watch");
+
 mongoose
   .connect(db, { useNewUrlParser: true })
   .then(() => console.log("Connected to MongoDB successfully"))
   .catch(err => console.log(err));
 
 mongoose.set('useFindAndModify', false);
+
+
+
+
+var promise = Watch.create({
+  brand: "testBrand",
+  model: "testModel",
+  style: "testStyle",
+  price: 123,
+  reviews: {
+    userId: "5e2d27c5b2da08467f469ca4",
+    text: "testText"
+  }
+});
+
 
 // app.get("/", (req, res) => res.send("Hello World0"));
 app.use(passport.initialize());
