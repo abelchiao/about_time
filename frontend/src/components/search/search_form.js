@@ -94,7 +94,7 @@ class SearchForm extends React.Component {
         }
 
         return (
-            <div className="splash-background search-transparent">
+            <div className="search-transparent">
                 <h1>Start your search:</h1>
                 <form className="splash-form" onSubmit={this.handleSubmit}>
                     <div className="price input" id="price">

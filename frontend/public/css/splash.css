@@ -1,11 +1,30 @@
 body {
     display: block;
-    background-image: url("http://drive.google.com/uc?exportview&id=1s5R4g3L-JOjEe2ltMYsD13sqcKR530gv");
     background-repeat: no-repeat;
     background-color: #414348;
     font-family: haboro-serif, serif;
     font-style: normal;
     font-weight: 300;
+}
+
+.results-background {
+    /* Top image is German movement bg, bottom is Casio GShock bg */
+    background-image: url("https://drive.google.com/uc?exportview&id=160pGDaZBgTxwIV-d-CuJ1wPUPke3DU4e");
+    /* background-image: url("https://drive.google.com/uc?exportview&id=1tZuHPPeNoQojSfjfUhXJFr8BLiWxKHPP"); */
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    position: fixed;
+}
+
+.splash-background {
+    background-image: url("http://drive.google.com/uc?exportview&id=1s5R4g3L-JOjEe2ltMYsD13sqcKR530gv");
+    min-width: 100%;
+    min-height: 100%;
+    background-size: cover;
+    top: 0;
+    left: 0;
+    position: fixed;
 }
 
 footer {
@@ -27,7 +46,6 @@ input[type="radio"] {
 
 input[type="submit"] {
     font-size: 1.2rem;
-    padding: 0 10px;
 }
 
 h2 {
@@ -59,33 +77,32 @@ h2 {
 
 .price-inputs {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     font-size: 1.5rem;
-    max-width: 70%;
-    margin: auto;
 }
 
-.search-box {
-    display: inline-block;
+.search-result-show {
     text-align: center;
-    max-width: 70%;
-}
-
-.search-transparent {
-    background-color: lightgray;
+    background-color: rgb(33, 58, 92);
     margin: 2em auto;
     border: 2px solid black;
-    opacity: 0.90;
     filter: alpha(opacity=90);
     text-align: center;
-    max-width: 70%;
+    max-width: 90%;
     min-width: 700px;
+    min-height: 80%;
     border-radius: 6px;
+}
+
+.search-result-show h1 {
+    color: linen;
 }
 
 .splash > h1 {
     font-size: 2.2rem;
+    text-align: left;
 }
+
 .splash-form {
     padding: 1em;
 }  
@@ -93,7 +110,7 @@ h2 {
 .splash-form .input-select {
     padding: 5px;
     font-size: 1.0rem;
-    width: 40%;
+    width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
 }
@@ -106,7 +123,6 @@ h2 {
 	display: inline-block;
 	cursor: pointer;
 	color: #182e4f;
-	font-size:12px;
 	font-weight:bold;
 	padding:4px 18px;
 	text-decoration:none;
@@ -123,6 +139,24 @@ h2 {
 	top:1px;
 }
 
+.splash-search-box {
+    display: inline;
+    text-align: center;
+    max-width: 90%;
+    margin: 5px;
+}
+
+.splash-search-transparent {
+    background-color: lightgray;
+    margin: 2em auto;
+    border: 2px solid black;
+    opacity: 0.90;
+    filter: alpha(opacity=90);
+    text-align: center;
+    max-width: 60%;
+    min-width: 700px;
+    border-radius: 6px;
+}
 
 .summary p {
     text-transform: uppercase;
@@ -132,6 +166,32 @@ h2 {
     line-height: 1.6;
     text-align: right;
     text-shadow:0px 1px 0px gray;
+}
+
+.top-three-row {
+    text-align: center;
+    margin: 3em 0;
+    height: 80%
+}
+
+.top-three-row li {
+    display: inline-block;
+    background-color: linen;
+    top: 5em;
+    text-align: center;
+}
+
+.top-three-row img {
+    border: 5px solid black;
+
+}
+
+.top-three-row ul {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    text-align: center;
+    max-width: 80%;
 }
 
 .modal-background {

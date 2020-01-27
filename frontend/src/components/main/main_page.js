@@ -5,7 +5,7 @@ class MainPage extends React.Component {
 
     render() {
         return (
-            <div className="splash">
+            <div className="splash-background">
                 <section className="intro">
                     <header className="banner">
                         <h1>About Time</h1>
@@ -14,9 +14,9 @@ class MainPage extends React.Component {
                         <p>A curated list of watch recommendations, tailored to just what you are looking for. It's About Time.</p>
                     </div>
                 </section>
-            <footer>
-                footer
-            </footer>
+                <footer>
+                    footer
+                </footer>
                 <section className="splash-search-transparent">
                     <div className="splash-search-box">
                         <SearchContainer />
