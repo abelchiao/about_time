@@ -25,7 +25,6 @@ class ModalTestPage extends React.Component {
   };
 
   openWatchModal(e) {
-    // this.props.openModal('show-watch', '5e2a1c8184d4208edbcbef6a')
     this.props.openModal('show-watch', '5e2e335c4f5dc4062c94bd93')
   };
 
