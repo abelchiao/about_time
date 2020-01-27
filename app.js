@@ -18,6 +18,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const Watch = require("./models/Watch");
+const User = require("./models/User");
 
 mongoose
   .connect(db, { useNewUrlParser: true })
@@ -125,19 +126,36 @@ mongoose.set('useFindAndModify', false);
 
 
 // Watch.remove({}, function(err) {
-Watch.deleteMany({}, function(err) {
-  console.log("collection removed");
+User.deleteMany({}, function(err) {
+  console.log("User collection removed");
 }).then( () => {
 
-const lineReader = require("line-reader");
-let itemsSeedData;
-lineReader.eachLine("./data/watchesSeedRevArrMinAddLine2.json", function(line) {
+const lineReader1 = require("line-reader");
+let itemsSeedData1;
+lineReader1.eachLine("./data/usersSeed1.json", function(line) {
   console.log(line);
-  itemsSeedData = JSON.parse(line);
-  Watch.insertMany(itemsSeedData);
+  itemsSeedData1 = JSON.parse(line);
+  User.insertMany(itemsSeedData1);
 });
 }
 );
+
+
+
+// // Watch.remove({}, function(err) {
+// Watch.deleteMany({}, function(err) {
+//   console.log("Watch collection removed");
+// }).then( () => {
+
+// const lineReader2 = require("line-reader");
+// let itemsSeedData2;
+// lineReader2.eachLine("./data/watchesSeedRevArrMinAddLine2.json", function(line) {
+//   console.log(line);
+//   itemsSeedData2 = JSON.parse(line);
+//   Watch.insertMany(itemsSeedData2);
+// });
+// }
+// );
 
 
 

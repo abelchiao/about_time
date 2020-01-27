@@ -1,0 +1,9 @@
+{"handle":"test","email":"test@test.net","password":"$2a$10$qJPrpNrZSu21ikac9kfRNue9DDqI3PzlRPrvdnbpXOB5buWcwRPMO"}
+{"handle":"demoUser","email":"demoUser@demo.net","password":"$2a$10$7uPJVjl7jXI429X8mCh3T.Q0H6LvVm2TbuklUXKNL5IwilXUZ5WRq"}
+{"handle":"watchWatcher","email":"watch@watcher.net","password":"$2a$10$FOqgrVQZI/KvhShL38nDdeWxWDjdufr0RczHlod.nO0M9b6PDV/Y6"}
+{"handle":"watchBuyer","email":"watch@buyer.net","password":"$2a$10$muj6MKuU/mJZKILYFg4/6O6DZs0nlLIFImN9Rh6wZ5DE3rToIC9E."}
+{"handle":"watchFinder","email":"watch@finder.net","password":"$2a$10$9HHBVQRsUsDpGPSiFa5qPePinItPQCx1JPwzZEyRP3F6iC2NI3k5i"}
+{"handle":"watchMaker","email":"watch@maker.net","password":"$2a$10$Ph5jD3D0E7FSk7U20nGzA.b0k5hNiazo/HxXUJuXJ20rs/Px0AyoK"}
+{"handle":"timeKeeper","email":"time@keeper.net","password":"$2a$10$RqnlGvdfxEpBLyK//e/lguqEaoFyFxP3glfl.5m/y204L2BO0zz0q"}
+{"handle":"timeSeeker","email":"time@seeker.net","password":"$2a$10$/P6QvcElQ6s7ydy2GD7XVOe2oGSu1QnLvshZztZan7uo3H8fXlXBC"}
+{"handle":"timeTracker","email":"time@tracker.net","password":"$2a$10$M1nLpyp61o9CFmpn98vSoOpfo6C.3KMWTKutAgCbMZ9DtE97.7JbK"}
