@@ -1,17 +1,9 @@
 const mongoose = require("mongoose");
 
-const express = require("express");
-const app = express();
-
-const db = require("./config/keys").mongoURI;
-
-const users = require("./routes/api/users");
-const watches = require("./routes/api/watches");
-const reviews = require("./routes/api/reviews");
-const searches = require("./routes/api/searches");
-
 const passport = require("passport");
 
+const express = require("express");
+const app = express();
 
 const path = require("path");
 
@@ -22,21 +14,27 @@ if (process.env.NODE_ENV === "production") {
   });
 }
 
-
 const bodyParser = require("body-parser");
 
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-const Watch = require("./models/Watch");
-const User = require("./models/User");
+const db = require("./config/keys").mongoURI;
 
 mongoose
-  .connect(db, { useNewUrlParser: true })
-  .then(() => console.log("Connected to MongoDB successfully"))
-  .catch(err => console.log(err));
+.connect(db, { useNewUrlParser: true })
+.then(() => console.log("Connected to MongoDB successfully"))
+.catch(err => console.log(err));
 
 mongoose.set('useFindAndModify', false);
+
+const users = require("./routes/api/users");
+const watches = require("./routes/api/watches");
+const reviews = require("./routes/api/reviews");
+const searches = require("./routes/api/searches");
+
+const Watch = require("./models/Watch");
+const User = require("./models/User");
 
 
 
