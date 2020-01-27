@@ -48,19 +48,19 @@ mongoose.set('useFindAndModify', false);
 // TODO after seeding user, grab user IDs and place within reviews object of Watches seed file,
 // then disable above block, uncomment this block and run second to populate watches from seed file
 
-// Watch.deleteMany({}, function(err) {
-//   console.log("Watch collection removed");
-// }).then( () => {
+Watch.deleteMany({}, function(err) {
+  console.log("Watch collection removed");
+}).then( () => {
 
-// const lineReader2 = require("line-reader");
-// let itemsSeedData2;
-// lineReader2.eachLine("./data/watchesSeedFull.json", function(line) {
-//   console.log(line);
-//   itemsSeedData2 = JSON.parse(line);
-//   console.log(itemsSeedData2)
-//   Watch.insertMany(itemsSeedData2);
-// });
-// });
+const lineReader2 = require("line-reader");
+let itemsSeedData2;
+lineReader2.eachLine("./data/watchesSeedFullWImg.json", function(line) {
+  console.log(line);
+  itemsSeedData2 = JSON.parse(line);
+  console.log(itemsSeedData2)
+  Watch.insertMany(itemsSeedData2);
+});
+});
 
 
 
