@@ -1,10 +1,9 @@
 import { connect } from 'react-redux';
 import { fetchSearch, newSearch } from '../../actions/search_actions';
+import { openModal } from '../../actions/modal_actions';
 import ResultsShow from './results_show';
 
 const mapStateToProps = (state) => {
-    console.log(state)
-    console.log(state.watches)
     return {
         topThree: state.watches.slice(0, 3),
         otherResults: state.watches.slice(3, ),
@@ -15,8 +14,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
+        fetchSearch: (data) => dispatch(fetchSearch(data)),
         newSearch: (data) => dispatch(newSearch(data)),
-        fetchSearch: (data) => dispatch(fetchSearch(data))
+        openModal: (modal, watchId) => dispatch(openModal(modal, watchId))
     };
 };
 
