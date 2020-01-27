@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import ReviewIndex from './review_index';
-import { createReview } from '../../actions/review_actions';
+import { createReview , updateReview } from '../../actions/review_actions';
 
 const mapStateToProps = state => ({
   currentUser: state.session.user
