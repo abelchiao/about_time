@@ -4,12 +4,13 @@ class ResultsShow extends React.Component {
     constructor(props) {
         super(props);
 
-        this.openWatchModal = this.openWatchModal.bind(this);
+        // this.openWatchModal = this.openWatchModal.bind(this);
     }
 
-    openWatchModal(e) {
-        this.props.openModal('show-watch', e.currentTarget.value)
-    }
+    // openWatchModal(e) {
+    //     console.log(e.currentTarget.value)
+    //     this.props.openModal('show-watch', e.currentTarget.value)
+    // }
 
     render() {
         return (
@@ -19,7 +20,7 @@ class ResultsShow extends React.Component {
                         <h1>The top three matches are:</h1>
                             <ul>
                                 { this.props.topThree.map((watch, idx) =>
-                                    <li key={idx} value={ watch._id } onClick={ this.openWatchModal }>
+                                    <li key={idx} value={ watch._id } onClick={() => this.props.openModal('show-watch', watch._id) }>
                                         { watch._id }
                                         { watch.imageURL }
                                         <br />
