@@ -11,10 +11,12 @@ class SearchForm extends React.Component {
             style: '',
             errors: {},
             selectedTier: '',
+            selectedMovement: '',
             redirectToResults: false
         };
 
-        this.handleSelect = this.handleSelect.bind(this);
+        this.handleSelectMovement = this.handleSelectMovement.bind(this);
+        this.handleSelectPrice = this.handleSelectPrice.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
@@ -25,9 +27,15 @@ class SearchForm extends React.Component {
         });
     }
 
-    handleSelect(e) {
+    handleSelectPrice(e) {
         this.setState({
-            selectedTier: e.target.name
+            selectedTier: e.target.name,
+        })
+    }
+
+    handleSelectMovement(e) {
+        this.setState({
+            selectedMovement: e.target.name
         })
     }
 
@@ -52,7 +60,6 @@ class SearchForm extends React.Component {
 
    render() {   
        const brands = [
-           { id: 0, value: '' },
            { id: 1, value: 'Casio' },
            { id: 2, value: 'Citizen' },
            { id: 3, value: 'Omega' },
@@ -71,10 +78,9 @@ class SearchForm extends React.Component {
        }, this);
 
        const styles = [
-           { id: 0, value: ''},
-           { id: 1, value: 'casual' },
-           { id: 2, value: 'formal' },
-           { id: 3, value: 'sporty' },
+           { id: 1, value: 'Casual' },
+           { id: 2, value: 'Formal' },
+           { id: 3, value: 'Sporty' },
        ]
 
        const stylesList = styles.length > 0
@@ -88,6 +94,23 @@ class SearchForm extends React.Component {
                )
            }, this);
 
+       const caseType = [
+           { id: 1, value: 'Stainless steel' },
+           { id: 2, value: 'Gold' },
+           { id: 3, value: 'Polished' },
+       ]
+
+       const caseTypeList = caseType.length > 0
+           && styles.map((caseType, i) => {
+               return (
+                   <option key={ i }
+                       value={ caseType.value }
+                       onChange={ this.update('caseType') } >
+                       { caseType.value }
+                   </option>
+               )
+           }, this);
+
         const redirectToResults = this.state.redirectToResults;
         if (redirectToResults === true) {
             return <Redirect to="/watches/search" />;
@@ -96,16 +119,16 @@ class SearchForm extends React.Component {
         return (
             <div className="search-transparent">
                 <h1>Start your search:</h1>
-                <form className="splash-form" onSubmit={this.handleSubmit}>
+                <form className="splash-form" onSubmit={ this.handleSubmit }>
                     <div className="price input" id="price">
                         <h2>How much are you looking to spend?</h2>
-                        <div className="price-inputs">
+                        <div className="radio-inputs">
                             <label>
                                 <input type="radio" 
                                        name="tier0" 
                                        value="100-300"
                                        checked={ this.state.selectedTier === 'tier0' }
-                                       onChange={ this.handleSelect }
+                                       onChange={ this.handleSelectPrice }
                                 />
                                 $100 - 300
                             </label>
@@ -115,7 +138,7 @@ class SearchForm extends React.Component {
                                        name="tier1"
                                        value="300-500" 
                                        checked={ this.state.selectedTier === 'tier1' }
-                                       onChange={ this.handleSelect }
+                                       onChange={ this.handleSelectPrice }
                                 />
                                 $300 - 500
                             </label>
@@ -125,7 +148,7 @@ class SearchForm extends React.Component {
                                        name="tier2"
                                        value="500-1000" 
                                        checked={ this.state.selectedTier === 'tier2' }
-                                       onChange={ this.handleSelect }
+                                       onChange={ this.handleSelectPrice }
                                 />
                                 $500 - 1000
                             </label>
@@ -135,23 +158,74 @@ class SearchForm extends React.Component {
                                        name="tier3"
                                        value="1000+" 
                                        checked={ this.state.selectedTier === 'tier3' }
-                                       onChange={ this.handleSelect }
+                                       onChange={ this.handleSelectPrice }
                                 />
                                 $1000 +
                             </label>
                         </div>
                     </div>
 
+                    <div className="movement input" id="movement">
+                        <h2>Select movement</h2>
+                        <div className="radio-inputs">
+                            <label>
+                                <input type="radio"
+                                    name="movement0"
+                                    value="Automatic"
+                                    checked={ this.state.selectedMovement === 'movement0' }
+                                    onChange={ this.handleSelectMovement }
+                                />
+                                Automatic
+                            </label>
+
+                            <label>
+                                <input type="radio"
+                                    name="movement1"
+                                    value="Quartz"
+                                    checked={ this.state.selectedMovement === 'movement1' }
+                                    onChange={ this.handleSelectMovement }
+                                />
+                                Quartz
+                            </label>
+
+                            <label>
+                                <input type="radio"
+                                    name="movement2"
+                                    value="Mechanical"
+                                    checked={this.state.selectedMovement === 'movement2'}
+                                    onChange={this.handleSelectMovement }
+                                />
+                                Mechanical
+                            </label>
+                        </div>
+
+                    </div>
+
                     <div className="brand input">
-                        <h2>Select preferred brand & style (leave blank if no preference)</h2>
+                        <h2>Select preferred brand / style / case (leave blank if no preference)</h2>
                         <select className="brand-list input-select">
+                            <option value="none" selected disabled hidden>
+                                Brand
+                            </option> 
                             { brandsList }
                         </select>
                     </div>
 
                     <div className="style input">
                         <select className="style-list input-select">
+                            <option value="none" selected disabled hidden>
+                                Style
+                            </option> 
                             { stylesList }
+                        </select>
+                    </div>
+
+                    <div className="case input">
+                        <select className="case-list input-select">
+                            <option value="none" selected disabled hidden>
+                                Case
+                            </option> 
+                            { caseTypeList }
                         </select>
                     </div>
 
