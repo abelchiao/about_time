@@ -32,19 +32,31 @@ const WatchSchema = new Schema({
   },
   style: {
     type: String,
-    required: true
+    default: "Misc"
   },
   gender: {
     type: String,
-    required: true
+    default: "Misc"
   },
   movement: {
     type: String,
-    required: true
+    default: "Misc"
   },
   case: {
     type: String,
-    required: true
+    default: "Misc"
+  },
+  description: {
+    type: String,
+    default: "Additional information soon!"
+  },
+  imageURL: {
+    type: String,
+    default: "www.google.com"
+  },
+  retailURL: {
+    type: String,
+    default: "www.google.com"
   },
   // waterResistance: {
   //   type: String,
@@ -52,9 +64,9 @@ const WatchSchema = new Schema({
   // },
   price: {
     type: Number,
-    required: true
+    default: 1
   },
-  reviews: [ reviewSchema ]
+  reviews: [reviewSchema]
   // reviews: {
   //   type: Array
   // }

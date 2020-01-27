@@ -5,8 +5,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   min-width: 600px;
-  width: 40%;
-  max-width: 800px;
+  width: 60%;
+  max-width: 80vw;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@
   box-sizing: border-box;
   max-height: 80vh;
   overflow-y: scroll;
+  font-family: 'Roboto', sans-serif;
 }
 
 .watch-show-modal-body {
@@ -21,19 +22,67 @@
   flex-direction: row;
 }
 
+.watch-photo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  width: 40%;
+}
+
 .watch-photo {
-  max-width: 30%;
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .watch-information {
   width: 60%;
+  padding: 30px;
+}
+
+/* .watch-title {
+  padding: 20px 0;
+} */
+
+.watch-brand {
+  font-size: 36px;
+  line-height: 40px;
+}
+
+.watch-model {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.watch-price {
+  font-size: 24px;
+  line-height: 30px;
+  padding: 20px 0;
+  font-weight: 200;
+}
+
+.watch-details-label {
+  font-size: 24px;
 }
 
 .watch-detail-item {
   display: flex;
+  margin: 10px 0;
+  align-items: center;
 }
 
 .watch-detail-item-img {
-  max-width: 50px;
+  max-width: 40px;
+  max-height: 40px;
+  padding: 8px;
 }
 
+.watch-detail-item-label {
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.watch-value {
+  font-size: 16px;
+  line-height: 20px;
+}
