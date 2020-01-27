@@ -25,26 +25,29 @@ class ReviewIndex extends React.Component {
     // debugger
     let reviewForm = 
     <form onSubmit={this.handleSubmit}>
+      <div className='review-form-header'>Own this watch? Tell us what you think!</div>
       <textarea value={this.state.text} onChange={this.update('text')} />
       <input type='submit' value='Submit Review' />
     </form>;
     this.props.reviews.forEach(review => {
       if (review.userId === this.props.currentUser.id) {
-        reviewForm = 'YOU HAVE ALREADY REVIEWED THIS WATCH!!!'
+        reviewForm = null;
       }
     });
 
     return (
-      <div className='review-index-parent'>Review Index!!!!
+      <div className='review-index-parent'>
+        <div className='review-form-container'>
+          {reviewForm}
+        </div>
+        <div className='review-index-header'>Our community's thoughts</div>
         <div className='review-index-items'>
           {
             this.props.reviews.map(review => {
-              return <ReviewIndexItem key={review._id} review={review} />
+              return <ReviewIndexItem key={review._id} review={review} currentUser={this.props.currentUser} />
             })
           }
         </div>
-
-        {reviewForm}
       </div>
     );
   };
