@@ -9,7 +9,7 @@ import { setAuthToken } from './util/session_api_util';
 import { logout } from './actions/session_actions';
 
 // import watch utils for testing
-// import { getWatch, getWatches, createWatch } from './util/watch_api_util';
+import { getWatch, getWatches, createWatch } from './util/watch_api_util';
 
 
 // import watch thunk action creators for testing
@@ -55,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // set watch utils to window for testing
     // window.getWatch = getWatch
-    // window.getWatches = getWatches
+    window.getWatches = getWatches
     // window.createWatch = createWatch
 
     // set search utils to window for testing

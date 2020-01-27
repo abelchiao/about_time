@@ -10,9 +10,11 @@ class SearchForm extends React.Component {
             brand: '',
             style: '',
             errors: {},
+            selectedTier: '',
             redirectToResults: false
         };
 
+        this.handleSelect = this.handleSelect.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
         this.renderErrors = this.renderErrors.bind(this);
     }
@@ -21,6 +23,12 @@ class SearchForm extends React.Component {
         return e => this.setState({
             [field]: e.currentTarget.value
         });
+    }
+
+    handleSelect(e) {
+        this.setState({
+            selectedTier: e.target.name
+        })
     }
 
     handleSubmit(e) {
@@ -86,29 +94,49 @@ class SearchForm extends React.Component {
         }
 
         return (
-            <div className="splash-background ui top attached tabular menu">
+            <div className="search-transparent">
                 <h1>Start your search:</h1>
                 <form className="splash-form" onSubmit={this.handleSubmit}>
                     <div className="price input" id="price">
                         <h2>How much are you looking to spend?</h2>
                         <div className="price-inputs">
                             <label>
-                                <input type="radio" name="tier0" value="100-300" />
+                                <input type="radio" 
+                                       name="tier0" 
+                                       value="100-300"
+                                       checked={ this.state.selectedTier === 'tier0' }
+                                       onChange={ this.handleSelect }
+                                />
                                 $100 - 300
                             </label>
 
                             <label>
-                                <input type="radio" name="tier1" value="300-500" />
+                                <input type="radio"
+                                       name="tier1"
+                                       value="300-500" 
+                                       checked={ this.state.selectedTier === 'tier1' }
+                                       onChange={ this.handleSelect }
+                                />
                                 $300 - 500
                             </label>
 
                             <label> 
-                                <input type="radio" name="tier2" value="500-1000" />
+                                <input type="radio"
+                                       name="tier2"
+                                       value="500-1000" 
+                                       checked={ this.state.selectedTier === 'tier2' }
+                                       onChange={ this.handleSelect }
+                                />
                                 $500 - 1000
                             </label>
 
                             <label>
-                                <input type="radio" name="tier3" value="1000+" />
+                                <input type="radio"
+                                       name="tier3"
+                                       value="1000+" 
+                                       checked={ this.state.selectedTier === 'tier3' }
+                                       onChange={ this.handleSelect }
+                                />
                                 $1000 +
                             </label>
                         </div>
