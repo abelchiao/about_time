@@ -63,18 +63,20 @@ class SearchForm extends React.Component {
 
    render() {   
        const brands = [
-           { id: 1, value: 'Casio' },
-           { id: 2, value: 'Citizen' },
-           { id: 3, value: 'Omega' },
-           { id: 4, value: 'Tissot' },
-       ]
+         { id: 1, value: "Baume&Mercier" },
+         { id: 2, value: "Citizen" },
+         { id: 3, value: "Movado" },
+         { id: 4, value: "Tissot" },
+         { id: 5, value: "Tag Heur" },
+       ];
 
        const brandsList = brands.length > 0
         && brands.map((brand, i) => {
            return (
-               <option key={i}
+                <option key={i}
                 value={ brand.value }
-                onChange={this.update('brand')} >
+                >
+                {/* onChange={this.update('brand')} > */}
                     { brand.value }
                 </option>
            )
@@ -222,8 +224,9 @@ class SearchForm extends React.Component {
                   Select preferred brand / style / case (leave blank if no
                   preference)
                 </h2>
-                <select className="brand-list input-select">
-                  <option value="none" selected disabled hidden>
+                <select className="brand-list input-select" value={this.state.brand} onChange={this.update('brand')}>
+                  <option value="none" hidden>
+                  {/* <option value="none" selected disabled hidden> */}
                     Brand
                   </option>
                   {brandsList}
@@ -231,8 +234,9 @@ class SearchForm extends React.Component {
               </div>
 
               <div className="style input">
-                <select className="style-list input-select">
-                  <option value="none" selected disabled hidden>
+                <select className="style-list input-select" defaultValue="none">
+                  <option value="none" disabled hidden>
+                  {/* <option value="none" selected disabled hidden> */}
                     Style
                   </option>
                   {stylesList}
@@ -240,8 +244,9 @@ class SearchForm extends React.Component {
               </div>
 
               <div className="case input">
-                <select className="case-list input-select">
-                  <option value="none" selected disabled hidden>
+                <select className="case-list input-select" defaultValue="none">
+                  <option value="none" disabled hidden>
+                  {/* <option value="none" selected disabled hidden> */}
                     Case
                   </option>
                   {caseTypeList}
