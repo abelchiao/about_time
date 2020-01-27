@@ -126,32 +126,33 @@ mongoose.set('useFindAndModify', false);
 
 
 // Watch.remove({}, function(err) {
-User.deleteMany({}, function(err) {
-  console.log("User collection removed");
-}).then( () => {
+// User.deleteMany({}, function(err) {
+//   console.log("User collection removed");
+// }).then( () => {
 
-const lineReader1 = require("line-reader");
-let itemsSeedData1;
-lineReader1.eachLine("./data/usersSeed1.json", function(line) {
-  console.log(line);
-  itemsSeedData1 = JSON.parse(line);
-  User.insertMany(itemsSeedData1);
-});
-}
-);
+// const lineReader1 = require("line-reader");
+// let itemsSeedData1;
+// lineReader1.eachLine("./data/usersSeed1.json", function(line) {
+//   console.log(line);
+//   itemsSeedData1 = JSON.parse(line);
+//   User.insertMany(itemsSeedData1);
+// });
+// }
+// );
 
 
 
-// // Watch.remove({}, function(err) {
+// Watch.remove({}, function(err) {
 // Watch.deleteMany({}, function(err) {
 //   console.log("Watch collection removed");
 // }).then( () => {
 
 // const lineReader2 = require("line-reader");
 // let itemsSeedData2;
-// lineReader2.eachLine("./data/watchesSeedRevArrMinAddLine2.json", function(line) {
+// lineReader2.eachLine("./data/watchesSeedFull.json", function(line) {
 //   console.log(line);
 //   itemsSeedData2 = JSON.parse(line);
+//   console.log(itemsSeedData2)
 //   Watch.insertMany(itemsSeedData2);
 // });
 // }
