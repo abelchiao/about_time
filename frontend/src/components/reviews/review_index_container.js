@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  createReview: review => dispatch(createReview(review))
+  createReview: review => dispatch(createReview(review)),
+  updateReview: review => dispatch(updateReview(review)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(ReviewIndex);
