@@ -12,6 +12,8 @@
   flex-direction: column;
   padding: 20px;
   box-sizing: border-box;
+  max-height: 80vh;
+  overflow-y: scroll;
 }
 
 .watch-show-modal-body {

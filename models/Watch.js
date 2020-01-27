@@ -11,6 +11,10 @@ const reviewSchema = new Schema({
     ref: "users",
     required: true
   },
+  userHandle: {
+    type: String,
+    required: true
+  },
   text: {
     type: String,
     required: true
@@ -26,6 +30,26 @@ const WatchSchema = new Schema({
     type: String,
     required: true
   },
+  style: {
+    type: String,
+    required: true
+  },
+  gender: {
+    type: String,
+    required: true
+  },
+  movement: {
+    type: String,
+    required: true
+  },
+  case: {
+    type: String,
+    required: true
+  },
+  // waterResistance: {
+  //   type: String,
+  //   required: true
+  // },
   price: {
     type: Number,
     required: true
