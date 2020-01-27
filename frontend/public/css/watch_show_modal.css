@@ -6,7 +6,7 @@
   transform: translate(-50%, -50%);
   min-width: 600px;
   width: 60%;
-  max-width: 80vw;
+  max-width: 900px;
   border-radius: 4px;
   display: flex;
   flex-direction: column;
@@ -37,7 +37,7 @@
 
 .watch-information {
   width: 60%;
-  padding: 30px;
+  padding: 30px 30px 15px 30px;
 }
 
 /* .watch-title {
@@ -85,4 +85,15 @@
 .watch-value {
   font-size: 16px;
   line-height: 20px;
+}
+
+.watch-description {
+  padding: 30px 50px;
+  text-align: center;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 200;
+  color: white;
+  background: gray;
+  border-radius: 4px;
 }

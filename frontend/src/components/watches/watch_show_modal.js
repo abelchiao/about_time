@@ -12,7 +12,7 @@ class WatchShowModal extends React.Component {
       <div className='watch-show-modal-parent'>
         <div className='watch-show-modal-body'>
           <div className='watch-photo-container'>
-            <img alt='' className='watch-photo' src="https://us.tissotshop.com/media/catalog/product/cache/2/image/9df78eab33525d08d6e5fb8d27136e95/T/0/T0914204605101_1.png"></img>
+            <img alt='' className='watch-photo' src={this.props.currentWatch.imageURL}></img>
           </div>
           <div className='watch-information'>
             <div className='watch-title'>
@@ -20,7 +20,9 @@ class WatchShowModal extends React.Component {
               <div className='watch-model'>{this.props.currentWatch.model}</div>
             </div>
             <div className='watch-price'>
-              {`$${this.props.currentWatch.price.toLocaleString()}`}
+              <a href={this.props.currentWatch.retailURL} target='_blank'>
+                {`$${this.props.currentWatch.price.toLocaleString()}`}
+              </a>
             </div>
             <div className='watch-details'>
               <div className='watch-details-label'>Details</div>
@@ -52,11 +54,11 @@ class WatchShowModal extends React.Component {
                   <div className='watch-value'>{this.props.currentWatch.waterResistance ? this.props.currentWatch.waterResistance : 'Details Unavailable'}</div>
                 </div>
               </div>
-              <div className='watch-description'>
-
-              </div>
             </div>
           </div>
+        </div>
+        <div className='watch-description'>
+          <div>{this.props.currentWatch.description}</div>
         </div>
         <ReviewIndexContainer reviews={this.props.currentWatch.reviews} watchId={this.props.currentWatch._id} />
       </div>
