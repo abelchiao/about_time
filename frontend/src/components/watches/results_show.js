@@ -21,14 +21,14 @@ class ResultsShow extends React.Component {
                             <ul>
                                 { this.props.topThree.map((watch, idx) =>
                                     <li key={idx} value={ watch._id } onClick={() => this.props.openModal('show-watch', watch._id) }>
-                                        { watch._id }
-                                        { watch.imageURL }
+                                        {/* { watch._id } */}
+                                        <img alt='' className='watch-photo' src={watch.imageURL}></img>
                                         <br />
                                         { watch.brand }
                                         <br />
                                         { watch.model }
                                         <br />
-                                        { watch.price }
+                                        ${ watch.price }
                                     </li>
                                     )
                                 }

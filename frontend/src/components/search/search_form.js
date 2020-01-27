@@ -6,13 +6,15 @@ class SearchForm extends React.Component {
         super(props);
 
         this.state = {
-            price: '',
-            brand: '',
-            style: '',
-            errors: {},
-            selectedTier: '',
-            selectedMovement: '',
-            redirectToResults: false
+          price: "",
+          brand: "",
+          style: "",
+          case: "",
+          errors: {},
+          selectedTier: "",
+          movement: "",
+          selectedMovement: "",
+          redirectToResults: false
         };
 
         this.handleSelectMovement = this.handleSelectMovement.bind(this);
@@ -29,13 +31,15 @@ class SearchForm extends React.Component {
 
     handleSelectPrice(e) {
         this.setState({
-            selectedTier: e.target.name,
-        })
+          price: e.target.value
+        //   selectedTier: e.target.name
+        });
     }
 
     handleSelectMovement(e) {
         this.setState({
-            selectedMovement: e.target.name
+            movement: e.target.value
+            // selectedMovement: e.target.name
         })
     }
 
@@ -60,18 +64,20 @@ class SearchForm extends React.Component {
 
    render() {   
        const brands = [
-           { id: 1, value: 'Casio' },
-           { id: 2, value: 'Citizen' },
-           { id: 3, value: 'Omega' },
-           { id: 4, value: 'Tissot' },
-       ]
+         { id: 1, value: "Baume&Mercier" },
+         { id: 2, value: "Citizen" },
+         { id: 3, value: "Movado" },
+         { id: 4, value: "Tag Heur" },
+         { id: 5, value: "Tissot" },
+       ];
 
        const brandsList = brands.length > 0
         && brands.map((brand, i) => {
            return (
-               <option key={i}
+                <option key={i}
                 value={ brand.value }
-                onChange={this.update('brand')} >
+                >
+                {/* onChange={this.update('brand')} > */}
                     { brand.value }
                 </option>
            )
@@ -88,24 +94,27 @@ class SearchForm extends React.Component {
                return (
                    <option key={ i }
                        value={ style.value }
-                       onChange={ this.update('style') } >
+                    >
+                       {/* onChange={ this.update('style') } > */}
                        { style.value }
                    </option>
                )
            }, this);
 
        const caseType = [
-           { id: 1, value: 'Stainless steel' },
-           { id: 2, value: 'Gold' },
-           { id: 3, value: 'Polished' },
-       ]
+         { id: 1, value: "Gold" },
+         { id: 2, value: "Polished" },
+         { id: 3, value: "Stainless Steel" },
+         { id: 4, value: "Titanium" },
+       ];
 
        const caseTypeList = caseType.length > 0
-           && styles.map((caseType, i) => {
+           && caseType.map((caseType, i) => {
                return (
                    <option key={ i }
                        value={ caseType.value }
-                       onChange={ this.update('caseType') } >
+                    >
+                       {/* onChange={ this.update('caseType') } > */}
                        { caseType.value }
                    </option>
                )
@@ -117,123 +126,146 @@ class SearchForm extends React.Component {
         }
 
         return (
-            <div className="search-transparent">
-                <h1>Start your search:</h1>
-                <form className="splash-form" onSubmit={ this.handleSubmit }>
-                    <div className="price input" id="price">
-                        <h2>How much are you looking to spend?</h2>
-                        <div className="radio-inputs">
-                            <label>
-                                <input type="radio" 
-                                       name="tier0" 
-                                       value="100-300"
-                                       checked={ this.state.selectedTier === 'tier0' }
-                                       onChange={ this.handleSelectPrice }
-                                />
-                                $100 - 300
-                            </label>
+          <div className="search-transparent">
+            <h1>Start your search:</h1>
+            <form className="splash-form" onSubmit={this.handleSubmit}>
+              <div className="price input" id="price">
+                <h2>How much are you looking to spend?</h2>
+                <div className="radio-inputs">
+                  <label>
+                    <input
+                      type="radio"
+                      name="tier0"
+                      value="100-300"
+                      checked={this.state.price === "100-300"}
+                      //   checked={this.state.selectedTier === "tier0"}
+                      onChange={this.handleSelectPrice}
+                    />
+                    $100 - 300
+                  </label>
 
-                            <label>
-                                <input type="radio"
-                                       name="tier1"
-                                       value="300-500" 
-                                       checked={ this.state.selectedTier === 'tier1' }
-                                       onChange={ this.handleSelectPrice }
-                                />
-                                $300 - 500
-                            </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="tier1"
+                      value="300-500"
+                      checked={this.state.price === "300-500"}
+                      //   checked={this.state.selectedTier === "tier1"}
+                      onChange={this.handleSelectPrice}
+                    />
+                    $300 - 500
+                  </label>
 
-                            <label> 
-                                <input type="radio"
-                                       name="tier2"
-                                       value="500-1000" 
-                                       checked={ this.state.selectedTier === 'tier2' }
-                                       onChange={ this.handleSelectPrice }
-                                />
-                                $500 - 1000
-                            </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="tier2"
+                      value="500-1000"
+                      checked={this.state.price === "500-1000"}
+                      //   checked={this.state.selectedTier === "tier2"}
+                      onChange={this.handleSelectPrice}
+                    />
+                    $500 - 1000
+                  </label>
 
-                            <label>
-                                <input type="radio"
-                                       name="tier3"
-                                       value="1000+" 
-                                       checked={ this.state.selectedTier === 'tier3' }
-                                       onChange={ this.handleSelectPrice }
-                                />
-                                $1000 +
-                            </label>
-                        </div>
-                    </div>
+                  <label>
+                    <input
+                      type="radio"
+                      name="tier3"
+                      value="1000+"
+                      checked={this.state.price === "1000+"}
+                      //   checked={this.state.selectedTier === "tier3"}
+                      onChange={this.handleSelectPrice}
+                    />
+                    $1000 +
+                  </label>
+                </div>
+              </div>
 
-                    <div className="movement input" id="movement">
-                        <h2>Select movement</h2>
-                        <div className="radio-inputs">
-                            <label>
-                                <input type="radio"
-                                    name="movement0"
-                                    value="Automatic"
-                                    checked={ this.state.selectedMovement === 'movement0' }
-                                    onChange={ this.handleSelectMovement }
-                                />
-                                Automatic
-                            </label>
+              <div className="movement input" id="movement">
+                <h2>Select movement</h2>
+                <div className="radio-inputs">
+                  <label>
+                    <input
+                      type="radio"
+                      name="movement0"
+                      value="Automatic"
+                      checked={this.state.movement === "Automatic"}
+                      //   checked={this.state.selectedMovement === "movement0"}
+                      onChange={this.handleSelectMovement}
+                    />
+                    Automatic
+                  </label>
 
-                            <label>
-                                <input type="radio"
-                                    name="movement1"
-                                    value="Quartz"
-                                    checked={ this.state.selectedMovement === 'movement1' }
-                                    onChange={ this.handleSelectMovement }
-                                />
-                                Quartz
-                            </label>
+                  <label>
+                    <input
+                      type="radio"
+                      name="movement1"
+                      value="Quartz"
+                      checked={this.state.movement === "Quartz"}
+                      //   checked={this.state.selectedMovement === "movement1"}
+                      onChange={this.handleSelectMovement}
+                    />
+                    Quartz
+                  </label>
 
-                            <label>
-                                <input type="radio"
-                                    name="movement2"
-                                    value="Mechanical"
-                                    checked={this.state.selectedMovement === 'movement2'}
-                                    onChange={this.handleSelectMovement }
-                                />
-                                Mechanical
-                            </label>
-                        </div>
+                  <label>
+                    <input
+                      type="radio"
+                      name="movement2"
+                      value="Mechanical"
+                      checked={this.state.movement === "Mechanical"}
+                    //   checked={this.state.selectedMovement === "movement2"}
+                      onChange={this.handleSelectMovement}
+                    />
+                    Mechanical
+                  </label>
+                </div>
+              </div>
 
-                    </div>
+              <div className="brand input">
+                <h2>
+                  Select preferred brand / style / case (leave blank if no
+                  preference)
+                </h2>
+                <select className="brand-list input-select" value={this.state.brand} onChange={this.update('brand')}>
+                  <option value="none" hidden>
+                  {/* <option value="none" selected disabled hidden> */}
+                    Brand
+                  </option>
+                  {brandsList}
+                </select>
+              </div>
 
-                    <div className="brand input">
-                        <h2>Select preferred brand / style / case (leave blank if no preference)</h2>
-                        <select className="brand-list input-select">
-                            <option value="none" selected disabled hidden>
-                                Brand
-                            </option> 
-                            { brandsList }
-                        </select>
-                    </div>
+              <div className="style input">
+                <select className="style-list input-select" value={this.state.style} onChange={this.update('style')}>
+                  <option value="none" hidden>
+                  {/* <option value="none" selected disabled hidden> */}
+                    Style
+                  </option>
+                  {stylesList}
+                </select>
+              </div>
 
-                    <div className="style input">
-                        <select className="style-list input-select">
-                            <option value="none" selected disabled hidden>
-                                Style
-                            </option> 
-                            { stylesList }
-                        </select>
-                    </div>
+              <div className="case input">
+                <select className="case-list input-select" value={this.state.case} onChange={this.update('case')}>
+                  <option value="none" hidden>
+                  {/* <option value="none" selected disabled hidden> */}
+                    Case
+                  </option>
+                  {caseTypeList}
+                </select>
+              </div>
 
-                    <div className="case input">
-                        <select className="case-list input-select">
-                            <option value="none" selected disabled hidden>
-                                Case
-                            </option> 
-                            { caseTypeList }
-                        </select>
-                    </div>
-
-                    <br />
-                    <input type="submit" value="Submit" className="splash-form-submit"/>
-                    {this.renderErrors()}
-                </form>
-            </div>
+              <br />
+              <input
+                type="submit"
+                value="Submit"
+                className="splash-form-submit"
+              />
+              {this.renderErrors()}
+            </form>
+          </div>
         );
     }
 }

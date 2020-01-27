@@ -42,10 +42,10 @@ router.post("/search", (req, res) => {
   let query = {}
   if (req.body.brand) query.brand = req.body.brand;
   // if (req.body.model) query.model = req.body.model;
-  if (req.body.style) query.style = req.body.style;
-  if (req.body.gender) query.gender = req.body.gender;
-  if (req.body.movement) query.movement = req.body.movement;
-  if (req.body.case) query.case = req.body.case;
+  if (req.body.style) query.style = {'$regex': req.body.style, '$options': 'i'};
+  if (req.body.gender) query.gender = {'$regex': req.body.gender, '$options': 'i'};
+  if (req.body.movement) query.movement = {'$regex': req.body.movement, '$options': 'i'};
+  if (req.body.case) query.case = {'$regex': req.body.case, '$options': 'i'};
   // if (req.body.waterResistance) query.waterResistance = req.body.waterResistance;
   // if (req.body.price) query.price = req.body.price;
   if (req.body.price === "100-300") {query.price = { $gte: 100, $lte: 300 }}
@@ -59,3 +59,6 @@ router.post("/search", (req, res) => {
     .catch(err => res.status(404).json({ nowatchesfound: "No watches found" }));
 });
 module.exports = router;
+
+
+
