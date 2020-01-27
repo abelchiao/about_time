@@ -15,7 +15,7 @@ class MainPage extends React.Component {
                     </div>
                 </section>
                 <footer>
-                    footer
+                    {/* footer */}
                 </footer>
                 <section className="splash-search-transparent">
                     <div className="splash-search-box">
