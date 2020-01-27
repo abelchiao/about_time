@@ -4,7 +4,7 @@ class ResultsShow extends React.Component {
     constructor(props) {
         super(props);
 
-        this.openWatchModal = this.openWatchModal.bind(this);
+        // this.openWatchModal = this.openWatchModal.bind(this);
     }
 
     // openWatchModal(e) {
