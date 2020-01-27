@@ -28,7 +28,7 @@ class ResultsShow extends React.Component {
                                         <br />
                                         { watch.model }
                                         <br />
-                                        { watch.price }
+                                        ${ watch.price }
                                     </li>
                                     )
                                 }
