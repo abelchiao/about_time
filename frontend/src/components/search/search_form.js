@@ -9,6 +9,7 @@ class SearchForm extends React.Component {
           price: "",
           brand: "",
           style: "",
+          case: "",
           errors: {},
           selectedTier: "",
           movement: "",
@@ -66,8 +67,8 @@ class SearchForm extends React.Component {
          { id: 1, value: "Baume&Mercier" },
          { id: 2, value: "Citizen" },
          { id: 3, value: "Movado" },
-         { id: 4, value: "Tissot" },
-         { id: 5, value: "Tag Heur" },
+         { id: 4, value: "Tag Heur" },
+         { id: 5, value: "Tissot" },
        ];
 
        const brandsList = brands.length > 0
@@ -93,24 +94,27 @@ class SearchForm extends React.Component {
                return (
                    <option key={ i }
                        value={ style.value }
-                       onChange={ this.update('style') } >
+                    >
+                       {/* onChange={ this.update('style') } > */}
                        { style.value }
                    </option>
                )
            }, this);
 
        const caseType = [
-           { id: 1, value: 'Stainless steel' },
-           { id: 2, value: 'Gold' },
-           { id: 3, value: 'Polished' },
-       ]
+         { id: 1, value: "Gold" },
+         { id: 2, value: "Polished" },
+         { id: 3, value: "Stainless Steel" },
+         { id: 4, value: "Titanium" },
+       ];
 
        const caseTypeList = caseType.length > 0
-           && styles.map((caseType, i) => {
+           && caseType.map((caseType, i) => {
                return (
                    <option key={ i }
                        value={ caseType.value }
-                       onChange={ this.update('caseType') } >
+                    >
+                       {/* onChange={ this.update('caseType') } > */}
                        { caseType.value }
                    </option>
                )
@@ -234,8 +238,8 @@ class SearchForm extends React.Component {
               </div>
 
               <div className="style input">
-                <select className="style-list input-select" defaultValue="none">
-                  <option value="none" disabled hidden>
+                <select className="style-list input-select" value={this.state.style} onChange={this.update('style')}>
+                  <option value="none" hidden>
                   {/* <option value="none" selected disabled hidden> */}
                     Style
                   </option>
@@ -244,8 +248,8 @@ class SearchForm extends React.Component {
               </div>
 
               <div className="case input">
-                <select className="case-list input-select" defaultValue="none">
-                  <option value="none" disabled hidden>
+                <select className="case-list input-select" value={this.state.case} onChange={this.update('case')}>
+                  <option value="none" hidden>
                   {/* <option value="none" selected disabled hidden> */}
                     Case
                   </option>
