@@ -26,6 +26,9 @@ router.post('/', (req, res) => {
     gender: req.body.gender,
     movement: req.body.movement,
     case: req.body.case,
+    description: req.body.description,
+    imageURL: req.body.imageURL,
+    retailURL: req.body.retailURL,
     // waterResistance: req.body.waterResistance,
     price: req.body.price
   });
