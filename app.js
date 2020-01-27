@@ -29,120 +29,25 @@ mongoose.set('useFindAndModify', false);
 
 
 
+// TODO uncomment and run first to populate users from seed file
 
-// var promise = Watch.create({
-//   brand: "testBrand",
-//   model: "testModel",
-//   style: "testStyle",
-//   price: 123,
-//   reviews: {
-//     userId: "5e2d27c5b2da08467f469ca4",
-//     text: "testText"
-//   }
-// });
-
-// const fs = require("fs");
-// const itemResult = await Watch.find({}).exec();
-// if(itemResult.length !== 0) {
-
-//   const itemsSeedDataRaw = fs.readFileSync(
-//     `${__dirname}/data/watchesSeedRevArrMinAddLine2.json`,
-//     "utf8"
-//   );
-// console.log(itemsSeedDataRaw)
-//   const itemsSeedData = JSON.parse(itemsSeedDataRaw);
-//   Watch.insertMany(itemsSeedData);
-
-  // await Watch.insertMany(itemsSeedData);
-
-// }
-
-
-// fs.readFile("./data/watchesSeedRevArrMin.json", (err, data) => {
-//   if (err) throw err;
-//   let watches = JSON.parse(data);
-//   console.log(watches);
-// });
-
-
-// let jsonData = require("./data/watchesSeedRevArrMin.json");
-// console.log(jsonData);
-
-
-// const fs = require("fs");
-// const fileContents = fs.readFileSync(
-//   "./data/watchesSeedRevArrMin.json",
-//   "utf8"
-// );
-// console.log(fileContents)
-// try {
-//   const data = JSON.parse(fileContents);
-// } catch (err) {
-//   console.error(err);
-// }
-
-
-// const fs = require("fs");
-
-// fs.readFile("/path/to/file.json", "utf8", (err, fileContents) => {
-//   if (err) {
-//     console.error(err);
-//     return;
-//   }
-//   try {
-//     const data = JSON.parse(fileContents);
-//   } catch (err) {
-//     console.error(err);
-//   }
-// });
-
-
-
-
-// const csvParser = require("csv-parser");
-// // const fs = require("fs");
-
-// const filepath = "./data/watchesSeedRevArrMinAddLine2.json";
-
-// fs.createReadStream(filepath)
-//   .on("error", err => {
-//     // handle error
-//     console.log(err);
-//   })
-
-//   // .pipe(csvParser())
-//   JSON.parse()
-//   .on("data", row => {
-//     // use row data
-//     console.log(row);
-
-//     Watch.create(row);
-//   })
-
-//   .on("end", () => {
-//     // handle end of CSV
-//   });
-
-
-
-// Watch.remove({}, function(err) {
 // User.deleteMany({}, function(err) {
 //   console.log("User collection removed");
 // }).then( () => {
 
-// const lineReader1 = require("line-reader");
-// let itemsSeedData1;
-// lineReader1.eachLine("./data/usersSeed1.json", function(line) {
-//   console.log(line);
-//   itemsSeedData1 = JSON.parse(line);
-//   User.insertMany(itemsSeedData1);
+//   const lineReader1 = require("line-reader");
+//   let itemsSeedData1;
+//   lineReader1.eachLine("./data/usersSeed1.json", function(line) {
+//     console.log(line);
+//     itemsSeedData1 = JSON.parse(line);
+//     User.insertMany(itemsSeedData1);
+//   });
 // });
-// }
-// );
 
 
+// TODO after seeding user, grab user IDs and place within reviews object of Watches seed file,
+// then disable above block, uncomment this block and run second to populate watches from seed file
 
-// Watch.remove({}, function(err) {
 // Watch.deleteMany({}, function(err) {
 //   console.log("Watch collection removed");
 // }).then( () => {
@@ -155,8 +60,7 @@ mongoose.set('useFindAndModify', false);
 //   console.log(itemsSeedData2)
 //   Watch.insertMany(itemsSeedData2);
 // });
-// }
-// );
+// });
 
 
 
