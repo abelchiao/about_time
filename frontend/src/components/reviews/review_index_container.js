@@ -3,7 +3,7 @@ import ReviewIndex from './review_index';
 import { createReview , updateReview } from '../../actions/review_actions';
 
 const mapStateToProps = state => ({
-  currentUser: state.session.user
+  currentUser: state.session.user,
 });
 
 const mapDispatchToProps = dispatch => ({

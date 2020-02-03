@@ -1,8 +1,8 @@
 import { connect } from 'react-redux';
 import WatchShowModal from './watch_show_modal';
 
-const mapStateToProps = state => ({
-
+const mapStateToProps = (state, ownProps) => ({
+  hello: ownProps.watchId
 });
 
 const mapDispatchToProps = dispatch => ({
