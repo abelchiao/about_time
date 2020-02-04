@@ -23,25 +23,56 @@
   justify-content: space-between;
   padding-bottom: 8px;
   font-weight: bold;
+  align-items: center;
 }
 
 .owned-review {
   background: white;
-  border: 1px solid lightgrey;
+  border: 2px solid lightgrey;
 }
 
 .review-dropdown-icon {
-  fill: red;
+  fill: black;
   height: 16px;
   width: 16px;
   position: relative;
+  padding: 0 5px;
 }
+
+.review-dropdown-icon:hover {
+  cursor: pointer;
+  fill: lightgray;
+}
+
+.review-dropdown-parent {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* .review-dropdown-parent:hover {
+  background: #fff;
+} */
 
 .review-dropdown-contents {
   position: absolute;
   background: #fff;
-  right: 45px;
+  top: 15px;
+  right: 1px;
   display: none;
+  width: 130px;
+  z-index: 10;
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.review-dropdown-item {
+  padding: 5px;
+}
+
+.review-dropdown-item:hover {
+  cursor: pointer;
 }
 
 .review-dropdown-item:hover {
@@ -50,4 +81,8 @@
 
 .show {
   display: block;
+}
+
+.hidden {
+  display: none;
 }
