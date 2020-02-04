@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.editReview = editReview;
     // window.updateReview = updateReview;
     // window.deleteReview = deleteReview;
-    // window.logout = logout;
+    window.logout = logout;
 
     const root = document.getElementById('root');
 
