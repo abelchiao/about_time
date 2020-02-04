@@ -7,7 +7,6 @@ import { logout } from '../../actions/session_actions';
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
         this.openLoginModal = this.openLoginModal.bind(this);
         this.openSignupModal = this.openSignupModal.bind(this);
         this.logout = this.logout.bind(this);
