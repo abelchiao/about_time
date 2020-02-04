@@ -26,11 +26,14 @@ class ReviewIndexItem extends React.Component {
 
     let modalChild = document.getElementsByClassName('modal-child')
     modalChild[0].onclick = () => dropdown.classList.remove('show')
+    let editButton = document.getElementById(`edit-button-${this.props.review._id}`)
+    dropdown.onclick = () => dropdown.classList.remove('show')
   }
 
   toggleEditField(e) {
-    let dropdown = document.getElementById(`review-dropdown-${this.props.review._id}`)
-    dropdown.classList.remove('show')
+    // let dropdown = document.getElementById(`review-dropdown-${this.props.review._id}`)
+    // let editButton = document.getElementById(`edit-button-${this.props.review._id}`)
+    // editButton.onclick = () => dropdown.classList.remove('show')
 
     let reviewDisplay = document.getElementById(`review-text-${this.props.review._id}`);
     let reviewEditForm = document.getElementById(`review-edit-form-${this.props.review._id}`);
@@ -86,7 +89,7 @@ class ReviewIndexItem extends React.Component {
               id={`review-dropdown-${this.props.review._id}`}
               className='review-dropdown-contents'
             >
-              <div onClick={this.toggleEditField} className='review-dropdown-item'>
+              <div id={`edit-button-${this.props.review._id}`} onClick={this.toggleEditField} className='review-dropdown-item'>
                 Edit your review
               </div>
               <div onClick={this.handleDelete} className='review-dropdown-item'>

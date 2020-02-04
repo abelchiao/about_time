@@ -72,6 +72,10 @@
 }
 
 .review-dropdown-item:hover {
+  cursor: pointer;
+}
+
+.review-dropdown-item:hover {
   background: lightskyblue
 }
 
