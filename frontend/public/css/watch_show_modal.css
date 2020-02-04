@@ -30,19 +30,10 @@
   width: 40%;
 }
 
-.watch-photo {
-  min-width: 100%;
-  min-height: 100%;
-}
-
 .watch-information {
   width: 60%;
   padding: 30px 30px 15px 30px;
 }
-
-/* .watch-title {
-  padding: 20px 0;
-} */
 
 .watch-brand {
   font-size: 36px;

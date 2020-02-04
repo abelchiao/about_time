@@ -7,6 +7,7 @@ import { logout } from '../../actions/session_actions';
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
+        console.log(props)
         this.openLoginModal = this.openLoginModal.bind(this);
         this.openSignupModal = this.openSignupModal.bind(this);
         this.logout = this.logout.bind(this);
@@ -25,7 +26,7 @@ class Navbar extends React.Component {
     }
 
     render() {
-        if (Object.entries(this.props.currentUser).length === 0) {
+        if (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser) {
             return(
                 <div className="navbar">
                     <button onClick={this.openLoginModal}>Log in</button>
