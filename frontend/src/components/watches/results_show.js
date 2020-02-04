@@ -3,7 +3,7 @@ import React from 'react';
 class ResultsShow extends React.Component {
     constructor(props) {
         super(props);
-
+        // localStorage.setItem('results', props)
         // this.openWatchModal = this.openWatchModal.bind(this);
     }
 

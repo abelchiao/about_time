@@ -8,6 +8,7 @@ import Modal from './modal/modal';
 import ModalTestPageContainer from './modal/modal-test-page-container';
 import ResultsShowContainer from './watches/results_show_container';
 import SearchFormContainer from './search/search_container';
+import Navbar from './navbar/navbar';
 
 // if (process.env.NODE_ENV === 'production') {
 //     app.use(express.static('frontend/build'));
