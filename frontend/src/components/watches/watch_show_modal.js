@@ -61,7 +61,10 @@ class WatchShowModal extends React.Component {
         <div className='watch-description'>
           <div>{this.props.currentWatch.description}</div>
         </div>
-        <ReviewIndexContainer reviews={this.props.currentWatch.reviews} watchId={this.props.currentWatch._id} />
+        <ReviewIndexContainer 
+          reviews={this.props.currentWatch.reviews} 
+          watchId={this.props.currentWatch._id}
+        />
       </div>
     )
   }

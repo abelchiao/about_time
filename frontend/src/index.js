@@ -26,7 +26,7 @@ import { getWatch, getWatches, createWatch } from './util/watch_api_util';
 // import { fetchUserSearches, newSearch, deleteSearch } from './actions/search_actions';
 
 // import { createReview, editReview, deleteReview } from "./util/review_api_util"
-// import { createReview, updateReview, deleteReview } from './actions/review_actions'
+import { createReview, updateReview, deleteReview } from './actions/review_actions'
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
@@ -73,10 +73,10 @@ document.addEventListener('DOMContentLoaded', () => {
     // window.newSearch = newSearch
     // window.deleteSearch = deleteSearch
 
-    // window.createReview = createReview;
+    window.createReview = createReview;
     // window.editReview = editReview;
-    // window.updateReview = updateReview;
-    // window.deleteReview = deleteReview;
+    window.updateReview = updateReview;
+    window.deleteReview = deleteReview;
     window.logout = logout;
 
     const root = document.getElementById('root');
