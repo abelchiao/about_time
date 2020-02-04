@@ -7,7 +7,7 @@ class WatchShowModal extends React.Component {
   };
 
   render() {
-    debugger
+    // debugger
     if (!this.props.currentWatch) return null;
     return (
       <div className='watch-show-modal-parent'>
