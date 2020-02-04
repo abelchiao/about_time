@@ -9,6 +9,7 @@ import Modal from './modal/modal';
 import ModalTestPageContainer from './modal/modal-test-page-container';
 import ResultsShowContainer from './watches/results_show_container';
 import SearchFormContainer from './search/search_container';
+import Navbar from './navbar/navbar';
 import ProfilePageContainer from './users/profile_page_container';
 
 // if (process.env.NODE_ENV === 'production') {

@@ -1,11 +1,13 @@
 import React from 'react';
 import SearchContainer from '../search/search_container';
+import Navbar from '../navbar/navbar';
 
 class MainPage extends React.Component {
 
     render() {
         return (
             <div className="splash-background">
+                <Navbar />
                 <section className="intro">
                     <header className="banner">
                         <h1>About Time</h1>
