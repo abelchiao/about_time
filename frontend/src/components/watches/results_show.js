@@ -1,9 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class ResultsShow extends React.Component {
     constructor(props) {
         super(props);
-        // localStorage.setItem('results', props)
+
         // this.openWatchModal = this.openWatchModal.bind(this);
     }
 
@@ -16,12 +17,13 @@ class ResultsShow extends React.Component {
         return (
             <div className="results-background">
                 <div className="search-result-show">
+                        <br />
+                        <Link className="back-to-search" to="/">Search again</Link>
                     <div className="top-three-row">
-                        <h1>The top three matches are:</h1>
+                        <h1>The top matches are:</h1>
                             <ul>
                                 { this.props.topThree.map((watch, idx) =>
                                     <li key={idx} value={ watch._id } onClick={() => this.props.openModal('show-watch', watch._id) }>
-                                        {/* { watch._id } */}
                                         <img alt='' className='watch-photo' src={watch.imageURL}></img>
                                         <br />
                                         { watch.brand }
