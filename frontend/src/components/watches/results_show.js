@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Navbar from '../navbar/navbar';
 
 class ResultsShow extends React.Component {
     constructor(props) {
@@ -16,6 +17,7 @@ class ResultsShow extends React.Component {
     render() {
         return (
             <div className="results-background">
+                <Navbar />
                 <div className="search-result-show">
                         <br />
                         <Link className="back-to-search" to="/">Search again</Link>
