@@ -41,5 +41,3 @@ export const deleteReview = review => dispatch => {
     .then( () => dispatch(deleteReviewAction(review)))
     .catch(err => console.log(err))
 }
-
-

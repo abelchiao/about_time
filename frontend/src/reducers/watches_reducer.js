@@ -10,7 +10,7 @@ const watchesReducer = (state = initialState, action) => {
     Object.freeze(state)
     switch (action.type) {
         case RECEIVE_WATCH:
-            return action.watch.data;
+            return [action.watch.data];
         case RECEIVE_WATCHES:
             return action.watches.data;
         default:

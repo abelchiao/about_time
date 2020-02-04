@@ -29,3 +29,25 @@
   background: white;
   border: 1px solid lightgrey;
 }
+
+.review-dropdown-icon {
+  fill: red;
+  height: 16px;
+  width: 16px;
+  position: relative;
+}
+
+.review-dropdown-contents {
+  position: absolute;
+  background: #fff;
+  right: 45px;
+  display: none;
+}
+
+.review-dropdown-item:hover {
+  background: lightskyblue
+}
+
+.show {
+  display: block;
+}
