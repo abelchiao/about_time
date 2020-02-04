@@ -6,13 +6,17 @@
   font-size: 24px;
 }
 
+.review-form-container {
+  margin-bottom: 20px;
+}
+
 .review-form-header {
   font-size: 24px;
   /* padding: 0 20px; */
 }
 
 .review-item-parent {
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
   background: lightgrey;
   border-radius: 4px;
@@ -24,6 +28,34 @@
   padding-bottom: 8px;
   font-weight: bold;
   align-items: center;
+}
+
+.review-form-body {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.new-review-textarea {
+  font-size: 16px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 5px;
+  height: 100px;
+}
+
+.new-review-button {
+  padding: 2.5px 0;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.new-review-button:hover {
+  cursor: pointer;
+  background: lightgray;
 }
 
 .owned-review {
@@ -87,7 +119,25 @@
   display: none;
 }
 
-/* .review-edit-form {
+.review-edit-form {
   display: flex;
   flex-direction: column;
-} */
+}
+
+.review-edit-textarea {
+  font-size: 16px;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  padding: 5px;
+  height: 60px;
+}
+
+.update-review-button {
+  padding: 2.5px 0;
+  background: lightgray;
+  border: 1px solid lightgray;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+}
