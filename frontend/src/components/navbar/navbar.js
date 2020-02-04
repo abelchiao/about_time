@@ -26,7 +26,7 @@ class Navbar extends React.Component {
     }
 
     render() {
-        if (Object.entries(this.props.currentUser).length === 0) {
+        if (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser) {
             return(
                 <div className="navbar">
                     <button onClick={this.openLoginModal}>Log in</button>
