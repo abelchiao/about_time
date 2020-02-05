@@ -1,9 +1,13 @@
 .review-index-parent {
-  padding: 30px 10px;
+  padding: 30px 10px 10px;
 }
 
 .review-index-header {
   font-size: 24px;
+}
+
+.review-form-container {
+  margin-bottom: 20px;
 }
 
 .review-form-header {
@@ -12,7 +16,7 @@
 }
 
 .review-item-parent {
-  margin: 10px;
+  margin: 10px 0;
   padding: 10px;
   background: lightgrey;
   border-radius: 4px;
@@ -26,9 +30,38 @@
   align-items: center;
 }
 
+.review-form-body {
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0;
+}
+
+.new-review-textarea {
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px;
+  height: 60px;
+}
+
+.new-review-button {
+  padding: 2.5px 0;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  background: #fff;
+}
+
+.new-review-button:hover {
+  cursor: pointer;
+  background: lightgray;
+}
+
 .owned-review {
   background: linen;
-  border: 2px solid lightgrey;
+  border: 1px solid gray;
 }
 
 .review-dropdown-icon {
@@ -65,10 +98,12 @@
   border: 2px solid lightgray;
   border-radius: 4px;
   font-size: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 }
 
 .review-dropdown-item {
   padding: 5px;
+  border-bottom: 1px solid lightgray;
 }
 
 .review-dropdown-item:hover {
@@ -76,7 +111,7 @@
 }
 
 .review-dropdown-item:hover {
-  background: lightskyblue
+  background: lightgray
 }
 
 .show {
@@ -85,4 +120,32 @@
 
 .hidden {
   display: none;
+}
+
+.review-edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-edit-textarea {
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px;
+  height: 60px;
+}
+
+.update-review-button {
+  padding: 2.5px 0;
+  background: lightgray;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.update-review-button:hover {
+  cursor: pointer;
+  background: rgb(168, 168, 168);
 }
