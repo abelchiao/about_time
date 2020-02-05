@@ -19,7 +19,7 @@ import ProfilePageContainer from './users/profile_page_container';
 //     })
 // }
 const App = () => (
-  <div>
+  <div id="app">
     <Modal />
     <Switch>
       <Route exact path="/modal-test" component={ModalTestPageContainer} />

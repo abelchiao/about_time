@@ -1,10 +1,16 @@
-body {
+body{
     display: block;
     background-repeat: no-repeat;
     background-color: #414348;
     font-family: haboro-serif, serif;
     font-style: normal;
     font-weight: 300;
+    min-width: 100%;
+    min-height: 100vh;
+}
+
+#app {
+    min-height: 100vh;
 }
 
 .results-background {
@@ -12,7 +18,7 @@ body {
     background-image: url("https://drive.google.com/uc?exportview&id=160pGDaZBgTxwIV-d-CuJ1wPUPke3DU4e");
     /* background-image: url("https://drive.google.com/uc?exportview&id=1tZuHPPeNoQojSfjfUhXJFr8BLiWxKHPP"); */
     min-width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     background-size: cover;
     top: 0;
     left: 0;
@@ -21,7 +27,7 @@ body {
 .splash-background {
     background-image: url("http://drive.google.com/uc?exportview&id=1s5R4g3L-JOjEe2ltMYsD13sqcKR530gv");
     min-width: 100%;
-    min-height: 100%;
+    min-height: 100vh;
     background-size: cover;
     top: 0;
     left: 0;
@@ -37,7 +43,7 @@ button {
     cursor: pointer;
     padding: 4px 10px;
     margin: 5px 5px;
-    border: 1px solid black;
+    border: 2px solid black;
     border-radius: 5px;
     font-size: 1em;
     font-weight: 800;
@@ -126,6 +132,7 @@ h2 {
     min-width: 700px;
     min-height: 80%;
     border-radius: 6px;
+    overflow: auto;
 }
 
 .search-result-show h1 {
@@ -216,6 +223,7 @@ h2 {
 
 .top-three-row img {
     border: 5px solid black;
+    border-radius: 5px;
 }
 
 .top-three-row ul {
