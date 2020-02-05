@@ -36,6 +36,44 @@ class ResultsShow extends React.Component {
     console.log("RESULTS PROPS: ", this.props);
     console.log("RESULTS STATE: ", this.state);
 
+    let saveSearchInputs;
+    if (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser) {
+        saveSearchInputs = (
+          <div>
+            <input
+              className="search-result-save-input"
+              type="text"
+              placeholder="Log in to save search"
+              size="45"
+              value={this.state.searchLabel}
+              onChange={this.update("searchLabel")}
+            ></input>
+            <button className="search-result-save-input" disabled>
+              Save Search
+            </button>
+          </div>
+        );
+    } else {
+        saveSearchInputs = (
+          <div>
+            <input
+              className="search-result-save-input"
+              type="text"
+              placeholder="Add label to save search"
+              size="45"
+              value={this.state.searchLabel}
+              onChange={this.update("searchLabel")}
+            ></input>
+            <button
+              className="search-result-save-input"
+              onClick={this.handleSubmit}
+            >
+              Save Search
+            </button>
+          </div>
+        );
+    }
+
     return (
       <div className="results-background">
         <Navbar />
@@ -47,15 +85,7 @@ class ResultsShow extends React.Component {
             </Link>
 
             <div className="search-result-save-container">
-              <input
-                className="search-result-save-input"
-                type="text"
-                placeholder="Add label to save search"
-                size="45"
-                value={this.state.searchLabel}
-                onChange={this.update("searchLabel")}
-              ></input>
-              <button className="search-result-save-input" onClick={this.handleSubmit}>Save Search</button>
+              {saveSearchInputs}
             </div>
           </div>
           <div className="top-three-row">

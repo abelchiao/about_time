@@ -10,7 +10,8 @@ const mapStateToProps = (state) => {
         otherResults: state.watches.slice(3, ),
         watches: state.watches,
         errors: state.errors.search,
-        searches: state.searches
+        searches: state.searches,
+        currentUser: state.session.user
     };
 };
 
