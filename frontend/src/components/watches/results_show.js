@@ -19,8 +19,8 @@ class ResultsShow extends React.Component {
             <div className="results-background">
                 <Navbar />
                 <div className="search-result-show">
-                        <br />
-                        <Link className="back-to-search" to="/">Search again</Link>
+                    <br />
+                    <Link className="back-to-search" to="/">Search again</Link>
                     <div className="top-three-row">
                         <h1>The top matches are:</h1>
                             <ul>

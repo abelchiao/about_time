@@ -139,7 +139,7 @@ h2 {
 
 .new-review-button {
   padding: 2.5px 0;
-  border: 1px solid gray;
+  border: 1px solid #414348;
   border-radius: 4px;
   margin-top: 10px;
   font-size: 14px;
@@ -373,11 +373,13 @@ h2 {
     background-color: linen;
     top: 5em;
     text-align: center;
+    border: 5px solid black;
+    border-radius: 5px;
 }
 
 .top-three-row img {
-    border: 5px solid black;
-    border-radius: 5px;
+    border-bottom: 5px solid black;
+    /* border-radius: 5px; */
 }
 
 .top-three-row ul {
