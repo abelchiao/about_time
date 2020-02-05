@@ -24,12 +24,18 @@ class ResultsShow extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    let data = {
-      label: this.state.searchLabel,
-      query: this.props.searches.new
-    };
-    // TODO duplicate clicks will fail unless search state is persisted to local storage
-    this.props.newSearch(data);
+
+    if (this.state.searchLabel === "") {
+        alert("Add label to save search")
+    } else {
+        let data = {
+        label: this.state.searchLabel,
+        query: this.props.searches.new
+        };
+        // TODO duplicate clicks will fail unless search state is persisted to local storage
+        this.props.newSearch(data)
+        .then(() => alert("Search saved!") )
+    }
   }
 
   render() {
