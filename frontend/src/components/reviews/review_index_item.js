@@ -36,7 +36,7 @@ class ReviewIndexItem extends React.Component {
     // editButton.onclick = () => dropdown.classList.remove('show')
 
     let reviewDisplay = document.getElementById(`review-text-${this.props.review._id}`);
-    let reviewEditForm = document.getElementById(`review-edit-form-${this.props.review._id}`);
+    let reviewEditForm = document.getElementById(`review-edit-form-parent-${this.props.review._id}`);
     reviewDisplay.classList.toggle('hidden');
     reviewEditForm.classList.toggle('hidden');
   }
@@ -48,7 +48,7 @@ class ReviewIndexItem extends React.Component {
   handleUpdate(e) {
     e.preventDefault()
     let reviewDisplay = document.getElementById(`review-text-${this.props.review._id}`);
-    let reviewEditForm = document.getElementById(`review-edit-form-${this.props.review._id}`);
+    let reviewEditForm = document.getElementById(`review-edit-form-parent-${this.props.review._id}`);
     reviewDisplay.classList.toggle('hidden');
     reviewEditForm.classList.toggle('hidden');
     this.props.updateReview({
@@ -107,14 +107,24 @@ class ReviewIndexItem extends React.Component {
         <div id={`review-text-${this.props.review._id}`} className='review-item-text'>
           {this.state.text}
         </div>
-        <form 
-          id={`review-edit-form-${this.props.review._id}`}
-          className='review-edit-form hidden'
-          onSubmit={this.handleUpdate}
+        <div
+          id={`review-edit-form-parent-${this.props.review._id}`}
+          className='review-edit-form-parent hidden'
         >
-          <textarea value={this.state.text} onChange={this.updateFormText()}/>
-          <input type='submit' value='Update Review'/>
-        </form>
+          <form 
+            id={`review-edit-form-${this.props.review._id}`}
+            className='review-edit-form'
+            onSubmit={this.handleUpdate}
+          >
+            <textarea 
+              className='review-edit-textarea' 
+              value={this.state.text} 
+              onChange={this.updateFormText()}
+            />
+            <button className='update-review-button' type='submit'>Update Review</button>
+            {/* <input className='update-review-button' type='submit' value='Update Review'/> */}
+          </form>
+        </div>
       </div>
     );
   };

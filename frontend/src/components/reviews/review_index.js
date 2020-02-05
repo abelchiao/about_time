@@ -29,8 +29,14 @@ class ReviewIndex extends React.Component {
     let reviewForm = 
     <form onSubmit={this.handleSubmit}>
       <div className='review-form-header'>Own this watch? Tell us what you think!</div>
-      <textarea value={this.state.text} onChange={this.update('text')} />
-      <input type='submit' value='Submit Review' />
+      <div className='review-form-body'>
+        <textarea 
+          value={this.state.text} 
+          onChange={this.update('text')}
+          className='new-review-textarea'
+        />
+        <button className='new-review-button' type='submit'>Submit Review</button>
+      </div>
     </form>;
     this.props.reviews.forEach(review => {
       if (review.userId === this.props.currentUser.id) {
