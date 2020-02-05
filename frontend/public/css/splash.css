@@ -411,3 +411,14 @@ h2 {
   left: 50%;
   transform: translate(-50%, -50%);
 } */
+
+.search-result-nav-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.search-result-save-container {
+    margin: 24px;
+}
