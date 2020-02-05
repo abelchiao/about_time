@@ -1,7 +1,6 @@
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+// import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
-import { BrowserRouter } from 'react-router-dom/cjs/react-router-dom.min';
 // const path = require('path');
 
 import MainPage from './main/main_page';
@@ -9,7 +8,6 @@ import Modal from './modal/modal';
 import ModalTestPageContainer from './modal/modal-test-page-container';
 import ResultsShowContainer from './watches/results_show_container';
 import SearchFormContainer from './search/search_container';
-import Navbar from './navbar/navbar';
 import ProfilePageContainer from './users/profile_page_container';
 
 // if (process.env.NODE_ENV === 'production') {
