@@ -7,7 +7,6 @@ import { logout } from '../../actions/session_actions';
 class Navbar extends React.Component {
     constructor(props) {
         super(props)
-        console.log(props)
         this.openLoginModal = this.openLoginModal.bind(this);
         this.openSignupModal = this.openSignupModal.bind(this);
         this.logout = this.logout.bind(this);
@@ -26,9 +25,15 @@ class Navbar extends React.Component {
     }
 
     render() {
-        if (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser) {
+        if (!this.props.currentUser || Object.entries(this.props.currentUser).length === 0) {
             return(
                 <div className="navbar">
+                    {/* <input 
+                        type="submit"
+                        value="Log in"
+                        className="splash-form-submit"
+                    /> */}
+
                     <button onClick={this.openLoginModal}>Log in</button>
                     <button onClick={this.openSignupModal}>Sign up</button>
                 </div>
@@ -36,7 +41,7 @@ class Navbar extends React.Component {
         } else {
             return(
                 <div className="navbar">
-                    <Link to='/profile'>Profile</Link>
+                    <Link to='/profile'><button>Profile</button></Link>
                     <button onClick={this.logout}>Sign out</button>
                 </div>
             )
