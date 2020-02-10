@@ -26,26 +26,42 @@ class ProfilePage extends React.Component {
 
         let searches;
         if ((this.props.searches.all.length === undefined) || (this.props.searches.all.length === 0)) {
-            searches = <div>No saved searches</div>
+            searches =
+                <div className="search-item-parent">
+                    <div className="search-item-header">
+                        No saved searches
+                    </div>
+                </div>
         } else {
-            searches = this.props.searches.all.map( (search, idx) => {
-                    return <p key={idx}>{search.label}</p>
-                })
+            searches = 
+                <div>
+                    {this.props.searches.all.map( (search, idx) => {
+                        return (<div className="search-item-parent" key={idx}>
+                                    <div className="search-item-header">
+                                        {search.label}
+                                    </div>
+                                </div>)
+                    })}
+                </div>
         }
 
         if (!this.props.currentUser.handle) {
             return (
                 <div className="profile-page-container">
-                    Please log in to see your profile page.
+                    <div className="profile-page-intro-text">
+                        Please log in to see your profile page.
+                    </div>
                 </div>
             )
         } else {
             return (
             <div className="profile-page-container">
-                <p>Welcome, {this.props.currentUser.handle}:</p>
-
+                <div className="profile-page-intro-text">
+                    Welcome, {this.props.currentUser.handle}:
+                </div>
                 <div className="search-items-container">
-                    { searches }
+                    <div className="search-items-header"> Your saved searches: </div>
+                    <div className="search-items-index">{searches}</div>
                 </div>
             </div>
             );
@@ -60,11 +76,13 @@ export default ProfilePage;
 
 
 // DONE TODO add saved searches to global state OR pull searches from DB on open of profile page
+// TODO add query parameters to search label
 // TODO iterate across reviews for all watches to show any from the user
 // DONE TODO profile page should reflect only logged in OR any user
-// TODO add link from search label to hit search api
-// TODO add query parameters to search label
 // DONE TODO add check for data loaded before render
+// DONE TODO initial styling for profile page/test
+// TODO add link from search label to hit search api
 // TODO delete button for label
 // TODO component for search item
+// TODO add navbar to profile page
 
