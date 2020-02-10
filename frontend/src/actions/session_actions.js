@@ -25,10 +25,6 @@ export const receiveErrors = errors => ({
     errors
 });
 
-// const clearErrors = () => ({
-//     type: CLEAR_SESSION_ERRORS
-// })
-
 export const logoutUser = () => ({
     type: RECEIVE_USER_LOGOUT
 });

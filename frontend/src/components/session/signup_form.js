@@ -60,7 +60,6 @@ class SignupForm extends React.Component {
   };
 
   renderErrors() {
-    // debugger
     return (
       <div className='session-errors'>
         {Object.keys(this.state.errors).map((error, idx) => (
