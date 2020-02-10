@@ -40,13 +40,26 @@ class SignupForm extends React.Component {
     };
 
     this.props.signup(user)
-      .then(() => this.props.login({
-        email: this.state.email,
-        password: this.state.password
-      }))
+      .then(() => {
+        if (!Object.keys(this.props.errors).length) {
+          this.props.login({
+            email: this.state.email,
+            password: this.state.password
+          })
+        }
+      })
+      .catch(err => console.log(err))
+
+    // this.props.signup(user)
+    //   .then(() => this.props.login({
+    //     email: this.state.email,
+    //     password: this.state.password
+    //   }))
+    //   .catch(err => console.log(err))
   };
 
   renderErrors() {
+    // debugger
     return (
       <div className='session-errors'>
         {Object.keys(this.state.errors).map((error, idx) => (
