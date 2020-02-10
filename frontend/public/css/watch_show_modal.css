@@ -1,5 +1,5 @@
 .watch-show-modal-parent {
-  background: #fff;
+  background: linen;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -30,19 +30,10 @@
   width: 40%;
 }
 
-.watch-photo {
-  max-width: 100%;
-  max-height: 100%;
-}
-
 .watch-information {
   width: 60%;
   padding: 30px 30px 15px 30px;
 }
-
-/* .watch-title {
-  padding: 20px 0;
-} */
 
 .watch-brand {
   font-size: 36px;
@@ -93,7 +84,7 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 200;
-  color: white;
-  background: gray;
+  color: linen;
+  background: #182e4f;
   border-radius: 4px;
 }

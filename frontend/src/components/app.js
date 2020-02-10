@@ -1,5 +1,5 @@
 import React from 'react';
-import { AuthRoute, ProtectedRoute } from '../util/route_util';
+// import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import { Switch, Route } from 'react-router-dom';
 // const path = require('path');
 
@@ -17,7 +17,7 @@ import ProfilePageContainer from './users/profile_page_container';
 //     })
 // }
 const App = () => (
-  <div>
+  <div id="app">
     <Modal />
     <Switch>
       <Route exact path="/modal-test" component={ModalTestPageContainer} />
