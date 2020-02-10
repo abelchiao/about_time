@@ -65,5 +65,6 @@ export default ProfilePage;
 // TODO add link from search label to hit search api
 // TODO add query parameters to search label
 // DONE TODO add check for data loaded before render
-
+// TODO delete button for label
+// TODO component for search item
 
