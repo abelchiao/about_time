@@ -2,7 +2,7 @@ import { RECEIVE_SEARCH, RECEIVE_NEW_SEARCH, RECEIVE_USER_SEARCHES, REMOVE_SEARC
 import { RECEIVE_WATCHES } from '../actions/watch_actions';
 
 // not currently using searches.user - currently set up to save all of a user's searches in searches.all
-const searchesReducer = (state = { all: {}, user: {}, new: undefined }, action) => {
+const searchesReducer = (state = { all: [], user: {}, new: undefined }, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
     switch (action.type) {
