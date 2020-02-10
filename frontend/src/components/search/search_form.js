@@ -85,8 +85,9 @@ class SearchForm extends React.Component {
 
        const styles = [
            { id: 1, value: 'Casual' },
-           { id: 2, value: 'Formal' },
-           { id: 3, value: 'Sporty' },
+           { id: 2, value: 'Classic' },
+           { id: 3, value: 'Formal' },
+           { id: 4, value: 'Sporty' },
        ]
 
        const stylesList = styles.length > 0
