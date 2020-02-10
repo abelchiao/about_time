@@ -39,6 +39,7 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
+    this.props.clearErrors()
     this.props.signup(user)
       .then(() => {
         if (!Object.keys(this.props.errors).length) {
