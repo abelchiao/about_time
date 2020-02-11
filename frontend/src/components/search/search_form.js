@@ -63,13 +63,14 @@ class SearchForm extends React.Component {
     }
 
    render() {   
-       const brands = [
-         { id: 1, value: "Baume&Mercier" },
-         { id: 2, value: "Citizen" },
-         { id: 3, value: "Movado" },
-         { id: 4, value: "Tag Heur" },
-         { id: 5, value: "Tissot" },
-       ];
+     const brands = [
+       { id: 1, value: "Baume&Mercier" },
+       { id: 2, value: "Citizen" },
+       { id: 3, value: "Movado" },
+       { id: 4, value: "Tag Heur" },
+       { id: 5, value: "Timex" },
+       { id: 6, value: "Tissot" },
+     ];
 
        const brandsList = brands.length > 0
         && brands.map((brand, i) => {
