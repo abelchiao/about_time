@@ -27,6 +27,23 @@ class ProfilePage extends React.Component {
             .then(this.setState({ redirectToResults: true }));
     }
 
+    handleDeleteClick(e, searchId) {
+        e.preventDefault();
+
+        // if (this.state.searchLabel === "") {
+        //     alert("Add label to save search")
+        // } else {
+        //     let data = {
+        //         label: this.state.searchLabel,
+        //         query: this.props.searches.new
+        //     };
+        //     // TODO duplicate clicks will fail unless search state is persisted to local storage
+        // console.log(searchId)
+            this.props.deleteSearch(searchId)
+                .then(() => alert("Search deleted!"))
+        // }
+    }
+
   render() {
     console.log("STATE: ", this.state);
     console.log("PROPS: ", this.props);
@@ -55,10 +72,15 @@ class ProfilePage extends React.Component {
                     {this.props.searches.all.map( (search, idx) => {
                         return (<div className="search-item-parent" key={idx}>
                                     <div className="search-item-header">
-                                        <a href="" className="profile-search-button" onClick={(e) => this.handleLabelClick(e, search.query)}>{search.label}</a>
+                                        <a href=""
+                                            className="profile-search-button"
+                                            onClick={(e) => this.handleLabelClick(e, search.query)}
+                                        >
+                                            {search.label}
+                                        </a>
                                         <button
                                             className="profile-search-delete"
-                                            onClick={this.handleDeleteClick}
+                                            onClick={ (e) => this.handleDeleteClick(e, search._id) }
                                         >
                                             Delete Search
                                         </button>
@@ -104,8 +126,8 @@ export default ProfilePage;
 // DONE TODO profile page should reflect only logged in OR any user
 // DONE TODO add check for data loaded before render
 // DONE TODO initial styling for profile page/test
-// TODO add link from search label to hit search api
-// TODO delete button for label
+// DONE TODO add link from search label to hit search api
+// DONE TODO delete button for label
 // TODO component for search item
 // TODO add navbar to profile page
 
