@@ -746,7 +746,7 @@
     "style": "Classic",
     "strap": "Stainless Steel",
     "case": "Stainless Steel",
-    "Additional Info": "water-resistant, jewels 3",
+    "Additional Info": "waterproof, jewels 3",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -806,7 +806,7 @@
     "style": "Classic",
     "strap": "Stainless Steel",
     "case": "Stainless Steel with gold plating",
-    "Additional Info": "watereproof, jewels: 3",
+    "Additional Info": "waterproof, jewels: 3",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -934,11 +934,11 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1tLVulDdHScYMnruYqpzeipjEEd2Q7cC0"
 }
 {
     "brand": "Tissot",
-    "model": "Tradion Automatic Small History",
+    "model": "Tradition Automatic Small Second",
     "retailURL": "https://us.tissotshop.com/men/classic/tissot-tradition-automatic-small-second-6.html",
     "gender": "Male",
     "price": 775,
@@ -946,7 +946,7 @@
     "style": "Classic",
     "strap": "Stainless Steel",
     "case": "Stainless Steel",
-    "Additional Info": "waterproof, jewels 25, energy mechanical, ",
+    "Additional Info": "waterproof, retro, vintage, jewels 25, energy mechanical, ",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -974,7 +974,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1GTkdKWmeZP2HfTtw3lfKnRSxGK-Tb2eL"
 }
 {
     "brand": "Tissot",
@@ -985,8 +985,8 @@
     "movement": "Automatic",
     "style": "Classic",
     "strap": "Stainless Steel",
-    "case": "Stainless steel with rose gold plateing",
-    "Additional Info": "waterproof, jewels 25, energy mechanical, ",
+    "case": "Stainless steel with rose gold plating",
+    "Additional Info": "waterproof, jewels 25, mechanical",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -1021,7 +1021,7 @@
     "model": "Carson Premium",
     "retailURL": "https://us.tissotshop.com/men/classic/tissot-carson-premium-3.html",
     "gender": "Male",
-    "price": 295,
+    "price": 325,
     "movement": "Quartz",
     "style": "Classic",
     "strap": "Leather",
@@ -1034,7 +1034,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1nrdMhPK08SR3Zepn0TT1krSRjhds9jVF"
 }
 {
     "brand": "Tissot",
@@ -1042,10 +1042,10 @@
     "retailURL": "https://us.tissotshop.com/men/classic/tissot-carson-premium-chronograph-3.html",
     "gender": "Male",
     "price": 550,
-    "movement": "Quatrz",
+    "movement": "Quartz",
     "style": "Classic",
     "strap": "Stainless Steel",
-    "case": "Stainless steel with rose gold plateing",
+    "case": "Stainless steel with rose gold plating",
     "Additional Info": "waterproof, jewels 4, energy quartz, functions(30-minutes and 1/10 of a second counters, central 60-seconds chronograph hand, add and split functions)",
     "reviews": [
         {
@@ -1065,7 +1065,7 @@
     "movement": "Automatic",
     "style": "Classic",
     "strap": "Stainless Steel",
-    "case": "Stainless steel with rose gold plateing",
+    "case": "Stainless steel with rose gold plating",
     "Additional Info": "waterproof, jewels 23, power mechanical,",
     "reviews": [
         {
@@ -1074,7 +1074,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1hpkmPIaxJ13S5Z3dYnCoOnW4cQOJiT1P"
 }
 {
     "brand": "Tissot",
@@ -1085,8 +1085,8 @@
     "movement": "Quartz",
     "style": "Classic",
     "strap": "Leather",
-    "case": "Stainless steel with rose gold plateing",
-    "Additional Info": "waterproof, ",
+    "case": "Stainless steel with rose gold plating",
+    "Additional Info": "waterproof",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -1094,7 +1094,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1jhR0yGQH4tj5j0IyvXH3xmlkafNkjBm8"
 }
 {
     "brand": "Tissot",
@@ -1103,10 +1103,10 @@
     "gender": "Male",
     "price": 495,
     "movement": "Quartz",
-    "style": "Heritage",
+    "style": "Casual",
     "strap": "Leather",
     "case": "Stainless Steel",
-    "Additional Info": "waterproof, jewels 8,",
+    "Additional Info": "waterproof, jewels 8",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -1123,9 +1123,9 @@
     "gender": "Male",
     "price": 1150,
     "movement": "Mechanical",
-    "style": "Heritage",
+    "style": "Classic",
     "strap": "Leather",
-    "case": "Stainless steel with rose gold plateing",
+    "case": "Stainless steel with rose gold plating",
     "Additional Info": "waterproof, jewels: 17, energy mechanical,",
     "reviews": [
         {
@@ -1143,7 +1143,7 @@
     "gender": "Male",
     "price": 300,
     "movement": "quartz",
-    "style": "Heritage",
+    "style": "Casual",
     "strap": "Leather",
     "case": "Stainless Steel",
     "Additional Info": "waterproof, jewels: 3, function(EOL)",
@@ -1163,7 +1163,7 @@
     "gender": "Male",
     "price": 2100,
     "movement": "Automatic",
-    "style": "Heritage",
+    "style": "Sporty",
     "strap": "Leather",
     "case": "Stainless Steel",
     "Additional Info": "waterproof, jewels: 27, function(\t30-minutes and 12-hours counters, central 60-seconds chronograph hand)",
@@ -1183,7 +1183,7 @@
     "gender": "Male",
     "price": 1400,
     "movement": "Automatic",
-    "style": "Heritage",
+    "style": "Casual",
     "strap": "Leather",
     "case": "Stainless Steel",
     "Additional Info": "waterproof, jewels: 37, functions(\t30-minutes and 12-hours counters, central 60-seconds chronograph hand)",
@@ -1203,7 +1203,7 @@
     "gender": "Male",
     "price": 3200,
     "movement": "Automatic",
-    "style": "Gold",
+    "style": "Classic",
     "strap": "Leather",
     "case": "18k Rose Gold",
     "Additional Info": "waterproof",
@@ -1223,7 +1223,7 @@
     "gender": "Male",
     "price": 2950,
     "movement": "Quartz",
-    "style": "Gold",
+    "style": "Classic",
     "strap": "Leather",
     "case": "18k Rose Gold",
     "Additional Info": "waterproof",
@@ -1234,7 +1234,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1w8-0mKGElA9mqea6uRKv-tDXoGOLS5C5"
 }
 {
     "brand": "Tissot",
@@ -1243,7 +1243,7 @@
     "gender": "Male",
     "price": 1300,
     "movement": "Automatic",
-    "style": "Gold",
+    "style": "Classic",
     "strap": "Leather",
     "case": "Stainless steel with 18k rose gold bezel",
     "Additional Info": "waterproof, jewels 25 ",
@@ -1254,7 +1254,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1UmKXMSeDLUk_7wNlsvOf1KqHI-aUcsV7"
 }
 {
     "brand": "Tissot",
@@ -1263,7 +1263,7 @@
     "gender": "Male",
     "price": 2750,
     "movement": "Automatic",
-    "style": "Gold",
+    "style": "Sporty",
     "strap": "Leather",
     "case": "Stainless steel with 18k rose gold bezel",
     "Additional Info": "waterproof, jewels 27",
@@ -1283,7 +1283,7 @@
     "gender": "Male",
     "price": 1900,
     "movement": "Quartz",
-    "style": "Gold",
+    "style": "Classic",
     "strap": "Leather",
     "case": "18k rose gold case with stainless steel case back",
     "Additional Info": "waterproof , jewels 7",
@@ -1303,9 +1303,9 @@
     "gender": "Male",
     "price": 7250,
     "movement": "Mechanical",
-    "style": "Gold",
+    "style": "Casual",
     "strap": "Leather",
-    "case": "18k yellow ngold case",
+    "case": "18k yellow gold case",
     "Additional Info": "",
     "reviews": [
         {
@@ -1314,7 +1314,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1jzWM9kut01bZajv0epPBvJjclLQ-VQFt"
 }
 {
     "brand": "Tissot",
@@ -1323,7 +1323,7 @@
     "gender": "Female",
     "price": 350,
     "movement": "Quartz",
-    "style": "",
+    "style": "Classic",
     "strap": "Stainless steel",
     "case": "stainless steel",
     "Additional Info": "waterproof, jewels 3,",
@@ -1343,7 +1343,7 @@
     "gender": "Female",
     "price": 245,
     "movement": "Quartz",
-    "style": "",
+    "style": "Casual",
     "strap": "Leather",
     "case": "stainless steel",
     "Additional Info": "waterproof, jewels 23",
@@ -1354,7 +1354,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=13XSUl5jTPMrUbZeS_rlEZnIsyKNy0IHi"
 }
 {
     "brand": "Tissot",
@@ -1363,9 +1363,9 @@
     "gender": "Female",
     "price": 375,
     "movement": "Quartz",
-    "style": "",
+    "style": "Classic",
     "strap": "Leather",
-    "case": "Stainless steel with rose gold plateing",
+    "case": "Stainless steel with rose gold plating",
     "Additional Info": "waterproof, jewels 11",
     "reviews": [
         {
@@ -1383,7 +1383,7 @@
     "gender": "Female",
     "price": 275,
     "movement": "Quartz",
-    "style": "",
+    "style": "Classic",
     "strap": "Leather",
     "case": "Stainless steel",
     "Additional Info": "waterproof, jewels 3,",
@@ -1403,9 +1403,9 @@
     "gender": "Female",
     "price": 415,
     "movement": "Quartz",
-    "style": "",
+    "style": "Formal",
     "strap": "Stainless steel",
-    "case": "Stainless steel with rose gold plateing",
+    "case": "Stainless steel with rose gold plating",
     "Additional Info": "waterproof, jewels 3, diamond indices",
     "reviews": [
         {
@@ -1423,7 +1423,7 @@
     "gender": "Female",
     "price": 825,
     "movement": "Automatic",
-    "style": "",
+    "style": "Casual",
     "strap": "Stainless steel",
     "case": "Stainless steel",
     "Additional Info": "waterproof, jewels 23",
@@ -1443,7 +1443,7 @@
     "gender": "Female",
     "price": 370,
     "movement": "Quartz",
-    "style": "",
+    "style": "Classic",
     "strap": "Stainless steel",
     "case": "Stainless steel",
     "Additional Info": "waterproof, jewels 3",
@@ -1463,7 +1463,7 @@
     "gender": "Female",
     "price": 425,
     "movement": "Quartz",
-    "style": "",
+    "style": "Classic",
     "strap": "Stainless steel",
     "case": "Stainless steel",
     "Additional Info": "waterprrof, jewels 3",
@@ -1538,35 +1538,15 @@
     "imageURL": ""
 }
 {
-    "brand": "",
-    "model": "",
-    "retailURL": "",
-    "gender": "",
-    "price": "",
-    "movement": "",
-    "style": "",
-    "strap": "",
-    "case": "",
-    "Additional Info": "",
-    "reviews": [
-        {
-            "userId": "5e2e8e9c58472200178de056",
-            "userHandle": "demoUser",
-            "text": "This is a great watch!"
-        }
-    ],
-    "imageURL": ""
-}
-{
     "brand": "Movado",
     "model": "Bold Thin",
-    "retailURL": "https://www.movado.com/us/en/shop-watches/movado-bold-thin-3600587.html",
-    "gender": "Male",
+    "retailURL": "https://www.movado.com/us/en/shop-watches/movado-bold-thin-3600585.html",
+    "gender": "Unisex",
     "price": 450,
     "movement": "Quartz",
-    "style": "",
-    "strap": "",
-    "case": "Black ion plated stainless steel",
+    "style": "Casual",
+    "strap": "Leather",
+    "case": "Blue ion-plated stainless steel",
     "Additional Info": "",
     "reviews": [
         {
@@ -1575,18 +1555,18 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1e-Gap1LQnnq8zRgegPiTJOPm0k6X49Sq"
 }
 {
     "brand": "Movado",
     "model": "Sapphire",
     "retailURL": "https://www.movado.com/us/en/shop-watches/sapphire-0607180.html",
-    "gender": "Male",
+    "gender": "Unisex",
     "price": 1995,
     "movement": "Quartz",
-    "style": "",
-    "strap": "",
-    "case": "YELLOW PVD-FINISHED STAINLESS STEEL",
+    "style": "Casual",
+    "strap": "Yellow gold PVD-finished stainless steel",
+    "case": "Yellow gold PVD-finished stainless steel",
     "Additional Info": "",
     "reviews": [
         {
@@ -1595,27 +1575,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
-}
-{
-    "brand": "Movado",
-    "model": "Bold Sport",
-    "retailURL": "https://www.movado.com/us/en/shop-watches/movado-bold-sport-3600452.html",
-    "gender": "Male",
-    "price": 450,
-    "movement": "Quartz",
-    "style": "Sporty",
-    "strap": "",
-    "case": "KHAKI ION-PLATED STAINLESS STEEL",
-    "Additional Info": "",
-    "reviews": [
-        {
-            "userId": "5e2e8e9c58472200178de056",
-            "userHandle": "demoUser",
-            "text": "This is a great watch!"
-        }
-    ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1QbEv_aosARRX5eg3dAIm_0oOc5faLtLB"
 }
 {
     "brand": "Movado",
@@ -1624,10 +1584,10 @@
     "gender": "Unisex",
     "price": 550,
     "movement": "Smart Module",
-    "style": "Smart",
-    "strap": "",
+    "style": "Casual",
+    "strap": "Leather",
     "case": "Stainless steel",
-    "Additional Info": "",
+    "Additional Info": "Smartwatch touchscreen",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -1635,7 +1595,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1eOiX3niIGourAVKng2NMsr8OkBS6EHme"
 }
 {
     "brand": "Movado",
@@ -1644,9 +1604,9 @@
     "gender": "Male",
     "price": 995,
     "movement": "Quartz",
-    "style": "",
-    "strap": "",
-    "case": "STAINLESS STEEL AND YELLOW PVD",
+    "style": "Classic",
+    "strap": "Stainless steel and yellow gold",
+    "case": "Stainless steel and yellow gold",
     "Additional Info": "",
     "reviews": [
         {
@@ -1655,7 +1615,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=15rKTbNmr16onyXTbpyx1TELwCTUiW6tW"
 }
 {
     "brand": "Movado",
@@ -1664,9 +1624,9 @@
     "gender": "Male",
     "price": 895,
     "movement": "Quartz",
-    "style": "",
-    "strap": "",
-    "case": "GUNMETAL ION-PLATED STAINLESS STEEL",
+    "style": "Casual",
+    "strap": "Stainless steel mesh",
+    "case": "Gunmetal ion-plated stainless steel",
     "Additional Info": "",
     "reviews": [
         {
@@ -1675,19 +1635,19 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=12n-tCZUZDAtBd3KQ7G4-aYPZ-_4ZPJyB"
 }
 {
     "brand": "Movado",
     "model": "Bold Shimmer",
     "retailURL": "https://www.movado.com/us/en/shop-watches/movado-bold-shimmer-3600637.html",
     "gender": "Female",
-    "price": 450,
+    "price": 695,
     "movement": "Quartz",
-    "style": "",
-    "strap": "",
-    "case": "ROSE GOLD ION-PLATED STAINLESS STEEL",
-    "Additional Info": "",
+    "style": "Formal",
+    "strap": "Rose gold ion-plated stainless steel",
+    "case": "Rose gold ion-plated stainless steel",
+    "Additional Info": "crystal pave bezel",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -1695,7 +1655,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1IGXULHQwyUGkcFgfawy5JqAwnj-kD7ti"
 }
 {
     "brand": "Movado",
@@ -1703,11 +1663,11 @@
     "retailURL": "https://www.movado.com/us/en/shop-watches/kora-0607326.html",
     "gender": "Female",
     "price": 1595,
-    "movement": "Qurtz",
-    "style": "",
-    "strap": "",
-    "case": "STAINLESS STEEL AND LIGHT YELLOW PVD WITH DIAMONDS",
-    "Additional Info": "Diamond Gemstones, Gemstones: 64",
+    "movement": "Quartz",
+    "style": "Formal",
+    "strap": "Stainless steel and pale yellow gold",
+    "case": "Stainless steel and pale yellow gold",
+    "Additional Info": "waterproof diamond jewels 64 white mother-of-pearl",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -1715,7 +1675,7 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1jjf0Skw9ZbRXl0YpyExPRNi4BFh68yqW"
 }
 {
     "brand": "Movado",
@@ -1724,10 +1684,10 @@
     "gender": "Female",
     "price": 895,
     "movement": "Quartz",
-    "style": "",
-    "strap": "",
-    "case": "Case Material\nCARNATION PVD-FINISHED STAINLESS STEEL",
-    "Additional Info": "",
+    "style": "Classic",
+    "strap": "Pale rose gold PVD-finished stainless steel",
+    "case": "Pale rose gold PVD-finished stainless steel",
+    "Additional Info": "waterproof black mother-of-pearl",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -1735,19 +1695,19 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1pULKniWaGlH7BizOb7Hbjg1sB9tkunUD"
 }
 {
     "brand": "Movado",
-    "model": "Bold Metals",
-    "retailURL": "https://www.movado.com/us/en/shop-watches/movado-bold-metals-3600104.html",
+    "model": "Bold Evolution",
+    "retailURL": "https://www.movado.com/us/en/shop-watches/movado-bold-evolution-3600675.html",
     "gender": "Female",
-    "price": 695,
+    "price": 495,
     "movement": "Quartz",
-    "style": "",
-    "strap": "",
-    "case": "YELLOW GOLD ION-PLATED STAINLESS STEEL",
-    "Additional Info": "",
+    "style": "Casual",
+    "strap": "Light blue ion-plated stainless steel mesh",
+    "case": "Light blue ion-plated stainless steel",
+    "Additional Info": "waterproof",
     "reviews": [
         {
             "userId": "5e2e8e9c58472200178de056",
@@ -1755,28 +1715,9 @@
             "text": "This is a great watch!"
         }
     ],
-    "imageURL": ""
+    "imageURL": "https://drive.google.com/uc?export=view&id=1I-ibdYeblxIIz5gUyME60U_qeoCkqysp"
 }
-{
-    "brand": "",
-    "model": "",
-    "retailURL": "",
-    "gender": "",
-    "price": "",
-    "movement": "",
-    "style": "",
-    "strap": "",
-    "case": "",
-    "Additional Info": "",
-    "reviews": [
-        {
-            "userId": "5e2e8e9c58472200178de056",
-            "userHandle": "demoUser",
-            "text": "This is a great watch!"
-        }
-    ],
-    "imageURL": ""
-}
+
 {
     "brand": "",
     "model": "",
