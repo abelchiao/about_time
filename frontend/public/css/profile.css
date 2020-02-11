@@ -27,8 +27,8 @@
 } */
 
 .search-item-parent {
-    margin: 10px 0;
-    padding: 10px;
+    margin: 5px;
+    padding: 5px;
     background: lightgrey;
     border-radius: 4px;
 }
@@ -36,8 +36,23 @@
 .search-item-header {
   display: flex;
   justify-content: space-between;
-  padding-bottom: 8px;
+  /* padding-bottom: 8px; */
   font-weight: bold;
   align-items: center;
 }
+
+.profile-search-button {
+  background-color: #182e4f;
+  border: none;
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
 

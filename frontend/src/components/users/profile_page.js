@@ -1,11 +1,17 @@
 import React from "react";
+import { Redirect } from 'react-router-dom';
+
 
 class ProfilePage extends React.Component {
   constructor(props) {
     super(props);
+    
     this.state = {
-        loaded: false
+        loaded: false,
+        redirectToResults: false
     };
+
+      this.handleLabelClick = this.handleLabelClick.bind(this);
   }
 
   async componentDidMount() {
@@ -15,9 +21,23 @@ class ProfilePage extends React.Component {
     }
   }
 
+    handleLabelClick(e) {
+        e.preventDefault();
+        let query = this.props.searches.all[0].query;
+        console.log(query)
+// debugger
+        this.props.fetchWatches(query)
+            .then(this.setState({ redirectToResults: true }));
+    }
+
   render() {
     console.log("STATE: ", this.state);
     console.log("PROPS: ", this.props);
+
+    const redirectToResults = this.state.redirectToResults;
+    if (redirectToResults === true) {
+        return <Redirect to="/watches/search" />;
+    }
 
     if (this.state.loaded === false) {
         // console.log("FALSE STATE TRIGGER")
@@ -38,7 +58,7 @@ class ProfilePage extends React.Component {
                     {this.props.searches.all.map( (search, idx) => {
                         return (<div className="search-item-parent" key={idx}>
                                     <div className="search-item-header">
-                                        {search.label}
+                                        <a href="" className="profile-search-button" onClick={this.handleLabelClick}>{search.label}</a>
                                     </div>
                                 </div>)
                     })}
@@ -60,7 +80,7 @@ class ProfilePage extends React.Component {
                     Welcome, {this.props.currentUser.handle}:
                 </div>
                 <div className="search-items-container">
-                    <div className="search-items-header"> Your saved searches: </div>
+                    <div className="search-items-header"> Your saved searches (click to see results): </div>
                     <div className="search-items-index">{searches}</div>
                 </div>
             </div>
