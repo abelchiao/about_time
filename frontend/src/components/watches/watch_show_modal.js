@@ -21,7 +21,7 @@ class WatchShowModal extends React.Component {
               <div className='watch-model'>{this.props.currentWatch.model}</div>
             </div>
             <div className='watch-price'>
-              <a href={this.props.currentWatch.retailURL} target='_blank'>
+              <a className='retail-link' href={this.props.currentWatch.retailURL} target='_blank'>
                 {`$${this.props.currentWatch.price.toLocaleString()}`}
               </a>
             </div>
