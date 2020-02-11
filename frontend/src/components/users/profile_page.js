@@ -21,11 +21,8 @@ class ProfilePage extends React.Component {
     }
   }
 
-    handleLabelClick(e) {
+    handleLabelClick(e, query) {
         e.preventDefault();
-        let query = this.props.searches.all[0].query;
-        console.log(query)
-// debugger
         this.props.fetchWatches(query)
             .then(this.setState({ redirectToResults: true }));
     }
@@ -58,7 +55,7 @@ class ProfilePage extends React.Component {
                     {this.props.searches.all.map( (search, idx) => {
                         return (<div className="search-item-parent" key={idx}>
                                     <div className="search-item-header">
-                                        <a href="" className="profile-search-button" onClick={this.handleLabelClick}>{search.label}</a>
+                                        <a href="" className="profile-search-button" onClick={(e) => this.handleLabelClick(e, search.query)}>{search.label}</a>
                                     </div>
                                 </div>)
                     })}

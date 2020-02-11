@@ -39,7 +39,6 @@ class ResultsShow extends React.Component {
   }
 
   render() {
-debugger    
     console.log("RESULTS PROPS: ", this.props);
     console.log("RESULTS STATE: ", this.state);
 
