@@ -56,6 +56,12 @@ class ProfilePage extends React.Component {
                         return (<div className="search-item-parent" key={idx}>
                                     <div className="search-item-header">
                                         <a href="" className="profile-search-button" onClick={(e) => this.handleLabelClick(e, search.query)}>{search.label}</a>
+                                        <button
+                                            className="profile-search-delete"
+                                            onClick={this.handleDeleteClick}
+                                        >
+                                            Delete Search
+                                        </button>
                                     </div>
                                 </div>)
                     })}

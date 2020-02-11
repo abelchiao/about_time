@@ -7,7 +7,7 @@
 .profile-page-intro-text {
   padding: 30px 50px;
   text-align: center;
-  font-size: 16px;
+  font-size: 24px;
   line-height: 20px;
   font-weight: 200;
   color: linen;
@@ -20,7 +20,8 @@
 }
 
 .search-items-header {
-  font-size: 24px;
+  font-size: 21px;
+  padding-bottom: 12px;
 }
 
 /* .search-items-index {
@@ -48,11 +49,16 @@
   padding: 5px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
+  /* display: inline-block; */
   font-size: 16px;
   margin: 5px;
   cursor: pointer;
   border-radius: 4px;
+  /* width: 100%; */
 }
+
+/* .profile-search-delete {
+
+} */
 
 
