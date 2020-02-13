@@ -126,7 +126,7 @@ input[type="submit"] {
     display: flex;
     justify-content: space-around;
     font-size: 1.5rem;
-    padding-bottom: 1em;
+    padding: 1em;
 }
 
 /* Reviews */
