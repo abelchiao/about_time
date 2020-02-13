@@ -1,4 +1,5 @@
-import React from 'react';
+import React from 'react'; 
+import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
 import { Redirect, withRouter } from 'react-router-dom';
 
 class SearchForm extends React.Component {
@@ -130,8 +131,18 @@ class SearchForm extends React.Component {
         return (
           <div className="search-transparent">
             <h1>Start your search:</h1>
-            <form className="splash-form" onSubmit={this.handleSubmit}>
-              <div className="price input" id="price">
+
+            <Tabs>
+              <TabList>
+                <Tab>Price</Tab>
+                <Tab>Movement</Tab>
+                <Tab>Brand</Tab>
+                <Tab>Style</Tab>
+                <Tab>Case</Tab>
+              </TabList>
+
+
+              <TabPanel className="price input" id="price">
                 <h2>How much are you looking to spend?</h2>
                 <div className="radio-inputs">
                   <label>
@@ -140,7 +151,6 @@ class SearchForm extends React.Component {
                       name="tier0"
                       value="100-300"
                       checked={this.state.price === "100-300"}
-                      //   checked={this.state.selectedTier === "tier0"}
                       onChange={this.handleSelectPrice}
                     />
                     $100 - 300
@@ -152,7 +162,6 @@ class SearchForm extends React.Component {
                       name="tier1"
                       value="300-500"
                       checked={this.state.price === "300-500"}
-                      //   checked={this.state.selectedTier === "tier1"}
                       onChange={this.handleSelectPrice}
                     />
                     $300 - 500
@@ -164,7 +173,6 @@ class SearchForm extends React.Component {
                       name="tier2"
                       value="500-1000"
                       checked={this.state.price === "500-1000"}
-                      //   checked={this.state.selectedTier === "tier2"}
                       onChange={this.handleSelectPrice}
                     />
                     $500 - 1000
@@ -181,11 +189,11 @@ class SearchForm extends React.Component {
                     />
                     $1000 +
                   </label>
-                </div>
-              </div>
+                </div>                
+              </TabPanel>
 
-              <div className="movement input" id="movement">
-                <h2>Select movement</h2>
+              <TabPanel className="movement input" id="movement">
+                {/* <h2>Select movement</h2> */}
                 <div className="radio-inputs">
                   <label>
                     <input
@@ -217,47 +225,70 @@ class SearchForm extends React.Component {
                       name="movement2"
                       value="Mechanical"
                       checked={this.state.movement === "Mechanical"}
-                    //   checked={this.state.selectedMovement === "movement2"}
+                      //   checked={this.state.selectedMovement === "movement2"}
                       onChange={this.handleSelectMovement}
                     />
                     Mechanical
                   </label>
                 </div>
-              </div>
+                <div className="explanation">
+                  <p>A telltale quartz movement is the individual ticks of the second hand.
+                  <br />
+                    Quartz movements require a battery, and are accurate and low-cost. </p>
+                </div>
+              </TabPanel>
 
-              <div className="brand input">
-                <h2>
-                  Select preferred brand / style / case (leave blank if no
-                  preference)
-                </h2>
+              <TabPanel className="brand input">
                 <select className="brand-list input-select" value={this.state.brand} onChange={this.update('brand')}>
                   <option value="none" hidden>
-                  {/* <option value="none" selected disabled hidden> */}
+                    {/* <option value="none" selected disabled hidden> */}
                     Brand
                   </option>
                   {brandsList}
                 </select>
-              </div>
+              </TabPanel>
 
-              <div className="style input">
+              <TabPanel className="style input">
                 <select className="style-list input-select" value={this.state.style} onChange={this.update('style')}>
                   <option value="none" hidden>
-                  {/* <option value="none" selected disabled hidden> */}
+                    {/* <option value="none" selected disabled hidden> */}
                     Style
                   </option>
                   {stylesList}
                 </select>
-              </div>
+              </TabPanel>
 
-              <div className="case input">
+              <TabPanel className="case input">
                 <select className="case-list input-select" value={this.state.case} onChange={this.update('case')}>
                   <option value="none" hidden>
-                  {/* <option value="none" selected disabled hidden> */}
+                    {/* <option value="none" selected disabled hidden> */}
                     Case
                   </option>
                   {caseTypeList}
                 </select>
+              </TabPanel>
+
+            </Tabs>
+            <form className="splash-form" onSubmit={this.handleSubmit}>
+              {/* <div className="price input" id="price">
               </div>
+
+              <div className="movement input" id="movement">
+              </div> */}
+
+              {/* <div className="brand input">
+                <h2>
+                  Select preferred brand / style / case (leave blank if no
+                  preference)
+                </h2>
+              </div> */}
+
+              {/* <div className="style input">
+              </div>
+
+              <div className="case input">
+
+              </div> */}
 
               <br />
               <input
