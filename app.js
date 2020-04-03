@@ -43,18 +43,18 @@ const User = require("./models/User");
 
 // TODO uncomment and run first to populate users from seed file
 
-// User.deleteMany({}, function(err) {
-//   console.log("User collection removed");
-// }).then( () => {
+User.deleteMany({}, function(err) {
+  console.log("User collection removed");
+}).then( () => {
 
-//   const lineReader1 = require("line-reader");
-//   let itemsSeedData1;
-//   lineReader1.eachLine("./data/usersSeed1.json", function(line) {
-//     console.log(line);
-//     itemsSeedData1 = JSON.parse(line);
-//     User.insertMany(itemsSeedData1);
-//   });
-// });
+  const lineReader1 = require("line-reader");
+  let itemsSeedData1;
+  lineReader1.eachLine("./data/usersSeed1.json", function(line) {
+    console.log(line);
+    itemsSeedData1 = JSON.parse(line);
+    User.insertMany(itemsSeedData1);
+  });
+});
 
 
 // TODO after seeding user, grab user IDs and place within reviews object of Watches seed file,
