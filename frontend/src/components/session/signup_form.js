@@ -39,18 +39,33 @@ class SignupForm extends React.Component {
       password2: this.state.password2
     };
 
+    this.props.clearErrors()
     this.props.signup(user)
-      .then(() => this.props.login({
-        email: this.state.email,
-        password: this.state.password
-      }))
+      .then(() => {
+        if (!Object.keys(this.props.errors).length) {
+          this.props.login({
+            email: this.state.email,
+            password: this.state.password
+          })
+        }
+      })
+      .catch(err => console.log(err))
+
+    // this.props.signup(user)
+    //   .then(() => this.props.login({
+    //     email: this.state.email,
+    //     password: this.state.password
+    //   }))
+    //   .catch(err => console.log(err))
   };
 
   renderErrors() {
     return (
-      <div>
+      <div className='session-errors'>
         {Object.keys(this.state.errors).map((error, idx) => (
-          <div key={`error-${idx}`}>{this.state.errors[error]}</div>
+          <div 
+            className='session-error-item'
+            key={`error-${idx}`}>{this.state.errors[error]}</div>
         ))}
       </div>
     )
@@ -58,39 +73,58 @@ class SignupForm extends React.Component {
 
   render() {
     return (
-      <div className='signup-form-parent'>
-        <h1>Sign Up</h1>
+      <div className='session-form-parent'>
+        <div className='session-form-title'>Sign Up</div>
         <button onClick={this.demoLogin} className='demo-login-button'>Demo Login</button>
-        <form className='signup-form-main' onSubmit={this.handleSubmit}>
+        <div className='or-separator'>Or</div>
+        <form className='session-form-main' onSubmit={this.handleSubmit}>
           {this.renderErrors()}
-          <label htmlFor="login-handle">Username</label>
-          <input
-            type="text"
-            id="login-handle"
-            value={this.state.handle}
-            onChange={this.update("handle")}
-          />
-          <label htmlFor="login-email">Email</label>
-          <input
-            id="login-email"
-            type="text"
-            value={this.state.email}
-            onChange={this.update("email")}
-          />
-          <label htmlFor="login-password">Password</label>
-          <input
-            type="password"
-            id="login-password"
-            value={this.state.password}
-            onChange={this.update("password")}
-          />
-          <label htmlFor="login-password2">Confirm Password</label>
-          <input
-            type="password"
-            id="login-password2"
-            value={this.state.password2}
-            onChange={this.update("password2")}
-          />
+
+          <div className='session-input-group'>
+            <div className='session-input-item'>
+              <label className='session-input-label' htmlFor="login-handle">Username</label>
+              <input
+                type="text"
+                id="login-handle"
+                className='session-input-field'
+                value={this.state.handle}
+                onChange={this.update("handle")}
+              />
+            </div>
+            <div className='session-input-item'>
+              <label className='session-input-label' htmlFor="login-email">Email</label>
+              <input
+                id="login-email"
+                className='session-input-field'
+                type="text"
+                value={this.state.email}
+                onChange={this.update("email")}
+              />
+            </div>
+          </div>
+
+          <div className='session-input-group'>
+            <div className='session-input-item'>
+              <label className='session-input-label' htmlFor="login-password">Password</label>
+              <input
+                type="password"
+                id="login-password"
+                className='session-input-field'
+                value={this.state.password}
+                onChange={this.update("password")}
+              />
+            </div>
+            <div className='session-input-item'>
+              <label className='session-input-label' htmlFor="login-password2">Confirm Password</label>
+              <input
+                type="password"
+                id="login-password2"
+                className='session-input-field'
+                value={this.state.password2}
+                onChange={this.update("password2")}
+              />
+            </div>
+          </div>
           <button>Sign Up</button>
         </form>
         

@@ -7,6 +7,7 @@ class WatchShowModal extends React.Component {
   };
 
   render() {
+    // debugger
     if (!this.props.currentWatch) return null;
     return (
       <div className='watch-show-modal-parent'>
@@ -20,7 +21,7 @@ class WatchShowModal extends React.Component {
               <div className='watch-model'>{this.props.currentWatch.model}</div>
             </div>
             <div className='watch-price'>
-              <a href={this.props.currentWatch.retailURL} target='_blank'>
+              <a className='retail-link' href={this.props.currentWatch.retailURL} target='_blank'>
                 {`$${this.props.currentWatch.price.toLocaleString()}`}
               </a>
             </div>
@@ -60,7 +61,10 @@ class WatchShowModal extends React.Component {
         <div className='watch-description'>
           <div>{this.props.currentWatch.description}</div>
         </div>
-        <ReviewIndexContainer reviews={this.props.currentWatch.reviews} watchId={this.props.currentWatch._id} />
+        <ReviewIndexContainer 
+          reviews={this.props.currentWatch.reviews} 
+          watchId={this.props.currentWatch._id}
+        />
       </div>
     )
   }

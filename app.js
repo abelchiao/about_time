@@ -38,6 +38,9 @@ const User = require("./models/User");
 
 
 
+// NOTE: seedfiles must remain in single line format, with valid JSON for each line
+
+
 // TODO uncomment and run first to populate users from seed file
 
 // User.deleteMany({}, function(err) {
