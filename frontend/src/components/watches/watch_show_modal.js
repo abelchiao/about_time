@@ -28,28 +28,28 @@ class WatchShowModal extends React.Component {
             <div className='watch-details'>
               <div className='watch-details-label'>Details</div>
               <div className='watch-detail-item'>
-                <img alt='' className='watch-detail-item-img' src='https://www.movado.com/on/demandware.static/-/Sites/default/dw1a6109c6/images/productattributes/gender.png'></img>
+                <img alt='' className='watch-detail-item-img' src='/img/gender.png'></img>
                 <div className='watch-detail-item-values'>
                   <div className='watch-detail-item-label'>Gender</div>
                   <div className='watch-value'>{this.props.currentWatch.gender ? this.props.currentWatch.gender : 'Details Unavailable'}</div>
                 </div>
               </div>
               <div className='watch-detail-item'>
-                <img alt='' className='watch-detail-item-img' src='https://www.movado.com/on/demandware.static/-/Sites/en_US/v1579968029533/images/productattributes/movement_type.png'></img>
+                <img alt='' className='watch-detail-item-img' src='/img/movement_type.png'></img>
                 <div className='watch-detail-item-values'>
                   <div className='watch-detail-item-label'>Movement Type</div>
                   <div className='watch-value'>{this.props.currentWatch.movement ? this.props.currentWatch.movement : 'Details Unavailable'}</div>
                 </div>
               </div>
               <div className='watch-detail-item'>
-                <img alt='' className='watch-detail-item-img' src='https://www.movado.com/on/demandware.static/-/Sites/en_US/v1579968029533/images/productattributes/case_material.png'></img>
+                <img alt='' className='watch-detail-item-img' src='/img/case_material.png'></img>
                 <div className='watch-detail-item-values'>
                   <div className='watch-detail-item-label'>Case Material</div>
                   <div className='watch-value'>{this.props.currentWatch.case ? this.props.currentWatch.case : 'Details Unavailable'}</div>
                 </div>
               </div>
               <div className='watch-detail-item'>
-                <img alt='' className='watch-detail-item-img' src='https://www.movado.com/on/demandware.static/-/Sites/en_US/v1579968029533/images/productattributes/water_resistance.png'></img>
+                <img alt='' className='watch-detail-item-img' src='/img/water_resistance.png'></img>
                 <div className='watch-detail-item-values'>
                   <div className='watch-detail-item-label'>Water Resistance</div>
                   <div className='watch-value'>{this.props.currentWatch.waterResistance ? this.props.currentWatch.waterResistance : 'Details Unavailable'}</div>
