@@ -26,7 +26,7 @@ class ResultsShow extends React.Component {
     e.preventDefault();
 
     if (this.state.searchLabel === "") {
-        alert("Add label to save search")
+        alert("Add a label to save this search")
     } else {
         let data = {
         label: this.state.searchLabel,
@@ -49,12 +49,12 @@ class ResultsShow extends React.Component {
             <input
               className="search-result-save-input"
               type="text"
-              placeholder="Log in to save search"
+              placeholder="Log in to save this search"
               size="45"
               value={this.state.searchLabel}
               onChange={this.update("searchLabel")}
             ></input>
-            <button className="search-result-save-input" disabled>
+            <button className="search-result-save-input" onClick={() => alert("Log in to save this search!")}>
               Save Search
             </button>
           </div>
@@ -65,7 +65,7 @@ class ResultsShow extends React.Component {
             <input
               className="search-result-save-input"
               type="text"
-              placeholder="Add label to save search"
+              placeholder="Add a label to save this search"
               size="45"
               value={this.state.searchLabel}
               onChange={this.update("searchLabel")}
@@ -86,9 +86,9 @@ class ResultsShow extends React.Component {
         <div className="search-result-show">
           <br />
           <div className="search-result-nav-container">
-            <Link className="back-to-search" to="/">
+            {/* <Link className="back-to-search" to="/">
               Search again
-            </Link>
+            </Link> */}
 
             <div className="search-result-save-container">
               {saveSearchInputs}
@@ -112,7 +112,8 @@ class ResultsShow extends React.Component {
                   {watch.brand}
                   <br />
                   {watch.model}
-                  <br />${watch.price}
+                  <br />
+                  ${watch.price}
                 </li>
               ))}
             </ul>

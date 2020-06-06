@@ -144,7 +144,6 @@ export default ProfilePage;
 
 
 // DONE TODO add saved searches to global state OR pull searches from DB on open of profile page
-// TODO add query parameters to search label
 // TODO iterate across reviews for all watches to show any from the user
 // DONE TODO profile page should reflect only logged in OR any user
 // DONE TODO add check for data loaded before render
@@ -152,8 +151,9 @@ export default ProfilePage;
 // DONE TODO add link from search label to hit search api
 // DONE TODO delete button for label
 // TODO component for search item
-// TODO add navbar to profile page
+// DONE TODO add navbar to profile page
+// DONE TODO return link to main search page
 
-// TODO return link to main search page
 // TODO reorg search item panel to combined layout
+// TODO add query parameters to search label
 // TODO loading icon
