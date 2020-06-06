@@ -121,7 +121,10 @@ input[type="submit"] {
 }
 
 .navbar {
+    align-self: flex-start;
     background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
 }
 
 .radio-inputs {
