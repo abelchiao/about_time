@@ -25,15 +25,21 @@ class Navbar extends React.Component {
     }
 
     render() {
+        console.log("HASH", window.location.hash)
+        if (window.location.hash === "#/profile") {
+            return (
+                <div className="navbar">
+                    <Link to='/'><button>Main Page</button></Link>
+                    <button onClick={this.logout}>Sign out</button>
+                </div>
+            )
+        }
+        // TODO check for logged in user or not from profile page
+        // TODO extrapolate div navbar to outer of if then structure
+
         if (!this.props.currentUser || Object.entries(this.props.currentUser).length === 0) {
             return(
                 <div className="navbar">
-                    {/* <input 
-                        type="submit"
-                        value="Log in"
-                        className="splash-form-submit"
-                    /> */}
-
                     <button onClick={this.openLoginModal}>Log in</button>
                     <button onClick={this.openSignupModal}>Sign up</button>
                 </div>

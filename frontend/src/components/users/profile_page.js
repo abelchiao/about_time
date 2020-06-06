@@ -1,5 +1,6 @@
 import React from "react";
 import { Redirect } from 'react-router-dom';
+import Navbar from '../navbar/navbar';
 
 
 class ProfilePage extends React.Component {
@@ -113,6 +114,7 @@ class ProfilePage extends React.Component {
         if (!this.props.currentUser.handle) {
             return (
                 <div className="profile-page-container">
+                    <Navbar />
                     <div className="profile-page-intro-text">
                         Please log in to see your profile page.
                     </div>
@@ -121,6 +123,7 @@ class ProfilePage extends React.Component {
         } else {
             return (
                 <div className="profile-page-container">
+                    <Navbar />
                     <div className="profile-page-intro-text">
                         Welcome, {this.props.currentUser.handle}:
                     </div>
