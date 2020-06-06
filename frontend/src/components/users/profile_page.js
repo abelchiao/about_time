@@ -45,7 +45,7 @@ class ProfilePage extends React.Component {
     }
 
   render() {
-    // console.log("STATE: ", this.state);
+    console.log("STATE: ", this.state);
     // console.log("PROPS: ", this.props);
 
     const redirectToResults = this.state.redirectToResults;
@@ -93,6 +93,17 @@ class ProfilePage extends React.Component {
                                             {/* </button> */}
                                         </a>
 
+                                    </div>
+
+                                    <div className="search-item-details">
+                                        {/* TODO output highlights from within object {search.query} */}
+                                        {(search.query["brand"] !== "") ? ("Brand: " + search.query["brand"] + " ") : null }
+                                        {(search.query["case"] !== "") ? ("Case: " + search.query["case"] + " ") : null }
+                                        {(search.query["movement"] !== "") ? ("Movement: " + search.query["movement"] + " ") : null } 
+                                        {(search.query["price"] !== "") ? ("Price: " + search.query["price"] + " ") : null }
+                                        {(search.query["selectedMovement"] !== "") ? ("Selected Movement: " + search.query["selectedMovement"] + " ") : null }
+                                        {(search.query["selectedTier"] !== "") ? ("Selected Tier: " + search.query["selectedTier"] + " ") : null }
+                                        {(search.query["style"] !== "") ? ("Style: " + search.query["style"] + " ") : null }
                                     </div>
                                 </div>)
                     })

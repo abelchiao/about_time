@@ -95,3 +95,9 @@
 .profile-search-delete-icon {
   /* color: white; */
 }
+
+
+.search-item-details {
+  padding: 5px;
+  margin: 5px;
+}
