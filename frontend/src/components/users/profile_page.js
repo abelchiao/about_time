@@ -68,26 +68,30 @@ class ProfilePage extends React.Component {
                 </div>
         } else {
             searches = 
-                <div>
-                    {this.props.searches.all.map( (search, idx) => {
+
+                    this.props.searches.all.map( (search, idx) => {
                         return (<div className="search-item-parent" key={idx}>
                                     <div className="search-item-header">
                                         <a href=""
                                             className="profile-search-button"
                                             onClick={(e) => this.handleLabelClick(e, search.query)}
                                         >
-                                            {search.label}
+                                            <div className="profile-search-label">
+                                                {search.label}
+                                            </div>
+
+                                            <button
+                                                className="profile-search-delete"
+                                                onClick={ (e) => this.handleDeleteClick(e, search._id) }
+                                            >
+                                                Delete Search
+                                            </button>
                                         </a>
-                                        <button
-                                            className="profile-search-delete"
-                                            onClick={ (e) => this.handleDeleteClick(e, search._id) }
-                                        >
-                                            Delete Search
-                                        </button>
+
                                     </div>
                                 </div>)
-                    })}
-                </div>
+                    })
+
         }
 
         if (!this.props.currentUser.handle) {
@@ -100,15 +104,15 @@ class ProfilePage extends React.Component {
             )
         } else {
             return (
-            <div className="profile-page-container">
-                <div className="profile-page-intro-text">
-                    Welcome, {this.props.currentUser.handle}:
+                <div className="profile-page-container">
+                    <div className="profile-page-intro-text">
+                        Welcome, {this.props.currentUser.handle}:
+                    </div>
+                    <div className="search-items-container">
+                        <div className="search-items-header"> Your saved searches (click to open search results): </div>
+                        <div className="search-items-index">{searches}</div>
+                    </div>
                 </div>
-                <div className="search-items-container">
-                    <div className="search-items-header"> Your saved searches (click to see results): </div>
-                    <div className="search-items-index">{searches}</div>
-                </div>
-            </div>
             );
         }
 
@@ -131,3 +135,6 @@ export default ProfilePage;
 // TODO component for search item
 // TODO add navbar to profile page
 
+// TODO return link to main search page
+// TODO reorg search item panel to combined layout
+// TODO loading icon
