@@ -29,12 +29,12 @@ class Navbar extends React.Component {
         <div className="navbar">
             { (!this.props.currentUser || Object.entries(this.props.currentUser).length === 0) ?
                 <div>
-                    <button onClick={this.openLoginModal}>Log in</button>
-                    <button onClick={this.openSignupModal}>Sign up</button>
+                    <button onClick={this.openLoginModal}>Log In</button>
+                    <button onClick={this.openSignupModal}>Sign Up</button>
                 </div>
             : 
             <div>
-                    <button onClick={this.logout}>Sign out</button>
+                    <button onClick={this.logout}>Sign Out</button>
                     { (window.location.hash !== "#/profile") ? <Link to='/profile'><button>Profile</button></Link> : null }
                 </div>
             }
