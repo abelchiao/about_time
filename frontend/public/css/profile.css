@@ -77,6 +77,29 @@
   align-items: center;
 }
 
+.profile-search-button:hover {
+  background-color: green;
+  /* border: .1em black solid; */
+  color: white;
+  padding: 5px;
+  text-align: center;
+  text-decoration: none;
+  /* display: inline-block; */
+  font-size: 1.5em;
+  /* margin: 5px; */
+  cursor: pointer;
+  border-radius: 4px;
+  width: 100%;
+  /* height: 100%; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.profile-search-button:hover div {
+  background-color: green;
+}
+
 .profile-search-label {
 }
 
@@ -96,6 +119,12 @@
 
 .profile-search-delete-icon {
   /* color: white; */
+}
+
+.profile-search-delete-icon:hover {
+  /* color: white; */
+  color: red;
+  /* background-color: white; */
 }
 
 

@@ -24,6 +24,8 @@ class ProfilePage extends React.Component {
 
     handleLabelClick(e, query) {
         e.preventDefault();
+        console.log("HIT1")
+
         this.props.fetchWatches(query)
             // .then(this.setState({ redirectToResults: true }));
             .then(this.props.history.push(`/watches/search`));
@@ -31,6 +33,8 @@ class ProfilePage extends React.Component {
 
     handleDeleteClick(e, searchId) {
         e.preventDefault();
+        e.stopPropagation();
+        console.log("HIT2")
 
         // if (this.state.searchLabel === "") {
         //     alert("Add label to save search")
