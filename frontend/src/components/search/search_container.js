@@ -11,7 +11,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        fetchSearch: data => dispatch(fetchSearch(data)),
+        // TODO UNUSED
+        // fetchSearch: data => dispatch(fetchSearch(data)),
         fetchWatches: search => dispatch(fetchWatches(search))
     };
 }

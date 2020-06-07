@@ -17,7 +17,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return {
-        fetchSearch: (data) => dispatch(fetchSearch(data)),
+        // TODO UNUSED
+        // fetchSearch: (data) => dispatch(fetchSearch(data)),
         newSearch: (data) => dispatch(newSearch(data)),
         openModal: (modal, watchId) => dispatch(openModal(modal, watchId))
     };

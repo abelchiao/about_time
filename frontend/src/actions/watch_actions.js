@@ -14,6 +14,7 @@ const receiveWatches = (watches, query) => ({
   query
 })
 
+// TODO UNUSED
 export const createWatch = watch => dispatch => {
   return WatchApiUtil.createWatch(watch)
     .then(watch => dispatch(receiveWatch(watch)))
