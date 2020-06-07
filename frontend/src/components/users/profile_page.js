@@ -9,7 +9,7 @@ class ProfilePage extends React.Component {
     
     this.state = {
         loaded: false,
-        redirectToResults: false
+        // redirectToResults: false
     };
 
       this.handleLabelClick = this.handleLabelClick.bind(this);
@@ -25,7 +25,8 @@ class ProfilePage extends React.Component {
     handleLabelClick(e, query) {
         e.preventDefault();
         this.props.fetchWatches(query)
-            .then(this.setState({ redirectToResults: true }));
+            // .then(this.setState({ redirectToResults: true }));
+            .then(this.props.history.push(`/watches/search`));
     }
 
     handleDeleteClick(e, searchId) {
@@ -49,10 +50,10 @@ class ProfilePage extends React.Component {
     console.log("STATE: ", this.state);
     // console.log("PROPS: ", this.props);
 
-    const redirectToResults = this.state.redirectToResults;
-    if (redirectToResults === true) {
-        return <Redirect to="/watches/search" />;
-    }
+    // const redirectToResults = this.state.redirectToResults;
+    // if (redirectToResults === true) {
+    //     return <Redirect to="/watches/search" />;
+    // }
 
     if (this.state.loaded === false) {
         // console.log("FALSE STATE TRIGGER")
@@ -76,9 +77,9 @@ class ProfilePage extends React.Component {
                         // console.log("TEST", search.query)
                         // console.log("TESTkeys", Object.keys(search.query))
                         Object.keys(search.query).forEach( search_prop => {
-                            if (search_prop !== "redirectToResults") {
+                            // if (search_prop !== "redirectToResults") {
                                 search_queries += (search.query[search_prop] !== "") ? (search_prop.toUpperCase() + ": " + search.query[search_prop] + " ") : ""
-                            }
+                            // }
                         })
                     
 
