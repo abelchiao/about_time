@@ -71,6 +71,17 @@ class ProfilePage extends React.Component {
             searches = 
 
                     this.props.searches.all.map( (search, idx) => {
+
+                        let search_queries = "";
+                        // console.log("TEST", search.query)
+                        // console.log("TESTkeys", Object.keys(search.query))
+                        Object.keys(search.query).forEach( search_prop => {
+                            if (search_prop !== "redirectToResults") {
+                                search_queries += (search.query[search_prop] !== "") ? (search_prop.toUpperCase() + ": " + search.query[search_prop] + " ") : ""
+                            }
+                        })
+                    
+
                         return (<div className="search-item-parent" key={idx}>
                                     <div className="search-item-header">
                                         <a href=""
@@ -98,13 +109,15 @@ class ProfilePage extends React.Component {
 
                                     <div className="search-item-details">
                                         {/* TODO output highlights from within object {search.query} */}
-                                        {(search.query["brand"] !== "") ? ("Brand: " + search.query["brand"] + " ") : null }
+
+                                        {search_queries}
+                                        {/* {(search.query["brand"] !== "") ? ("Brand: " + search.query["brand"] + " ") : null }
                                         {(search.query["case"] !== "") ? ("Case: " + search.query["case"] + " ") : null }
                                         {(search.query["movement"] !== "") ? ("Movement: " + search.query["movement"] + " ") : null } 
                                         {(search.query["price"] !== "") ? ("Price: " + search.query["price"] + " ") : null }
                                         {(search.query["selectedMovement"] !== "") ? ("Selected Movement: " + search.query["selectedMovement"] + " ") : null }
                                         {(search.query["selectedTier"] !== "") ? ("Selected Tier: " + search.query["selectedTier"] + " ") : null }
-                                        {(search.query["style"] !== "") ? ("Style: " + search.query["style"] + " ") : null }
+                                        {(search.query["style"] !== "") ? ("Style: " + search.query["style"] + " ") : null } */}
                                     </div>
                                 </div>)
                     })
