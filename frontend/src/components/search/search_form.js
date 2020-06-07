@@ -12,10 +12,10 @@ class SearchForm extends React.Component {
           style: "",
           case: "",
           errors: {},
-          selectedTier: "",
+          // selectedTier: "",
           movement: "",
-          selectedMovement: "",
-          redirectToResults: false
+          // selectedMovement: "",
+          // redirectToResults: false
         };
 
         this.handleSelectMovement = this.handleSelectMovement.bind(this);
@@ -48,7 +48,9 @@ class SearchForm extends React.Component {
         e.preventDefault();
         const search = Object.assign({}, this.state);
         this.props.fetchWatches(search)
-        .then(this.setState({ redirectToResults: true }));
+        // .then(this.setState({ redirectToResults: true }));
+        .then(this.props.history.push(`/watches/search`));
+
     }
 
     renderErrors() {
@@ -123,10 +125,10 @@ class SearchForm extends React.Component {
                )
            }, this);
 
-        const redirectToResults = this.state.redirectToResults;
-        if (redirectToResults === true) {
-            return <Redirect to="/watches/search" />;
-        }
+        // const redirectToResults = this.state.redirectToResults;
+        // if (redirectToResults === true) {
+        //     return <Redirect to="/watches/search" />;
+        // }
 
         return (
           <div className="search-transparent">
@@ -269,6 +271,7 @@ class SearchForm extends React.Component {
               </TabPanel>
 
             </Tabs>
+
             <form className="splash-form" onSubmit={this.handleSubmit}>
               {/* <div className="price input" id="price">
               </div>
