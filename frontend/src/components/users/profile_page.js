@@ -73,13 +73,22 @@ class ProfilePage extends React.Component {
 
                     this.props.searches.all.map( (search, idx) => {
 
-                        let search_queries = "";
+                        // let search_queries = <li></li>;
                         // console.log("TEST", search.query)
                         // console.log("TESTkeys", Object.keys(search.query))
-                        Object.keys(search.query).forEach( search_prop => {
+                        let search_queries = Object.keys(search.query).map( search_prop => {
                             // if (search_prop !== "redirectToResults") {
-                                search_queries += (search.query[search_prop] !== "") ? (search_prop.toUpperCase() + ": " + search.query[search_prop] + " ") : ""
+                            // console.log("TESTST", "" + search.query[search_prop])
+                            // search_queries += <li className="search-item-detail-list-item">
+                            // search_queries += {(search.query[search_prop] !== "") ? (search_prop.toUpperCase() + ": " + search.query[search_prop] + " ") : ""}
+                            // return <li className="search-item-detail-list-item"> {(search.query[search_prop] !== "") ? (search_prop.toUpperCase() + ": " + search.query[search_prop] + " ") : ""} </li>
+                            
+                            return (search.query[search_prop] !== "") ? <li className="search-item-detail-list-item"> {(search_prop.toUpperCase() + ": " + search.query[search_prop] + " ")} </li> : ""
+
+                            // search_queries += </li>
                             // }
+                            // console.log("TESTST111", "" + search_queries)
+
                         })
                     
 
@@ -110,8 +119,13 @@ class ProfilePage extends React.Component {
 
                                     <div className="search-item-details">
                                         {/* TODO output highlights from within object {search.query} */}
-
-                                        {search_queries}
+                                        <ul className="search-item-details-list">
+                                            {/* { search_queries } */}
+                                            { Object.keys(search.query).map(
+                                                search_prop => (search.query[search_prop] !== "")
+                                                ? <li className="search-item-details-list-item" key={search_prop}> {(search_prop.toUpperCase() + ": " + search.query[search_prop] + " ")} </li>
+                                                : null ) }
+                                        </ul>
                                         {/* {(search.query["brand"] !== "") ? ("Brand: " + search.query["brand"] + " ") : null }
                                         {(search.query["case"] !== "") ? ("Case: " + search.query["case"] + " ") : null }
                                         {(search.query["movement"] !== "") ? ("Movement: " + search.query["movement"] + " ") : null } 
@@ -142,7 +156,7 @@ class ProfilePage extends React.Component {
                         Welcome, {this.props.currentUser.handle}:
                     </div>
                     <div className="search-items-container">
-                        <div className="search-items-header"> Your saved searches (click to open search results): </div>
+                        <div className="search-items-header"> Your saved searches (click label name to open search results): </div>
                         <div className="search-items-index">{searches}</div>
                     </div>
                 </div>
