@@ -82,7 +82,7 @@ class ProfilePage extends React.Component {
                         <div className="profile-page-container">
                             <Navbar />
                             <div className="profile-page-intro-text">
-                                Welcome, { this.props.currentUser.handle }:
+                                Welcome, { this.props.currentUser.handle }!
                             </div>
                             <div className="search-items-container">
                                 <div className="search-items-header">Saved searches</div>

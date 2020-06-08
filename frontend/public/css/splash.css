@@ -16,11 +16,11 @@ body{
 
 .results-background {
     /* Top image is German movement bg, bottom is Casio GShock bg */
-    background-image: url("https://drive.google.com/uc?exportview&id=160pGDaZBgTxwIV-d-CuJ1wPUPke3DU4e");
-    /* background-image: url("https://drive.google.com/uc?exportview&id=1tZuHPPeNoQojSfjfUhXJFr8BLiWxKHPP"); */
+    /* background-image: url("https://drive.google.com/uc?exportview&id=160pGDaZBgTxwIV-d-CuJ1wPUPke3DU4e"); */
+    background-image: url("https://drive.google.com/uc?exportview&id=1tZuHPPeNoQojSfjfUhXJFr8BLiWxKHPP");
     min-width: 100%;
     min-height: 100vh;
-    background-size: cover;
+    background-size: contain;
     top: 0;
     left: 0;
 }
