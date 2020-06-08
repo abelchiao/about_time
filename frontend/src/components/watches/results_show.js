@@ -40,7 +40,11 @@ class ResultsShow extends React.Component {
 
   render() {
     console.log("RESULTS PROPS: ", this.props);
-    console.log("RESULTS STATE: ", this.state);
+    console.log("RESULTS STATE123: ", this.state);
+
+    const { dataLoad } = this.props;
+    if (!dataLoad) { return <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>; };
+
 
     let saveSearchInputs;
     if (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser) {
@@ -81,43 +85,46 @@ class ResultsShow extends React.Component {
     }
 
     return (
-      <div className="results-background">
-        <Navbar />
-        <div className="search-result-show">
-          <br />
-          <div className="search-result-nav-container">
-            {/* <Link className="back-to-search" to="/">
-              Search again
-            </Link> */}
+      (this.props.dataLoad === true)
+      ?
+        // return (
+        <div className="results-background">
+          <Navbar />
+          <div className="search-result-show">
+            <br />
+            <div className="search-result-nav-container">
+              {/* <Link className="back-to-search" to="/">
+                Search again
+              </Link> */}
 
-            <div className="search-result-save-container">
-              {saveSearchInputs}
+              <div className="search-result-save-container">
+                {saveSearchInputs}
+              </div>
             </div>
-          </div>
-          <div className="top-three-row">
-            <h1>The top matches are:</h1>
-            <ul>
-              {this.props.topThree.map((watch, idx) => (
-                <li
-                  key={idx}
-                  value={watch._id}
-                  onClick={() => this.props.openModal("show-watch", watch._id)}
-                >
-                  <img
-                    alt=""
-                    className="watch-photo"
-                    src={watch.imageURL}
-                  ></img>
-                  <br />
-                  {watch.brand}
-                  <br />
-                  {watch.model}
-                  <br />
-                  ${watch.price}
-                </li>
-              ))}
-            </ul>
-          </div>
+            <div className="top-three-row">
+              <h1>The top matches are:</h1>
+              <ul>
+                {this.props.topThree.map((watch, idx) => (
+                  <li
+                    key={idx}
+                    value={watch._id}
+                    onClick={() => this.props.openModal("show-watch", watch._id)}
+                  >
+                    <img
+                      alt=""
+                      className="watch-photo"
+                      src={watch.imageURL}
+                    ></img>
+                    <br />
+                    {watch.brand}
+                    <br />
+                    {watch.model}
+                    <br />
+                    ${watch.price}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
           {/* <div className="other-results">
                         <ul>
@@ -127,7 +134,11 @@ class ResultsShow extends React.Component {
                             }
                         </ul>
                     </div> */}
+          </div>
         </div>
+    : 
+      <div>
+          "TEST LOADING"
       </div>
     );
   }

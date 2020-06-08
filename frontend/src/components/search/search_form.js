@@ -30,6 +30,10 @@ class SearchForm extends React.Component {
         });
     }
 
+    componentDidMount() {
+        this.props.resetDataLoad();
+    };
+
     handleSelectPrice(e) {
         this.setState({
           price: e.target.value
@@ -49,8 +53,9 @@ class SearchForm extends React.Component {
         const search = Object.assign({}, this.state);
         this.props.fetchWatches(search)
         // .then(this.setState({ redirectToResults: true }));
-        .then(this.props.history.push(`/watches/search`));
-
+        // .then(this.props.history.push(`/watches/search`))
+        // .then( () => this.props.confirmDataLoad() );
+        this.props.history.push(`/watches/search`)
     }
 
     renderErrors() {

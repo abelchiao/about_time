@@ -430,6 +430,7 @@ input[type="submit"] {
 .watch-photo {
     width: 18em;
     height: 28em;
+    object-fit: cover;
 }
 
 .modal-background {

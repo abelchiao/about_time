@@ -10,6 +10,7 @@ class ProfilePage extends React.Component {
     };
 
     async componentDidMount() {
+        this.props.resetDataLoad();
         if (this.props.currentUser.handle) {
             await this.props.fetchUserSearches();
             this.setState({loaded: true});
@@ -19,7 +20,8 @@ class ProfilePage extends React.Component {
     handleLabelClick(e, query) {
         e.preventDefault();
         this.props.fetchWatches(query)
-            .then(this.props.history.push(`/watches/search`));
+        // .then( () => this.props.confirmDataLoad() );
+        this.props.history.push(`/watches/search`);
     };
 
     handleDeleteClick(e, searchId) {
