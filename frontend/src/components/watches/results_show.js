@@ -43,8 +43,14 @@ class ResultsShow extends React.Component {
     console.log("RESULTS STATE123: ", this.state);
 
     const { dataLoad } = this.props;
-    if (!dataLoad) { return <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div>; };
-
+    if (!dataLoad) {
+      return (
+        <div className="results-background">
+          <Navbar />
+          <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> 
+        </div>
+      );
+    };
 
     let saveSearchInputs;
     if (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser) {
@@ -85,8 +91,8 @@ class ResultsShow extends React.Component {
     }
 
     return (
-      (this.props.dataLoad === true)
-      ?
+      // (this.props.dataLoad === true)
+      // ?
         // return (
         <div className="results-background">
           <Navbar />
@@ -136,10 +142,10 @@ class ResultsShow extends React.Component {
                     </div> */}
           </div>
         </div>
-    : 
-      <div>
-          "TEST LOADING"
-      </div>
+    // : 
+    //   <div>
+    //       "TEST LOADING"
+    //   </div>
     );
   }
 }
