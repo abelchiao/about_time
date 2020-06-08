@@ -64,7 +64,7 @@ class ResultsShow extends React.Component {
               value={this.state.searchLabel}
               onChange={this.update("searchLabel")}
             ></input>
-            <button className="search-result-save-input" onClick={() => alert("Log in to save this search!")}>
+            <button className="search-result-save-button" onClick={() => alert("Log in to save this search!")}>
               Save Search
             </button>
           </div>
@@ -81,7 +81,7 @@ class ResultsShow extends React.Component {
               onChange={this.update("searchLabel")}
             ></input>
             <button
-              className="search-result-save-input"
+              className="search-result-save-button"
               onClick={this.handleSubmit}
             >
               Save Search
@@ -97,7 +97,6 @@ class ResultsShow extends React.Component {
         <div className="results-background">
           <Navbar />
           <div className="search-result-show">
-            <br />
             <div className="search-result-nav-container">
               {/* <Link className="back-to-search" to="/">
                 Search again

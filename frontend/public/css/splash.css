@@ -40,19 +40,26 @@ body{
 
 a {
     text-decoration: none;
-    color: linen;
+    color: ivory;
 }
 
 button {
-    background-color: lightgrey;
+    background-color: ivory;
     cursor: pointer;
     padding: 4px 10px;
     margin: 5px 5px;
-    border: 2px solid black;
+    border: 2px solid #1D2731;
     border-radius: 5px;
     font-size: 1em;
     font-weight: 800;
     color: #263d5f;
+}
+
+button:hover {
+    background-color: #D9B310;
+    /* background-color: yellow; */
+    color: #1D2731;
+    /* color: #263d5f; */
 }
 
 footer {
@@ -100,7 +107,7 @@ input[type="submit"] {
     line-height: 0.8;
     text-transform: uppercase;
     font-weight: 900;
-    color: #182e4f;
+    color: #0B3C5D;
     text-align: right;
     padding: 0.4em 0 0.6em;
 }
@@ -163,7 +170,7 @@ input[type="submit"] {
 }
 
 .owned-review {
-  background: linen;
+  background: ivory;
   border: 1px solid gray;
 }
 
@@ -201,7 +208,7 @@ input[type="submit"] {
 
 .review-dropdown-contents {
   position: absolute;
-  background: #fff;
+  background: ivory;
   top: 15px;
   right: 1px;
   display: none;
@@ -316,19 +323,19 @@ input[type="submit"] {
 /* ---------------------- */
 
 .search-result-show {
-    background-color: #182e4f;
+    background-color: #0B3C5D;
     margin: 2em auto;
-    border: 2px solid black;
+    border: 2px solid #1D2731;
     filter: alpha(opacity=90);
     max-width: 90%;
-    min-width: 700px;
+    min-width: 75%;
     min-height: 80%;
     border-radius: 6px;
     overflow: auto;
 }
 
 .search-result-show h1 {
-    color: linen;
+    color: ivory;
 }
 
 .show {
@@ -353,7 +360,7 @@ input[type="submit"] {
 	border:1px solid #dcdcdc;
 	display: inline-block;
 	cursor: pointer;
-	color: #182e4f;
+	color: #0B3C5D;
 	font-weight:bold;
 	padding:4px 18px;
 	text-decoration:none;
@@ -380,7 +387,7 @@ input[type="submit"] {
 .splash-search-transparent {
     background-color: lightgray;
     margin: 2em auto;
-    border: 2px solid black;
+    border: 2px solid #1D2731;
     opacity: 0.95;
     text-align: center;
     max-width: 60%;
@@ -409,15 +416,15 @@ input[type="submit"] {
 
 .top-three-row li {
     display: inline-block;
-    background-color: linen;
+    background-color: ivory;
     top: 5em;
     text-align: center;
-    border: 5px solid black;
+    border: 5px solid #1D2731;
     border-radius: 5px;
 }
 
 .top-three-row img {
-    border-bottom: 5px solid black;
+    border-bottom: 5px solid #1D2731;
     /* border-radius: 5px; */
 }
 
@@ -449,8 +456,13 @@ input[type="submit"] {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    border-bottom: #1D2731 2px solid;
 }
 
 .search-result-save-container {
     margin: 12px 24px;
+}
+
+.search-result-save-input {
+    background: ivory;
 }

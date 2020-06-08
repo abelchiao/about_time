@@ -1,5 +1,5 @@
 .watch-show-modal-parent {
-  background: linen;
+  background: ivory;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -84,8 +84,8 @@
   font-size: 16px;
   line-height: 20px;
   font-weight: 200;
-  color: linen;
-  background: #182e4f;
+  color: ivory;
+  background: #0B3C5D;
   border-radius: 4px;
 }
 

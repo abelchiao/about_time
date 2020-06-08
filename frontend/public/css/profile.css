@@ -18,16 +18,16 @@
   font-size: 24px;
   /* line-height: 20px; */
   /* font-weight: 200; */
-  color: linen;
-  background: #182e4f;
+  color: ivory;
+  background: #0B3C5D;
   border-radius: 4px;
-  width: 66%;
+  width: 75%;
   margin-top: 32px;
 }
 
 .search-items-container {
   padding: 30px 10px 10px;
-  width: 66%;
+  width: 90%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -40,46 +40,59 @@
   /* padding-bottom: 12px; */
   width: 33%;
   text-align: center;
-  color: linen;
-  background-color: #182e4f;
+  color: ivory;
+  background-color: #0B3C5D;
 }
 
 .search-items-index {
-  width: 100%;
+  /* max-width: 100%; */
+  min-width: 75%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .search-item-parent {
-  margin: 5px;
-  padding: 5px;
+  margin: .25em;
+  padding: .25em;
   /* background: lightgrey; */
   border-radius: .3em;
   min-height: 6.5vh;
-  /* width: 66%; */
+  width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #182e4f;
+  background-color: #0B3C5D;
 }
 
 .search-item-parent:hover {
-  margin: 5px;
-  padding: 5px;
+  margin: .25em;
+  padding: .25em;
   /* background: lightgrey; */
   border-radius: 4px;
   min-height: 6.5vh;
   /* width: 66%; */
   display: flex;
   flex-direction: column;
-  background-color: #003000;
+  background-color: #328CC1;
+  color: #1D2731;
 }
 
 .search-item-parent:hover div {
-  background-color: #003000;
+  background-color: #328CC1;
+  color: #1D2731;
+}
+
+.search-item-parent:hover li {
+  /* background-color: #1D2731; */
+  /* color: ivory; */
+  color: #1D2731;
+  background-color: ivory;
 }
 
 .search-item-header {
-  background-color: #182e4f;
+  background-color: #0B3C5D;
   /* border: none; */
-  color: linen;
+  color: ivory;
   padding: .5em .5em;
   text-align: center;
   /* text-decoration: none; */
@@ -103,10 +116,10 @@
   width: 1.2em;
   margin: 0px;
   padding: 0px;
-  /* background-color: #182e4f; */
+  /* background-color: #0B3C5D; */
   border: 0px;
   border-radius: 0px;
-  color: linen;
+  color: ivory;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -119,7 +132,7 @@
 
 .profile-search-delete-icon:hover {
   /* color: white; */
-  color: #900000;
+  color: #D9B310;
   /* background-color: white; */
 }
 
@@ -127,7 +140,7 @@
 .search-item-details {
   padding: .5em;
   /* margin: .25em; */
-  /* background-color: #182e4f; */
+  /* background-color: #0B3C5D; */
 }
 
 .search-item-details-list {
@@ -137,10 +150,12 @@
 .search-item-details-list-item {
   float: left;
   /* display: inline; */
-  background-color: linen;
+  /* background-color: ivory; */
+  background-color: #1D2731;
+  color: ivory;
   padding: .25em;
   margin: .25em;
-  border-color: black;
+  border-color: #1D2731;
   border-width: 1px;
   border-style: solid;
   border-radius: .25em;
