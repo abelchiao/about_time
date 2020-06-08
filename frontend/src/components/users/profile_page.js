@@ -34,7 +34,14 @@ class ProfilePage extends React.Component {
     render() {
 
         if (this.state.loaded === false) {
-            return null;
+            return (
+                <div className="profile-page-container">
+                    <Navbar />
+                    <div className="profile-page-intro-text">
+                        <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> 
+                    </div>
+                </div>
+            )
         } else {
             let searches =
                 ((this.props.searches.all.length === undefined) || (this.props.searches.all.length === 0))
