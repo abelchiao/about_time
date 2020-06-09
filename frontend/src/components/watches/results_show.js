@@ -61,10 +61,10 @@ class ResultsShow extends React.Component {
               type="text"
               placeholder="Log in to save this search"
               size="45"
-              value={this.state.searchLabel}
-              onChange={this.update("searchLabel")}
+              value={ this.state.searchLabel }
+              onChange={ this.update("searchLabel") }
             ></input>
-            <button className="search-result-save-button" onClick={() => alert("Log in to save this search!")}>
+            <button className="search-result-save-button" onClick={ () => alert("Log in to save this search!") }>
               Save Search
             </button>
           </div>
@@ -77,18 +77,28 @@ class ResultsShow extends React.Component {
               type="text"
               placeholder="Add a label to save this search"
               size="45"
-              value={this.state.searchLabel}
-              onChange={this.update("searchLabel")}
+              value={ this.state.searchLabel }
+              onChange={ this.update("searchLabel") }
             ></input>
-            <button
-              className="search-result-save-button"
-              onClick={this.handleSubmit}
-            >
+            <button className="search-result-save-button" onClick={ this.handleSubmit }>
               Save Search
             </button>
           </div>
         );
     }
+
+    let searchQueryTags =
+      (console.log(this.props.searches) === undefined)
+      ? Object.keys(this.props.searches.new)
+          .map(search_prop => (
+            (this.props.searches.new[search_prop] !== "")
+              ? <li className="search-result-query-tags-list-item" key={ search_prop }>
+                  { (search_prop.toUpperCase() + ": " + this.props.searches.new[search_prop] + " ") }
+                </li>
+              : null
+            )
+          )
+      : null;
 
     return (
       // (this.props.dataLoad === true)
@@ -101,13 +111,20 @@ class ResultsShow extends React.Component {
               {/* <Link className="back-to-search" to="/">
                 Search again
               </Link> */}
-
               <div className="search-result-save-container">
                 {saveSearchInputs}
               </div>
             </div>
-            <div className="top-three-row">
 {/* TODO add query tags here */}
+            {/* <div className="search-result-query-tags"> */}
+            <div className="search-result-query-tags">
+              Selected search parameters:
+              <ul className="search-result-query-tags-list">
+                { searchQueryTags }
+              </ul>
+            </div>
+            {/* </div> */}
+            <div className="top-three-row">
               <h1>The top matches are:</h1>
               <ul>
                 {this.props.topThree.map((watch, idx) => (
@@ -120,7 +137,7 @@ class ResultsShow extends React.Component {
                       alt=""
                       className="watch-photo"
                       src={watch.imageURL}
-                    ></img>
+                    />
                     <br />
                     {watch.brand}
                     <br />

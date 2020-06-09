@@ -28,10 +28,69 @@
     color: ivory;
 }
 
+.search-result-nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-bottom: #1D2731 2px solid;
+}
+
+.search-result-save-container {
+    margin: 12px 24px;
+}
+
+.search-result-save-input {
+    background: ivory;
+}
+
+.search-result-query-tags {
+    padding: .5em;
+    border-bottom: #1D2731 2px solid;
+}
+
+.search-result-query-tags-list {
+  padding: .5em;
+  display: flex;
+}
+
+.search-result-query-tags-list-item {
+  /* float: left; */
+  /* display: inline; */
+  /* background-color: ivory; */
+  background-color: #1D2731;
+  color: ivory;
+  padding: .25em;
+  margin: .25em;
+  border-color: #1D2731;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: .25em;
+  /* font-family: Arial, Helvetica, sans-serif; */
+  font-size: 1em;
+}
+
+.search-result-query-tags-list-item:hover {
+  /* background-color: #1D2731; */
+  /* color: ivory; */
+  color: #1D2731;
+  background-color: ivory;
+}
+
 .top-three-row {
     text-align: center;
     margin: 3em 0;
     height: 80%
+}
+
+.top-three-row ul {
+    /* display: flex; */
+    /* justify-content: space-around; */
+    margin: auto;
+    text-align: center;
+    max-width: 80%;
+    /* columns: 3; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .top-three-row li {
@@ -58,17 +117,6 @@
     /* border-radius: 5px; */
 }
 
-.top-three-row ul {
-    /* display: flex; */
-    /* justify-content: space-around; */
-    margin: auto;
-    text-align: center;
-    max-width: 80%;
-    /* columns: 3; */
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
 .watch-photo {
     width: 18em;
     height: 28em;
@@ -83,19 +131,4 @@
   left: 0;
   background: rgba(0, 0, 0, 0.7);
   z-index: 10;
-}
-
-.search-result-nav-container {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    border-bottom: #1D2731 2px solid;
-}
-
-.search-result-save-container {
-    margin: 12px 24px;
-}
-
-.search-result-save-input {
-    background: ivory;
 }
