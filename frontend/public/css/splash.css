@@ -60,6 +60,7 @@ button:hover {
     /* background-color: yellow; */
     color: #1D2731;
     /* color: #263d5f; */
+    border: 2px solid #D9B310;
 }
 
 footer {
@@ -421,6 +422,16 @@ input[type="submit"] {
     text-align: center;
     border: 5px solid #1D2731;
     border-radius: 5px;
+    margin: 0em 1em;
+}
+
+.top-three-row li:hover {
+    border: 5px solid #D9B310;
+    cursor: pointer;
+}
+
+.top-three-row li:hover img {
+    border-bottom: 5px solid #D9B310;
 }
 
 .top-three-row img {
