@@ -41,7 +41,7 @@
     text-align: center;
     border: 5px solid #1D2731;
     border-radius: 5px;
-    margin: 0em 1em;
+    margin: 1em;
 }
 
 .top-three-row li:hover {
@@ -59,11 +59,14 @@
 }
 
 .top-three-row ul {
-    display: flex;
-    justify-content: space-around;
+    /* display: flex; */
+    /* justify-content: space-around; */
     margin: auto;
     text-align: center;
     max-width: 80%;
+    /* columns: 3; */
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .watch-photo {
@@ -96,5 +99,3 @@
 .search-result-save-input {
     background: ivory;
 }
-
-

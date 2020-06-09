@@ -107,6 +107,7 @@ class ResultsShow extends React.Component {
               </div>
             </div>
             <div className="top-three-row">
+{/* TODO add query tags here */}
               <h1>The top matches are:</h1>
               <ul>
                 {this.props.topThree.map((watch, idx) => (
@@ -128,6 +129,7 @@ class ResultsShow extends React.Component {
                     ${watch.price}
                   </li>
                 ))}
+{/* TODO add other results here */}
               </ul>
             </div>
 
