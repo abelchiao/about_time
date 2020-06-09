@@ -1,0 +1,100 @@
+.results-background {
+    /* Top image is German movement bg, bottom is Casio GShock bg */
+    /* background-image: url("https://drive.google.com/uc?exportview&id=160pGDaZBgTxwIV-d-CuJ1wPUPke3DU4e"); */
+    /* background-image: url("https://drive.google.com/uc?exportview&id=1tZuHPPeNoQojSfjfUhXJFr8BLiWxKHPP"); */
+    background-image: url("/img/background/casio-gshock.jpg");
+    min-width: 100%;
+    min-height: 100vh;
+    background-size: contain;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.search-result-show {
+    background-color: #0B3C5D;
+    margin: 2em auto;
+    border: 2px solid #1D2731;
+    filter: alpha(opacity=90);
+    max-width: 90%;
+    min-width: 75%;
+    min-height: 80%;
+    border-radius: 6px;
+    overflow: auto;
+}
+
+.search-result-show h1 {
+    color: ivory;
+}
+
+.top-three-row {
+    text-align: center;
+    margin: 3em 0;
+    height: 80%
+}
+
+.top-three-row li {
+    display: inline-block;
+    background-color: ivory;
+    top: 5em;
+    text-align: center;
+    border: 5px solid #1D2731;
+    border-radius: 5px;
+    margin: 0em 1em;
+}
+
+.top-three-row li:hover {
+    border: 5px solid #D9B310;
+    cursor: pointer;
+}
+
+.top-three-row li:hover img {
+    border-bottom: 5px solid #D9B310;
+}
+
+.top-three-row img {
+    border-bottom: 5px solid #1D2731;
+    /* border-radius: 5px; */
+}
+
+.top-three-row ul {
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+    text-align: center;
+    max-width: 80%;
+}
+
+.watch-photo {
+    width: 18em;
+    height: 28em;
+    object-fit: cover;
+}
+
+.modal-background {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 10;
+}
+
+.search-result-nav-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    border-bottom: #1D2731 2px solid;
+}
+
+.search-result-save-container {
+    margin: 12px 24px;
+}
+
+.search-result-save-input {
+    background: ivory;
+}
+
+

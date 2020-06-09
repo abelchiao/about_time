@@ -62,6 +62,7 @@
   display: flex;
   flex-direction: column;
   background-color: #0B3C5D;
+  border: .25em #1D2731 solid;
 }
 
 .search-item-parent:hover {
@@ -75,6 +76,7 @@
   flex-direction: column;
   background-color: #328CC1;
   color: #1D2731;
+  border: .25em #D9B310 solid;
 }
 
 .search-item-parent:hover div {
@@ -107,7 +109,7 @@
   align-items: center;
 }
 
-
+/* TODO font */
 .profile-search-label {
   /* padding-left: .5em; */
 }
@@ -135,7 +137,6 @@
   color: #D9B310;
   /* background-color: white; */
 }
-
 
 .search-item-details {
   padding: .5em;

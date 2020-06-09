@@ -120,4 +120,4 @@ export default ProfilePage;
 
 // DONE TODO reorg search item panel to combined layout
 // DONE TODO add query parameters to search label
-// TODO loading icon
+// DONE TODO loading icon

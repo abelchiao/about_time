@@ -92,3 +92,181 @@
 .retail-link {
   color: darkblue;
 }
+
+
+/* Reviews */
+
+.new-review-textarea {
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px;
+  height: 60px;
+}
+
+.new-review-button {
+  padding: 2.5px 0;
+  border: 1px solid #414348;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+  background: #fff;
+}
+
+.new-review-button:hover {
+  cursor: pointer;
+  background: lightgray;
+}
+
+.owned-review {
+  background: ivory;
+  border: 1px solid gray;
+}
+
+.react-tabs {
+  background-color: #fff;
+  border-bottom: 1px solid #aaa;
+}
+
+.react-tabs__tab {
+  font-size: 2em;
+  border: 1px solid transparent;
+  border-bottom: none;
+  bottom: -1px;
+  position: relative;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+
+.react-tabs__tab-list {
+  display: flex;
+  background: lightgrey;
+  flex-direction: row;
+  justify-content: flex-start;
+  border-bottom: 1px solid #aaa;
+  margin: 0 0 10px;
+  padding: 0 1rem;
+}
+
+.react-tabs__tab--selected {
+  background: #fff;
+  border-color: #aaa;
+  color: black;
+  border-radius: 5px 5px 0 0;
+}
+
+.review-dropdown-contents {
+  position: absolute;
+  background: ivory;
+  top: 15px;
+  right: 1px;
+  display: none;
+  width: 130px;
+  z-index: 10;
+  border: 2px solid lightgray;
+  border-radius: 4px;
+  font-size: 14px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+}
+
+.review-dropdown-icon {
+  fill: black;
+  height: 16px;
+  width: 16px;
+  position: relative;
+  padding: 0 5px;
+}
+
+.review-dropdown-icon:hover {
+  cursor: pointer;
+  fill: lightgray;
+}
+
+.review-dropdown-parent {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.review-dropdown-item {
+  padding: 5px;
+  border-bottom: 1px solid lightgray;
+}
+
+.review-dropdown-item:hover {
+  cursor: pointer;
+}
+
+.review-dropdown-item:hover {
+  background: lightgray
+}
+
+.review-edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-edit-textarea {
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 4px;
+  padding: 10px;
+  height: 60px;
+}
+
+.review-form-body {
+    display: flex;
+    flex-direction: column;
+    margin: 10px 0;
+}
+
+.review-form-container {
+    margin-bottom: 20px;
+}
+
+.review-form-header {
+    font-size: 24px;
+}
+
+.review-index-parent {
+  padding: 30px 10px 10px;
+}
+
+.review-index-header {
+  font-size: 24px;
+}
+
+.review-item-parent {
+  margin: 10px 0;
+  padding: 10px;
+  background: lightgrey;
+  border-radius: 4px;
+}
+
+.review-item-header {
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 8px;
+  font-weight: bold;
+  align-items: center;
+}
+
+.update-review-button {
+  padding: 2.5px 0;
+  background: lightgray;
+  border: 1px solid gray;
+  border-radius: 4px;
+  margin-top: 10px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+.update-review-button:hover {
+  cursor: pointer;
+  background: rgb(168, 168, 168);
+}
+
+.show {
+  display: block;
+}
