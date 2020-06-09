@@ -11,7 +11,7 @@ class SearchForm extends React.Component {
           brand: "",
           style: "",
           case: "",
-          errors: {},
+          // errors: {},
           // selectedTier: "",
           movement: "",
           // selectedMovement: "",
@@ -21,7 +21,7 @@ class SearchForm extends React.Component {
         this.handleSelectMovement = this.handleSelectMovement.bind(this);
         this.handleSelectPrice = this.handleSelectPrice.bind(this);
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.renderErrors = this.renderErrors.bind(this);
+        // this.renderErrors = this.renderErrors.bind(this);
     }
 
     update(field) {
@@ -58,17 +58,17 @@ class SearchForm extends React.Component {
         this.props.history.push(`/watches/search`)
     }
 
-    renderErrors() {
-        return (
-            <ul>
-                {Object.keys(this.state.errors).map((error, i) => (
-                    <li key={`error-${i}`}>
-                        {this.state.errors[error]}
-                    </li>
-                ))}
-            </ul>
-        );
-    }
+    // renderErrors() {
+    //     return (
+    //         <ul>
+    //             {Object.keys(this.state.errors).map((error, i) => (
+    //                 <li key={`error-${i}`}>
+    //                     {this.state.errors[error]}
+    //                 </li>
+    //             ))}
+    //         </ul>
+    //     );
+    // }
 
    render() {   
      const brands = [
@@ -304,7 +304,7 @@ class SearchForm extends React.Component {
                 value="Submit"
                 className="splash-form-submit"
               />
-              {this.renderErrors()}
+              {/* {this.renderErrors()} */}
             </form>
           </div>
         );
