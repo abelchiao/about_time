@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchSearch, newSearch } from '../../actions/search_actions';
+import { fetchWatches } from '../../actions/watch_actions';
 import { openModal } from '../../actions/modal_actions';
 import ResultsShow from './results_show';
 
@@ -20,6 +21,7 @@ const mapDispatchToProps = dispatch => {
     return {
         // TODO UNUSED
         // fetchSearch: (data) => dispatch(fetchSearch(data)),
+        fetchWatches: search => dispatch(fetchWatches(search)),
         newSearch: (data) => dispatch(newSearch(data)),
         openModal: (modal, watchId) => dispatch(openModal(modal, watchId)),
     };

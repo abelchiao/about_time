@@ -9,7 +9,7 @@ class ResultsShow extends React.Component {
       searchLabel: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-
+    this.handleTagSearch = this.handleTagSearch.bind(this);
     // this.openWatchModal = this.openWatchModal.bind(this);
   }
 
@@ -18,16 +18,23 @@ class ResultsShow extends React.Component {
   //     this.props.openModal('show-watch', e.currentTarget.value)
   // }
 
+  handleTagSearch(searchProp) {
+    let search = {};
+    search[searchProp] = this.props.searches.new[searchProp];
+    this.props.fetchWatches(search);
+  }
+
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
   }
 
   handleSubmit(e) {
     e.preventDefault();
-
+    
     if (this.state.searchLabel === "") {
-        alert("Add a label to save this search")
+      alert("Add a label to save this search")
     } else {
+      console.log("TETS", e)
         let data = {
         label: this.state.searchLabel,
         query: this.props.searches.new
@@ -88,12 +95,12 @@ class ResultsShow extends React.Component {
     }
 
     let searchQueryTags =
-      (console.log(this.props.searches) === undefined)
+      (this.props.searches !== undefined)
       ? Object.keys(this.props.searches.new)
-          .map(search_prop => (
-            (this.props.searches.new[search_prop] !== "")
-              ? <li className="search-result-query-tags-list-item" key={ search_prop }>
-                  { (search_prop.toUpperCase() + ": " + this.props.searches.new[search_prop] + " ") }
+          .map( searchProp => (
+            (this.props.searches.new[searchProp] !== "")
+              ? <li className="search-result-query-tags-list-item" key={ searchProp } onClick={ () => this.handleTagSearch(searchProp) }>
+                { (searchProp.toUpperCase() + ": " + this.props.searches.new[searchProp] + " ") }
                 </li>
               : null
             )
