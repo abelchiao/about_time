@@ -12,7 +12,7 @@ const searchesReducer = (state = { all: [], user: {}, new: undefined }, action) 
             return newState;
         case RECEIVE_NEW_SEARCH:
             newState.all.push(action.search.data);
-            newState.new = undefined;
+            newState.new = action.search.data.query;
             return newState;
         case RECEIVE_USER_SEARCHES:
             newState.all = action.searches.data
