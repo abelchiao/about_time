@@ -39,13 +39,14 @@ button {
     font-size: 1em;
     font-weight: 800;
     color: #263d5f;
+    transition-duration: 0.3s;
 }
 
 button:hover {
     background-color: #328CC1;
     /* background-color: yellow; */
     color: #1D2731;
-     /* color: #263d5f; */
+    /* color: #263d5f; */
     border: 1px solid #D9B310;
     /* outline-color: #D9B310;
     outline-style: solid;
@@ -58,7 +59,7 @@ button:focus {
     /* color: #1D2731; */
 
     /* color: #263d5f; */
-    /* outline: none; */
+    outline: none;
 }
 
 footer {
