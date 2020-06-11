@@ -98,7 +98,7 @@
     cursor: pointer;
     background-color: #1D2731;
     color: ivory;
-    padding: .25em .5em;
+    padding: .25em 1em;
     margin: .25em;
     border-color: #1D2731;
     border-width: 1px;
@@ -138,7 +138,21 @@
 .search-result-query-tags-list-item-delete {
   width: 1em;
   margin: 0px;
-  padding: 0px 0px 0em .75em;
+  padding: 0px 0px 0em 1em;
+  /* background-color: #0B3C5D; */
+  border: 0px;
+  border-radius: 0px;
+  color: ivory;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+
+.search-result-query-tags-list-item-sort {
+  width: .75em;
+  margin: 0px;
+  padding: 0px 0px 0em 1em;
   /* background-color: #0B3C5D; */
   border: 0px;
   border-radius: 0px;

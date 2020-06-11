@@ -7,7 +7,8 @@ class ResultsShow extends React.Component {
     super(props);
     this.state = {
       searchLabel: "",
-      resultWatchesCount: 9
+      resultWatchesCount: 9,
+      sortBy: "price",
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTagSearch = this.handleTagSearch.bind(this);
@@ -77,8 +78,8 @@ class ResultsShow extends React.Component {
   }
 
   render() {
-    console.log("RESULTS PROPS: ", this.props);
-    console.log("RESULTS STATE123: ", this.state);
+    // console.log("RESULTS PROPS: ", this.props);
+    // console.log("RESULTS STATE123: ", this.state);
 
     const { dataLoad } = this.props;
     if (!dataLoad) {
@@ -146,7 +147,42 @@ class ResultsShow extends React.Component {
       searchQueryTags = (Object.values(searchQueryTags).every( v => (v == null ) )) ? <div>NO SEARCH PARAMETERS SELECTED</div> : searchQueryTags;
     }
 
-    let resultWatches = this.props.watches.slice(0, this.state.resultWatchesCount);
+    let searchSortTags =
+      ["price", "brand", "model", "movement", "case", "style", "gender"]
+          .map(searchProp => (
+              <li className="search-result-query-tags-list-item" key={searchProp} onClick={() => (this.state.sortBy === searchProp) ? this.setState({ sortBy: (searchProp + "Reversed") }) : this.setState({ sortBy: searchProp }) }>
+                  <div className="search-result-query-tags-list-item-text">
+                      {searchProp.toUpperCase()}
+                  </div>
+                  <div className="search-result-query-tags-list-item-sort">
+                      { (this.state.sortBy === searchProp)
+                          ? <svg className="search-result-query-tags-list-item-delete-icon1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-down" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M413.1 222.5l22.2 22.2c9.4 9.4 9.4 24.6 0 33.9L241 473c-9.4 9.4-24.6 9.4-33.9 0L12.7 278.6c-9.4-9.4-9.4-24.6 0-33.9l22.2-22.2c9.5-9.5 25-9.3 34.3.4L184 343.4V56c0-13.3 10.7-24 24-24h32c13.3 0 24 10.7 24 24v287.4l114.8-120.5c9.3-9.8 24.8-10 34.3-.4z"></path></svg>
+                          : <svg className="search-result-query-tags-list-item-delete-icon1" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="arrow-up" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6 0-33.9L207 39c9.4-9.4 24.6-9.4 33.9 0l194.3 194.3c9.4 9.4 9.4 24.6 0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3 0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"></path></svg>
+                      }
+                  </div>
+              </li>
+          )
+        )
+    let sortBy = this.state.sortBy;
+    if ((sortBy === "brandReversed") || (sortBy === "caseReversed") || (sortBy === "modelReversed") || (sortBy === "movementReversed") || (sortBy === "styleReversed") || (sortBy === "genderReversed") || (this.state.sortBy === "priceReversed")) {
+      sortBy = sortBy.slice(0, sortBy.indexOf("Reversed"));
+    };
+
+    let allWatches = this.props.watches.slice();
+    if (sortBy === "price") { 
+      allWatches.sort( (a, b) => (b.price - a.price) ); 
+    };
+    if ((sortBy === "brand") || (sortBy === "case") || (sortBy === "model") || (sortBy === "movement") || (sortBy === "style") || (sortBy === "gender")) {
+      allWatches.sort( (a, b) => ((b[sortBy] || "").localeCompare(a[sortBy] || "")) );
+    };
+// console.log('sortBy', sortBy, this.state.sortBy);
+
+    if ((this.state.sortBy === "brandReversed") || (this.state.sortBy === "caseReversed") || (this.state.sortBy === "modelReversed") || (this.state.sortBy === "movementReversed") || (this.state.sortBy === "styleReversed") || (this.state.sortBy === "genderReversed") || (this.state.sortBy === "priceReversed")) {
+      allWatches.reverse();
+    };
+// console.log('allWatches222', allWatches);
+
+    let resultWatches = allWatches.slice(0, this.state.resultWatchesCount);
 
     return (
       // (this.props.dataLoad === true)
@@ -172,6 +208,14 @@ class ResultsShow extends React.Component {
               </ul>
             </div>
             {/* </div> */}
+
+            <div className="search-result-query-tags">
+              {/* Current search parameters: */}
+              <ul className="search-result-query-tags-list">
+                {searchSortTags}
+              </ul>
+            </div>
+
             <div className="top-three-row">
               {/* <h1>The top matches are:</h1> */}
               <ul>
