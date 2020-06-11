@@ -6,12 +6,28 @@ class ResultsShow extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      searchLabel: ""
+      searchLabel: "",
+      resultWatchesCount: 9
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleTagSearch = this.handleTagSearch.bind(this);
     this.handleTagSearchDelete = this.handleTagSearchDelete.bind(this);
     // this.openWatchModal = this.openWatchModal.bind(this);
+    this.loadMoreWatches = this.loadMoreWatches.bind(this);
+  }
+
+  componentWillMount() {
+    window.addEventListener('scroll', this.loadMoreWatches);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.loadMoreWatches);
+  }
+  
+  loadMoreWatches() {
+    if (window.innerHeight + document.documentElement.scrollTop === document.scrollingElement.scrollHeight) {
+      this.setState({resultWatchesCount: this.state.resultWatchesCount + 6});
+    }
   }
 
   // openWatchModal(e) {
@@ -130,6 +146,8 @@ class ResultsShow extends React.Component {
       searchQueryTags = (Object.values(searchQueryTags).every( v => (v == null ) )) ? <div>NO SEARCH PARAMETERS SELECTED</div> : searchQueryTags;
     }
 
+    let resultWatches = this.props.watches.slice(0, this.state.resultWatchesCount);
+
     return (
       // (this.props.dataLoad === true)
       // ?
@@ -157,7 +175,7 @@ class ResultsShow extends React.Component {
             <div className="top-three-row">
               {/* <h1>The top matches are:</h1> */}
               <ul>
-                {this.props.topThree.map((watch, idx) => (
+                {resultWatches.map((watch, idx) => (
                   <li
                     key={idx}
                     value={watch._id}

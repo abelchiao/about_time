@@ -8,8 +8,8 @@ import { resetDataLoad } from '../../actions/data_load_actions'
 const mapStateToProps = (state) => {
     // console.log(state)
     return {
-        topThree: state.watches.slice(0, 3),
-        otherResults: state.watches.slice(3, ),
+        // topThree: state.watches.slice(0, 9),
+        // otherResults: state.watches.slice(9, ),
         watches: state.watches,
         errors: state.errors.search,
         searches: state.searches,
