@@ -67,7 +67,12 @@
 
 .search-result-save-input:focus {
     /* outline: none; */
-    outline-color: #D9B310;
+    outline: none;
+    /* outline-color: #328CC1;
+    outline-style: solid;
+    outline-width: 3px; */
+    box-shadow: 0 0 0 .15em #328CC1;
+    /* border: 2px #328CC1 solid; */
 }
 
 .search-result-save-button {
@@ -90,6 +95,7 @@
   /* float: left; */
   /* display: inline; */
   /* background-color: ivory; */
+  cursor: pointer;
   background-color: #1D2731;
   color: ivory;
   padding: .25em .5em;
@@ -109,8 +115,9 @@
 .search-result-query-tags-list-item:hover {
   /* background-color: #1D2731; */
   /* color: ivory; */
-  color: #1D2731;
-  background-color: #328CC1;
+    color: #1D2731;
+    background-color: #328CC1;
+    border-color: #D9B310;
 }
 .search-result-query-tags-list-item:hover div {
   /* background-color: #1D2731; */
@@ -174,22 +181,22 @@
     background-color: ivory;
     top: 5em;
     text-align: center;
-    border: 5px solid #1D2731;
+    border: .25em solid #1D2731;
     border-radius: 5px;
     margin: 1em;
 }
 
 .top-three-row li:hover {
-    border: 5px solid #D9B310;
+    border: .25em solid #D9B310;
     cursor: pointer;
 }
 
 .top-three-row li:hover img {
-    border-bottom: 5px solid #D9B310;
+    border-bottom: .2em solid #D9B310;
 }
 
 .top-three-row img {
-    border-bottom: 5px solid #1D2731;
+    border-bottom: .15em solid #1D2731;
     /* border-radius: 5px; */
 }
 

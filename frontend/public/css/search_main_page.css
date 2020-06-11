@@ -34,7 +34,7 @@ button {
     cursor: pointer;
     padding: 4px 10px;
     margin: 5px 5px;
-    border: 2px solid #1D2731;
+    border: 1px solid #1D2731;
     border-radius: 5px;
     font-size: 1em;
     font-weight: 800;
@@ -42,11 +42,23 @@ button {
 }
 
 button:hover {
-    background-color: #D9B310;
+    background-color: #328CC1;
     /* background-color: yellow; */
     color: #1D2731;
+     /* color: #263d5f; */
+    border: 1px solid #D9B310;
+    /* outline-color: #D9B310;
+    outline-style: solid;
+    outline-width: 2px; */
+}
+
+button:focus {
+    /* border: 1px solid #D9B310; */
+    /* background-color: #328CC1; */
+    /* color: #1D2731; */
+
     /* color: #263d5f; */
-    border: 2px solid #D9B310;
+    /* outline: none; */
 }
 
 footer {
