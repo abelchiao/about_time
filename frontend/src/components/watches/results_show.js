@@ -23,6 +23,8 @@ class ResultsShow extends React.Component {
     e.preventDefault();
     let search = {};
     search[searchProp] = this.props.searches.new[searchProp];
+    this.props.resetDataLoad();
+      // .then(() => this.props.fetchWatches(search));
     this.props.fetchWatches(search);
   }
 
@@ -33,6 +35,7 @@ class ResultsShow extends React.Component {
     let search = Object.assign(this.props.searches.new);
     delete search[searchProp];
     // console.log("SER>>>>>>>>>", search);
+    this.props.resetDataLoad();
     this.props.fetchWatches(search);
   }
 
