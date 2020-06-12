@@ -1,29 +1,24 @@
 import { connect } from 'react-redux';
-import { fetchSearch, newSearch } from '../../actions/search_actions';
 import { fetchWatches } from '../../actions/watch_actions';
+import { newSearch } from '../../actions/search_actions';
 import { openModal } from '../../actions/modal_actions';
-import ResultsShow from './results_show';
 import { resetDataLoad } from '../../actions/data_load_actions'
+import ResultsShow from './results_show';
 
-const mapStateToProps = (state) => {
-    // console.log(state)
+const mapStateToProps = state => {
     return {
-        // topThree: state.watches.slice(0, 9),
-        // otherResults: state.watches.slice(9, ),
-        watches: state.watches,
-        errors: state.errors.search,
-        searches: state.searches,
         currentUser: state.session.user,
+        watches: state.watches,
+        searches: state.searches,
+        errors: state.errors.search,
         dataLoad: state.ui.dataLoad
-    }
+    };
 };
 
 const mapDispatchToProps = dispatch => {
     return {
-        // TODO UNUSED
-        // fetchSearch: (data) => dispatch(fetchSearch(data)),
         fetchWatches: search => dispatch(fetchWatches(search)),
-        newSearch: (data) => dispatch(newSearch(data)),
+        newSearch: data => dispatch(newSearch(data)),
         openModal: (modal, watchId) => dispatch(openModal(modal, watchId)),
         resetDataLoad: () => dispatch(resetDataLoad())
     };
