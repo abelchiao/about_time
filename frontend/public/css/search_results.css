@@ -66,7 +66,6 @@
 }
 
 .search-result-save-input:focus {
-    /* outline: none; */
     outline: none;
     /* outline-color: #328CC1;
     outline-style: solid;
@@ -104,7 +103,6 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
-  /* visibility: hidden; */
 }
 
 .hidden {
@@ -113,17 +111,12 @@
 
 .search-result-query-tags-list-sort-button {
     margin: .75em;
-  /* display: flex; */
-  /* justify-content: center; */
-  /* flex-wrap: wrap; */
     /* float: left; */
     /* display: inline; */
-    /* background-color: ivory; */
     cursor: pointer;
     background-color: #1D2731;
     color: ivory;
     padding: .25em 2em;
-    /* margin: .25em; */
     border-color: #1D2731;
     border-width: 1px;
     border-style: solid;
@@ -140,7 +133,6 @@
 .search-result-query-tags-list-item {
     /* float: left; */
     /* display: inline; */
-    /* background-color: ivory; */
     cursor: pointer;
     background-color: #1D2731;
     color: ivory;
@@ -160,16 +152,12 @@
 }
 
 .search-result-query-tags-list-item:hover {
-  /* background-color: #1D2731; */
-  /* color: ivory; */
     color: #1D2731;
     background-color: #328CC1;
     border-color: #D9B310;
 }
 
 .search-result-query-tags-list-item:hover div {
-  /* background-color: #1D2731; */
-  /* color: ivory; */
   color: #1D2731;
   background-color: #328CC1;
 }
@@ -215,7 +203,6 @@
 }
 
 .search-result-query-tags-list-item-delete-icon:hover {
-  /* color: white; */
   color: #D9B310;
   /* background-color: white; */
 }
