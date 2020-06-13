@@ -75,7 +75,7 @@ class SignupForm extends React.Component {
     return (
       <div className='session-form-parent'>
         <div className='session-form-title'>SIGN UP</div>
-        <button onClick={this.demoLogin} className='demo-login-button'>DENMO LOGIN</button>
+        <button onClick={this.demoLogin} className='demo-login-button'>DEMO LOGIN</button>
         <div className='or-separator'>Or</div>
         <form className='session-form-main' onSubmit={this.handleSubmit}>
           {this.renderErrors()}
