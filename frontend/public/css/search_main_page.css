@@ -30,22 +30,23 @@ a {
 }
 
 button {
-    background-color: ivory;
+    background-color: #1D2731;
     cursor: pointer;
     padding: 4px 10px;
     margin: 5px 5px;
     border: 1px solid #1D2731;
     border-radius: 5px;
     font-size: 1em;
-    font-weight: 800;
-    color: #263d5f;
+    /* font-weight: 800; */
+    color: ivory;
     transition-duration: 0.3s;
+    
 }
 
 button:hover {
-    background-color: #328CC1;
+    background-color: #0B3C5D;
     /* background-color: yellow; */
-    color: #1D2731;
+    color: #D9B310;
     /* color: #263d5f; */
     border: 1px solid #D9B310;
     /* outline-color: #D9B310;

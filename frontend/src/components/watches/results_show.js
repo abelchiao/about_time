@@ -35,7 +35,7 @@ class ResultsShow extends React.Component {
         let search = {};
         search[searchProp] = this.props.searches.new[searchProp];
         this.props.resetDataLoad();
-        
+
         this.props.fetchWatches(search);
     };
 
@@ -125,12 +125,12 @@ class ResultsShow extends React.Component {
             :
                 null;
 
-        if (searchQueryTags !== null) {
-            searchQueryTags = 
-                (Object.values(searchQueryTags).every( v => (v == null ) ))
-                ?   <div>NO SEARCH PARAMETERS SELECTED</div>
-                :   searchQueryTags;
-        };
+        // if (searchQueryTags !== null) {
+        //     searchQueryTags = 
+        //         (Object.values(searchQueryTags).every( v => (v == null ) ))
+        //         ?   <div>NO SEARCH PARAMETERS SELECTED</div>
+        //         :   searchQueryTags;
+        // };
 
         let searchSortTags =
             ["price", "brand", "model", "movement", "case", "style", "gender"].map( searchProp => (
@@ -170,13 +170,13 @@ class ResultsShow extends React.Component {
             <div className="results-background">
                 <Navbar />
                 <div className="search-result-show">
-                    <div className="search-result-nav-container">
-                        { saveSearchInputs }
-                    </div>
                     <div className="search-result-query-tags">
                         <ul className="search-result-query-tags-list">
                             { searchQueryTags }
                         </ul>
+                    </div>
+                    <div className="search-result-nav-container">
+                        { saveSearchInputs }
                     </div>
                     <div className="search-result-query-tags-sort">
                         <div className="search-result-query-tags-list-sort-button" onClick={ () => this.handleShowSort() }>
