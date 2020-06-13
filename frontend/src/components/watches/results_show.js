@@ -12,7 +12,7 @@ class ResultsShow extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleTagSearch = this.handleTagSearch.bind(this);
         this.handleTagSearchDelete = this.handleTagSearchDelete.bind(this);
-        this.handleShowSearch = this.handleShowSearch.bind(this);
+        this.handleShowSort = this.handleShowSort.bind(this);
         this.loadMoreWatches = this.loadMoreWatches.bind(this);
     };
 
@@ -35,6 +35,7 @@ class ResultsShow extends React.Component {
         let search = {};
         search[searchProp] = this.props.searches.new[searchProp];
         this.props.resetDataLoad();
+        
         this.props.fetchWatches(search);
     };
 
@@ -47,7 +48,7 @@ class ResultsShow extends React.Component {
         this.props.fetchWatches(search);
     };
 
-    handleShowSearch() {
+    handleShowSort() {
         let sortTags = document.getElementsByClassName("search-result-query-tags-list-sort")[0];
         sortTags.classList.toggle('hidden');
         let sortIconRight = document.getElementsByClassName("search-result-query-tags-list-item-sort-icon-right")[0];
@@ -178,7 +179,7 @@ class ResultsShow extends React.Component {
                         </ul>
                     </div>
                     <div className="search-result-query-tags-sort">
-                        <div className="search-result-query-tags-list-sort-button" onClick={ () => this.handleShowSearch() }>
+                        <div className="search-result-query-tags-list-sort-button" onClick={ () => this.handleShowSort() }>
                             <div className="search-result-query-tags-list-item-text">
                                 SORT
                             </div>

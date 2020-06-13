@@ -130,6 +130,12 @@
     /* transition-duration: .3s; */
 }
 
+.search-result-query-tags-list-sort-button:hover {
+    color: #1D2731;
+    background-color: #328CC1;
+    border-color: #D9B310;
+}
+
 .search-result-query-tags-list-item {
     /* float: left; */
     /* display: inline; */
