@@ -55,8 +55,8 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className='session-form-parent'>
-        <div className='session-form-title'>Log In</div>
-        <button onClick={this.demoLogin} className='demo-login-button'>Demo Login</button>
+        <div className='session-form-title'>LOG IN</div>
+        <button onClick={this.demoLogin} className='demo-login-button'>DEMO LOGIN</button>
         <div className='or-separator'>Or</div>
         <form className='session-form-main' onSubmit={this.handleSubmit}>
           {this.renderErrors()}
@@ -84,7 +84,7 @@ class LoginForm extends React.Component {
                 />
             </div>
           </div>
-          <button>Log In</button>
+          <button>LOG IN</button>
         </form>
       </div>
     )
