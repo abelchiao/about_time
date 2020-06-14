@@ -19,7 +19,7 @@
   /* line-height: 20px; */
   /* font-weight: 200; */
   color: ivory;
-  background: #0B3C5D;
+  background: #1D2731;
   border-radius: 4px;
   width: 75%;
   margin-top: 32px;
@@ -41,7 +41,7 @@
   width: 33%;
   text-align: center;
   color: ivory;
-  background-color: #0B3C5D;
+  background-color: #1D2731;
 }
 
 .search-items-index {
@@ -61,7 +61,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
-  background-color: #0B3C5D;
+  background-color: #1D2731;
   border: .15em #1D2731 solid;
 }
 
@@ -75,25 +75,25 @@
   /* width: 66%; */
   display: flex;
   flex-direction: column;
-  background-color: #328CC1;
-  color: #1D2731;
+  background-color: #0B3C5D;
+  color: #D9B310;
   border: .15em #D9B310 solid;
 }
 
 .search-item-parent:hover div {
-  background-color: #328CC1;
-  color: #1D2731;
+  background-color: #0B3C5D;
+  color: #D9B310;
 }
 
 .search-item-parent:hover li {
   /* background-color: #1D2731; */
   /* color: ivory; */
-  color: #1D2731;
-  background-color: ivory;
+  color: #D9B310;
+  background-color: #1D2731;
 }
 
 .search-item-header {
-  background-color: #0B3C5D;
+  background-color: transparent;
   /* border: none; */
   color: ivory;
   padding: .5em .5em;
@@ -135,11 +135,12 @@
 
 .profile-search-delete-icon:hover {
   /* color: white; */
-  color: #D9B310;
+  color: ivory;
   /* background-color: white; */
 }
 
 .search-item-details {
+  background-color: transparent;
   padding: .5em;
   /* margin: .25em; */
   /* background-color: #0B3C5D; */
@@ -153,11 +154,11 @@
   float: left;
   /* display: inline; */
   /* background-color: ivory; */
-  background-color: #1D2731;
+  background-color: #0B3C5D;
   color: ivory;
   padding: .25em;
   margin: .25em;
-  border-color: #1D2731;
+  border-color: #0B3C5D;
   border-width: 1px;
   border-style: solid;
   border-radius: .25em;
