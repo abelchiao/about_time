@@ -33,6 +33,7 @@ class Navbar extends React.Component {
         console.log("HIT222", document.getElementById("myDropdown").classList)
         document.getElementById("myDropdown").classList.toggle("show");
         console.log("HIT333", document.getElementById("myDropdown").classList)
+        document.getElementsByClassName("dropbtn")[0].classList.toggle("hidden");
     }
 
     render() {
@@ -48,6 +49,7 @@ class Navbar extends React.Component {
                     openDropdown.classList.remove('show');
                 }
             }
+            document.getElementsByClassName("dropbtn")[0].classList.remove("hidden");
         }
     }
 
