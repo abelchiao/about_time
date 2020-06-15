@@ -21,8 +21,8 @@
   color: ivory;
   background: #1D2731;
   border-radius: 4px;
-  width: 75%;
-  margin-top: 32px;
+  width: 45%;
+  margin-top: 2em;
 }
 
 .search-items-container {
@@ -156,7 +156,7 @@
   /* background-color: ivory; */
   background-color: #0B3C5D;
   color: ivory;
-  padding: .25em;
+  padding: .25em .5em;
   margin: .25em;
   border-color: #0B3C5D;
   border-width: 1px;
