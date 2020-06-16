@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 // const path = require('path');
 
 import MainPage from './main/main_page';
+import ScrollUp from './navbar/scrollUp';
 import Modal from './modal/modal';
 import ModalTestPageContainer from './modal/modal-test-page-container';
 import ResultsShowContainer from './watches/results_show_container';
@@ -18,6 +19,7 @@ import ProfilePageContainer from './users/profile_page_container';
 // }
 const App = () => (
   <div id="app">
+    <ScrollUp />
     <Modal />
     <Switch>
       <Route exact path="/modal-test" component={ModalTestPageContainer} />
