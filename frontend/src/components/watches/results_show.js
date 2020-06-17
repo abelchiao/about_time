@@ -197,13 +197,18 @@ class ResultsShow extends React.Component {
                             { resultWatches.map( (watch, idx) => (
 // TODO css for watch details
                                 <li key={ idx } value={ watch._id } onClick={ () => this.props.openModal("show-watch", watch._id) }>
-                                    <img alt="" className="watch-photo" src={ watch.imageURL } />
-                                    <br />
-                                    { watch.brand }
-                                    <br />
-                                    { watch.model }
-                                    <br />
-                                    ${ watch.price }
+                                    <div className="watch-list-photo-container" >
+                                        <img alt="" className="watch-photo" src={ watch.imageURL } />
+                                    </div>
+                                    <div>
+                                        { watch.brand }
+                                    </div>
+                                    <div>
+                                        { watch.model }
+                                    </div>
+                                    <div>
+                                        ${ watch.price }
+                                    </div>
                                 </li>
                             )) }
                         </ul>
