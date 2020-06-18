@@ -283,13 +283,16 @@
     margin: .5em;
     transition-duration: 0.3s;
     /* max-width:24%; */
-    /* background-color: black; */
+    background-color: #1D2731;
     max-width: 18em;
+    color: ivory;
 }
 
 .top-three-row li:hover {
     border: .25em solid #D9B310;
     cursor: pointer;
+    color: #D9B310;
+    background-color: #0B3C5D;
 }
 
 .top-three-row li:hover img {
@@ -325,14 +328,14 @@
     /* max-width: 18vw; */
     /* height: auto; */
     /* background-size: cover; */
-    /* background-color: black; */
+    background-color: ivory;
     /* width: 33%; */
-    border-bottom: .15em solid #1D2731;
+    border-bottom: .2em solid #1D2731;
     margin-bottom: .25em;
  }
 
  .top-three-row li:hover .watch-list-photo-container {
-    border-bottom: .15em solid #D9B310;
+    border-bottom: .2em solid #D9B310;
  }
 
 .watch-list-photo-detail {
