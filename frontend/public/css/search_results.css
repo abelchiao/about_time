@@ -76,7 +76,6 @@
     border-style: solid;
     border-radius: .25em;
     font-size: 1em;
-
 }
 
 .search-result-save-input:hover {
@@ -292,7 +291,7 @@
     /* display: inline-block; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
     /* background-color: ivory; */
     top: 5em;
