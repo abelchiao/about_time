@@ -63,17 +63,28 @@ class ResultsShow extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        if (this.state.searchLabel === "") {
-           alert("Add a label to save this search");
+        e.stopPropagation();
+
+        let alertText = document.getElementsByClassName("alert-text")[0];
+        if (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser) {
+            alertText.innerHTML = "LOG IN TO SAVE SEARCH";
         } else {
-            let data = {
-                label: this.state.searchLabel,
-                query: this.props.searches.new
+            if (this.state.searchLabel === "") {
+                alertText.innerHTML = "ADD LABEL TO SAVE SEARCH";
+            } else {
+                let data = {
+                    label: this.state.searchLabel,
+                    query: this.props.searches.new
+                };
+                alertText.innerHTML = "SEARCH SAVING...";
+                this.props.newSearch(data)
+                    .then( () => alertText.innerHTML = "SEARCH SAVED!")
+                    .catch( () => alertText.innerHTML = "ERROR: SEARCH NOT SAVED!");
             };
-            this.props.newSearch(data)
-                .then(() => alert("Search saved!") );
         };
+        document.getElementsByClassName("alert")[0].style.display = "flex";
     };
+
 
     render() {
         const { dataLoad } = this.props;
@@ -91,7 +102,7 @@ class ResultsShow extends React.Component {
             ?
                 <div className="search-result-save-container">
                     <input className="search-result-save-input" type="text" placeholder="Log in to save this search" value={ this.state.searchLabel } onChange={ this.update("searchLabel") } ></input>
-                    <button className="search-result-save-button" onClick={ () => alert("Log in to save this search!") }>
+                    <button className="search-result-save-button" onClick={ this.handleSubmit }>
                         SAVE SEARCH
                     </button>
                 </div>
@@ -166,9 +177,23 @@ class ResultsShow extends React.Component {
 
         let resultWatches = allWatches.slice(0, this.state.resultWatchesCount);
 
+        window.onclick = function (event) {
+            let alert = document.getElementsByClassName("alert")[0];
+            alert.style.display = (alert.style.display !== "none") ? "none" : alert.style.display;
+            // if (alert.style.display !== "none") {
+            //     alert.style.display = "none"
+            // }
+        }
+
         return (
             <div className="results-background">
                 <Navbar />
+                {/* <div className="alert" onClick={() => { document.getElementsByClassName("alert")[0].style.display = "none" }}> */}
+                <div className="alert" >
+                    <div className="alert-text"></div>
+                    <span className="alert-close">&times;</span>
+                    {/* <span className="alert-close" onClick={ () => { document.getElementsByClassName("alert")[0].style.display = "none"} }>&times;</span> */}
+                </div>
                 <div className="search-result-show">
                     <div className="search-result-nav-container">
                         { saveSearchInputs }

@@ -350,6 +350,41 @@
   z-index: 10;
 }
 
+
+.alert {
+  padding: 1em 0em; 
+  background-color: #D9B310;
+  z-index: 999;
+  opacity: 90%;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  position: fixed;
+  top: 0em;
+  left: 0em;
+  width: 100%;
+  height: 3vh;
+  font-size: 2em;
+  font-weight: bold;
+  color: #1D2731;
+}
+
+.alert-text {
+  opacity: 99%;
+}
+
+.alert-close {
+  font-size: 2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  color: #1D2731;
+}
+
+.alert-close:hover {
+  color: ivory;
+}
+
 .hidden {
     display: none;
 }
@@ -366,6 +401,10 @@
     .watch-list-photo-detail  {
         font-size: .85em;
     }
+
+    .alert {
+      font-size: 1.75em;
+    }
 }
 
 @media only screen and (max-width: 801px) {
@@ -378,5 +417,10 @@
     }
     .watch-list-photo-detail  {
         font-size: .8em;
+    }
+
+    .alert {
+      height: 6vh;
+      font-size: 1.25em;
     }
 }
