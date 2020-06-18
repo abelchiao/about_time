@@ -27,8 +27,13 @@ class ProfilePage extends React.Component {
     handleDeleteClick(e, searchId) {
         e.preventDefault();
         e.stopPropagation();
+        
+        let alertText = document.getElementsByClassName("alert-text")[0];
+        alertText.innerHTML = "DELETING SEARCH...";
         this.props.deleteSearch(searchId)
-            .then(() => alert("Search deleted!"));
+            .then( () => alertText.innerHTML = "SEARCH DELETED!")
+            .catch( () => alertText.innerHTML = "ERROR: SEARCH NOT DELETED!");
+        document.getElementsByClassName("alert")[0].style.display = "flex";
     };
 
     render() {

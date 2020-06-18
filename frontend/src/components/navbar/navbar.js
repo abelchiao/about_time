@@ -53,8 +53,20 @@ class Navbar extends React.Component {
         }
     }
 
+    window.onclick = function (event) {
+        event.stopPropagation();
+        let alert = document.getElementsByClassName("alert")[0];
+        if (alert !== undefined) {
+            alert.style.display = (alert.style.display !== "none") ? "none" : alert.style.display;
+        }
+    }
+
     return(
             <div className="dropdown">
+                <div className="alert" >
+                    <div className="alert-text"></div>
+                    <span className="alert-close">&times;</span>
+                </div>
                 <button onClick={(e) => this.myFunction(e)} className="dropbtn">
                     <svg aria-hidden="true" onClick={(e) => {console.log("HIT111"); this.myFunction(e)}} className="dropbtn-svg" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path fill="currentColor" d="M16 132h416c8.837 0 16-7.163 16-16V76c0-8.837-7.163-16-16-16H16C7.163 60 0 67.163 0 76v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16zm0 160h416c8.837 0 16-7.163 16-16v-40c0-8.837-7.163-16-16-16H16c-8.837 0-16 7.163-16 16v40c0 8.837 7.163 16 16 16z"></path></svg>
                 </button>
@@ -62,21 +74,20 @@ class Navbar extends React.Component {
                     { (!this.props.currentUser || Object.entries(this.props.currentUser).length === 0)
                         ?
                             <div>
-                                <button onClick={this.openLoginModal}>LOG IN</button>
-                                <button onClick={this.openSignupModal}>SIGN UP</button>
+                                <button className="dropdown-item" onClick={this.openLoginModal}>LOG IN</button>
+                                <button className="dropdown-item" onClick={this.openSignupModal}>SIGN UP</button>
                             </div>
                         : 
                             <div>
-                                <button onClick={this.logout}>SIGN OUT</button>
-                                { (window.location.hash !== "#/profile") ? <Link to='/profile'><button>PROFILE</button></Link> : null }
+                                <button className="dropdown-item" onClick={this.logout}>SIGN OUT</button>
+                                { (window.location.hash !== "#/profile") ? <Link to='/profile'><button className="dropdown-item">PROFILE</button></Link> : null }
                             </div>
                     }
                     <div>
-                        { (window.location.hash !== "#/") ? <Link to='/'><button>NEW SEARCH</button></Link> : null }
+                        { (window.location.hash !== "#/") ? <Link to='/'><button className="dropdown-item">NEW SEARCH</button></Link> : null }
                     </div>
-
                 </div>
-            </div>            
+            </div>
         // <div className="navbar">
         //     { (!this.props.currentUser || Object.entries(this.props.currentUser).length === 0) ?
         //         <div>

@@ -177,23 +177,11 @@ class ResultsShow extends React.Component {
 
         let resultWatches = allWatches.slice(0, this.state.resultWatchesCount);
 
-        window.onclick = function (event) {
-            let alert = document.getElementsByClassName("alert")[0];
-            alert.style.display = (alert.style.display !== "none") ? "none" : alert.style.display;
-            // if (alert.style.display !== "none") {
-            //     alert.style.display = "none"
-            // }
-        }
 
         return (
             <div className="results-background">
                 <Navbar />
                 {/* <div className="alert" onClick={() => { document.getElementsByClassName("alert")[0].style.display = "none" }}> */}
-                <div className="alert" >
-                    <div className="alert-text"></div>
-                    <span className="alert-close">&times;</span>
-                    {/* <span className="alert-close" onClick={ () => { document.getElementsByClassName("alert")[0].style.display = "none"} }>&times;</span> */}
-                </div>
                 <div className="search-result-show">
                     <div className="search-result-nav-container">
                         { saveSearchInputs }
