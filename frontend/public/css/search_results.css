@@ -106,6 +106,25 @@
 
 .search-result-save-button {
     margin: .1em 0em;
+
+    background-color: #1D2731;
+    cursor: pointer;
+    padding: 4px 10px;
+    border: 1px solid #1D2731;
+    border-radius: 5px;
+    font-size: 1em;
+    color: ivory;
+    transition-duration: 0.3s;
+}
+
+.search-result-save-button:hover {
+    background-color: #0B3C5D;
+    color: #D9B310;
+    border: 1px solid #D9B310;
+}
+
+.search-result-save-button:focus {
+    outline: none;
 }
 
 .search-result-query-tags {
@@ -275,10 +294,10 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: ivory;
+    /* background-color: ivory; */
     top: 5em;
     text-align: center;
-    border: .25em solid #1D2731;
+    border: .25em solid ivory;
     border-radius: 5px;
     margin: .5em;
     transition-duration: 0.3s;

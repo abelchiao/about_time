@@ -84,7 +84,7 @@ class LoginForm extends React.Component {
                 />
             </div>
           </div>
-          <button>LOG IN</button>
+          <button className="dropdown-item">LOG IN</button>
         </form>
       </div>
     )

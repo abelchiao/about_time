@@ -125,7 +125,7 @@ class SignupForm extends React.Component {
               />
             </div>
           </div>
-          <button>SIGN UP</button>
+          <button className="dropdown-item">SIGN UP</button>
         </form>
         
       </div>
