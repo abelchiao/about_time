@@ -6,7 +6,7 @@ class ResultsShow extends React.Component {
         super(props);
         this.state = {
             searchLabel: "",
-            resultWatchesCount: 9,
+            resultWatchesCount: 15,
             sortBy: "price"
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -195,19 +195,18 @@ class ResultsShow extends React.Component {
                     <div className="top-three-row">
                         <ul>
                             { resultWatches.map( (watch, idx) => (
-// TODO css for watch details
                                 <li key={ idx } value={ watch._id } onClick={ () => this.props.openModal("show-watch", watch._id) }>
-                                    <div className="watch-list-photo-container" >
+                                    <div className="watch-list-photo-container">
                                         <img alt="" className="watch-photo" src={ watch.imageURL } />
                                     </div>
-                                    <div>
+                                    <div className="watch-list-photo-detail">
                                         { watch.brand }
                                     </div>
-                                    <div>
-                                        { watch.model }
+                                    <div className="watch-list-photo-detail">
+                                        <div>{watch.model}</div>
                                     </div>
-                                    <div>
-                                        ${ watch.price }
+                                    <div className="watch-list-photo-detail">
+                                        ${watch.price}
                                     </div>
                                 </li>
                             )) }
