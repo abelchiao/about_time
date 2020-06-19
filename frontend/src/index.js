@@ -28,6 +28,14 @@ import { getWatch, getWatches, createWatch } from './util/watch_api_util';
 // import { createReview, editReview, deleteReview } from "./util/review_api_util"
 import { createReview, updateReview, deleteReview } from './actions/review_actions'
 
+import "./styles/reset.scss";
+import "./styles/search_main_page.scss";
+import "./styles/search_results.scss";
+import "./styles/session.scss";
+import "./styles/watch_show_modal.scss";
+import "./styles/profile.scss";
+import "./styles/loading_spinner.scss";
+
 document.addEventListener('DOMContentLoaded', () => {
     let store;
 
