@@ -379,7 +379,7 @@
   padding: 1em 0em; 
   background-color: $color-2;
   z-index: 999;
-  opacity: 90%;
+  opacity: .90;
   display: none;
   align-items: center;
   justify-content: space-evenly;
@@ -394,7 +394,7 @@
 }
 
 .alert-text {
-  opacity: 99%;
+  opacity: .99;
 }
 
 .alert-close {
