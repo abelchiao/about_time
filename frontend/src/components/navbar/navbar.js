@@ -40,6 +40,8 @@ class Navbar extends React.Component {
 
     // Close the dropdown menu if the user clicks outside of it
     window.onclick = function (event) {
+        event.stopPropagation();
+
         if (!event.target.matches('.dropbtn')) {
             var dropdowns = document.getElementsByClassName("dropdown-content");
             var i;
@@ -51,10 +53,7 @@ class Navbar extends React.Component {
             }
             document.getElementsByClassName("dropbtn")[0].classList.remove("hidden");
         }
-    }
 
-    window.onclick = function (event) {
-        event.stopPropagation();
         let alert = document.getElementsByClassName("alert")[0];
         if (alert !== undefined) {
             alert.style.display = (alert.style.display !== "none") ? "none" : alert.style.display;

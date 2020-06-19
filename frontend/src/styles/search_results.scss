@@ -1,3 +1,5 @@
+@import "colors";
+
 .results-background {
     /* Top image is German movement bg, bottom is Casio GShock bg */
     /* background-image: url("https://drive.google.com/uc?exportview&id=160pGDaZBgTxwIV-d-CuJ1wPUPke3DU4e"); */
@@ -13,9 +15,9 @@
 }
 
 .search-result-show {
-    /* background-color: #0B3C5D; */
+    /* background-color: $color-4; */
     margin: 2em auto;
-    /* border: 2px solid #1D2731; */
+    /* border: 2px solid $color-5; */
     filter: alpha(opacity=90);
     max-width: 90%;
     min-width: 75%;
@@ -30,7 +32,7 @@
 }
 
 .search-result-show h1 {
-    color: ivory;
+    color: $color-1;
 }
 
 .search-result-nav-container {
@@ -39,7 +41,7 @@
     justify-content: center;
     /* align-items: flex-end; */
     flex-wrap: wrap;
-    /* border-bottom: #1D2731 2px solid; */
+    /* border-bottom: $color-5 2px solid; */
     /* padding: 0em 22em; */
     width: 75%
 }
@@ -56,7 +58,7 @@
 
 .search-result-save-input {
     flex-grow: 1;
-    /* background: ivory; */
+    /* background: $color-1; */
     /* font-size: 1em; */
     margin: 0em .25em 0em 0em;
     /* margin: .75em; */
@@ -65,61 +67,62 @@
     /* padding: .25em 2em; */
 
     /* border-radius: .25em; */
-    /* border: 2px solid #1D2731; */
+    /* border: 2px solid $color-5; */
 
-    background-color: #1D2731;
-    color: ivory;
+    background-color: $color-5;
+    color: $color-1;
     padding: .25em 1em;
     /* margin: .25em; */
-    border-color: #1D2731;
+    border-color: $color-5;
     border-width: 1px;
     border-style: solid;
     border-radius: .25em;
     font-size: 1em;
+    transition-duration: 0.3s;
 }
 
 .search-result-save-input:hover {
-    color: #D9B310;
-    background-color: #0B3C5D;
-    border-color: #D9B310;
+    color: $color-2;
+    background-color: $color-4;
+    border-color: $color-2;
 
     /* outline: none; */
-    /* outline-color: #D9B310; */
+    /* outline-color: $color-2; */
 }
 
 .search-result-save-input:focus {
     outline: none;
-    /* outline-color: #328CC1;
+    /* outline-color: #color-3;
     outline-style: solid;
     outline-width: 3px; */
     
-    /* border-color: #D9B310; */
+    /* border-color: $color-2; */
     
-    /* box-shadow: 0 0 0 .15em #328CC1; */
-    /* border: 2px #328CC1 solid; */
+    /* box-shadow: 0 0 0 .15em #color-3; */
+    /* border: 2px #color-3 solid; */
 
-    background-color: #0B3C5D;
-    color: #D9B310;
-    border-color: #D9B310;
+    background-color: $color-4;
+    color: $color-2;
+    border-color: $color-2;
 }
 
 .search-result-save-button {
     margin: .1em 0em;
 
-    background-color: #1D2731;
+    background-color: $color-5;
     cursor: pointer;
     padding: 4px 10px;
-    border: 1px solid #1D2731;
+    border: 1px solid $color-5;
     border-radius: 5px;
     font-size: 1em;
-    color: ivory;
+    color: $color-1;
     transition-duration: 0.3s;
 }
 
 .search-result-save-button:hover {
-    background-color: #0B3C5D;
-    color: #D9B310;
-    border: 1px solid #D9B310;
+    background-color: $color-4;
+    color: $color-2;
+    border: 1px solid $color-2;
 }
 
 .search-result-save-button:focus {
@@ -128,7 +131,7 @@
 
 .search-result-query-tags {
     padding: 0em;
-    /* border-bottom: #1D2731 2px solid; */
+    /* border-bottom: $color-5 2px solid; */
     width: 66%;
 }
 
@@ -146,7 +149,7 @@
     align-items: center;
     justify-content: center;
     /* padding: 0em 6em; */
-    /* border-bottom: #1D2731 2px solid; */
+    /* border-bottom: $color-5 2px solid; */
     width: 90%;
 }
 
@@ -163,10 +166,10 @@
     /* float: left; */
     /* display: inline; */
     cursor: pointer;
-    background-color: #1D2731;
-    color: ivory;
+    background-color: $color-5;
+    color: $color-1;
     padding: .25em;
-    border-color: #1D2731;
+    border-color: $color-5;
     border-width: 1px;
     border-style: solid;
     border-radius: .25em;
@@ -176,31 +179,31 @@
     align-content: center;
     justify-content: center;
     align-items:center;
-    /* transition-duration: .3s; */
+    transition-duration: .3s;
     /* max-width: 66%; */
     width: 90%;
 }
 
 .search-result-query-tags-list-sort-button:hover {
-    color: #D9B310;
-    background-color: #0B3C5D;
-    border-color: #D9B310;
+    color: $color-2;
+    background-color: $color-4;
+    border-color: $color-2;
 }
 
 .search-result-query-tags-list-sort-button:hover div {
-    color: #D9B310;
-    background-color: #0B3C5D;
+    color: $color-2;
+    background-color: $color-4;
 }
 
 .search-result-query-tags-list-item {
     /* float: left; */
     /* display: inline; */
     cursor: pointer;
-    background-color: #1D2731;
-    color: ivory;
+    background-color: $color-5;
+    color: $color-1;
     padding: .25em 1em;
     margin: .25em;
-    border-color: #1D2731;
+    border-color: $color-5;
     border-width: 1px;
     border-style: solid;
     border-radius: .25em;
@@ -210,18 +213,18 @@
     align-content: center;
     justify-content: center;
     align-items:center;
-    /* transition-duration: .3s; */
+    transition-duration: .3s;
 }
 
 .search-result-query-tags-list-item:hover {
-    color: #D9B310;
-    background-color: #0B3C5D;
-    border-color: #D9B310;
+    color: $color-2;
+    background-color: $color-4;
+    border-color: $color-2;
 }
 
 .search-result-query-tags-list-item:hover div {
-  color: #D9B310;
-  background-color: #0B3C5D;
+  color: $color-2;
+  background-color: $color-4;
 }
 
 /* .search-result-query-tags-list-item-text {
@@ -235,10 +238,10 @@
   width: 1em;
   margin: 0px;
   padding: 0px 0px 0em 1em;
-  /* background-color: #0B3C5D; */
+  /* background-color: $color-4; */
   border: 0px;
   border-radius: 0px;
-  color: ivory;
+  color: $color-1;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -250,10 +253,10 @@
   height: 1em;
   margin: 0px;
   padding: 0px 0px 0em 1em;
-  /* background-color: #0B3C5D; */
+  /* background-color: $color-4; */
   border: 0px;
   border-radius: 0px;
-  color: ivory;
+  color: $color-1;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
@@ -265,7 +268,7 @@
 }
 
 .search-result-query-tags-list-item-delete-icon:hover {
-  color: ivory;
+  color: $color-1;
 }
 
 .top-three-row {
@@ -293,32 +296,32 @@
     flex-direction: column;
     /* justify-content: center; */
     align-items: center;
-    /* background-color: ivory; */
+    /* background-color: $color-1; */
     top: 5em;
     text-align: center;
-    border: .25em solid ivory;
+    border: .25em solid $color-1;
     border-radius: 5px;
     margin: .5em;
     transition-duration: 0.3s;
     /* max-width:24%; */
-    background-color: #1D2731;
+    background-color: $color-5;
     max-width: 18em;
-    color: ivory;
+    color: $color-1;
 }
 
 .top-three-row li:hover {
-    border: .25em solid #D9B310;
+    border: .25em solid $color-2;
     cursor: pointer;
-    color: #D9B310;
-    background-color: #0B3C5D;
+    color: $color-2;
+    background-color: $color-4;
 }
 
 .top-three-row li:hover img {
-    /* border-bottom: .2em solid #D9B310; */
+    /* border-bottom: .2em solid $color-2; */
 }
 
 .top-three-row img {
-    /* border-bottom: .15em solid #1D2731; */
+    /* border-bottom: .15em solid $color-5; */
     /* border-radius: 5px; */
 }
 
@@ -346,14 +349,14 @@
     /* max-width: 18vw; */
     /* height: auto; */
     /* background-size: cover; */
-    background-color: ivory;
+    background-color: $color-1;
     /* width: 33%; */
-    border-bottom: .2em solid #1D2731;
+    border-bottom: .2em solid $color-5;
     margin-bottom: .25em;
  }
 
  .top-three-row li:hover .watch-list-photo-container {
-    border-bottom: .2em solid #D9B310;
+    border-bottom: .2em solid $color-2;
  }
 
 .watch-list-photo-detail {
@@ -374,7 +377,7 @@
 
 .alert {
   padding: 1em 0em; 
-  background-color: #D9B310;
+  background-color: $color-2;
   z-index: 999;
   opacity: 90%;
   display: none;
@@ -387,7 +390,7 @@
   height: 3vh;
   font-size: 2em;
   font-weight: bold;
-  color: #1D2731;
+  color: $color-5;
 }
 
 .alert-text {
@@ -399,11 +402,11 @@
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
-  color: #1D2731;
+  color: $color-5;
 }
 
 .alert-close:hover {
-  color: ivory;
+  color: $color-1;
 }
 
 .hidden {
