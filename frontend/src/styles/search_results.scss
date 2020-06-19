@@ -403,9 +403,22 @@
   cursor: pointer;
   transition: 0.3s;
   color: $color-5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .alert-close:hover {
+  color: $color-1;
+}
+
+.alert-close-icon {
+  color: $color-5;
+  width: 1em;
+  height: 1em;
+}
+
+.alert-close-icon:hover {
   color: $color-1;
 }
 
