@@ -26,22 +26,23 @@ class ResultsShow extends React.Component {
   
     loadMoreWatches() {
         if ((window.innerHeight + document.documentElement.scrollTop) === document.scrollingElement.scrollHeight) {
-          this.setState({resultWatchesCount: this.state.resultWatchesCount + 6});
+            this.setState({ resultWatchesCount: this.state.resultWatchesCount + 6 });
         };
     };
 
     handleTagSearch(e, searchProp) {
         e.preventDefault();
+
         let search = {};
         search[searchProp] = this.props.searches.new[searchProp];
         this.props.resetDataLoad();
-
         this.props.fetchWatches(search);
     };
 
     handleTagSearchDelete(e, searchProp) {
         e.preventDefault();
         e.stopPropagation();
+
         let search = Object.assign(this.props.searches.new);
         delete search[searchProp];
         this.props.resetDataLoad();
@@ -99,25 +100,12 @@ class ResultsShow extends React.Component {
 
         let saveSearchInputs = 
             (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser)
-            ?
-                <div className="search-result-save-container">
-                    <input className="search-result-save-input" type="text" placeholder="Log in to save search" value={ this.state.searchLabel } onChange={ this.update("searchLabel") } ></input>
-                    <button className="search-result-save-button" onClick={ this.handleSubmit }>
-                        SAVE SEARCH
-                    </button>
-                </div>
-        
-            :
-                <div className="search-result-save-container">
-                    <input className="search-result-save-input" type="text" placeholder="Add a label to save search" value={ this.state.searchLabel } onChange={ this.update("searchLabel") } ></input>
-                    <button className="search-result-save-button" onClick={ this.handleSubmit }>
-                        SAVE SEARCH
-                    </button>
-                </div>;
+            ? "Log in to save search"
+            : "Add a label to save search";
 
         let searchQueryTags =
             (this.props.searches !== undefined)
-            ? 
+            ?
                 Object.keys(this.props.searches.new)
                     .map( searchProp => (
                         (this.props.searches.new[searchProp] !== "")
@@ -135,13 +123,6 @@ class ResultsShow extends React.Component {
                 )
             :
                 null;
-
-        // if (searchQueryTags !== null) {
-        //     searchQueryTags = 
-        //         (Object.values(searchQueryTags).every( v => (v == null ) ))
-        //         ?   <div>NO SEARCH PARAMETERS SELECTED</div>
-        //         :   searchQueryTags;
-        // };
 
         let searchSortTags =
             ["price", "brand", "model", "movement", "case", "style", "gender"].map( searchProp => (
@@ -181,10 +162,14 @@ class ResultsShow extends React.Component {
         return (
             <div className="results-background">
                 <Navbar />
-                {/* <div className="alert" onClick={() => { document.getElementsByClassName("alert")[0].style.display = "none" }}> */}
                 <div className="search-result-show">
                     <div className="search-result-nav-container">
-                        { saveSearchInputs }
+                        <div className="search-result-save-container">
+                            <input className="search-result-save-input" type="text" placeholder={ saveSearchInputs } value={ this.state.searchLabel } onChange={ this.update("searchLabel") } ></input>
+                            <button className="search-result-save-button" onClick={ this.handleSubmit }>
+                                SAVE SEARCH
+                            </button>
+                        </div>
                     </div>
                     <div className="search-result-query-tags">
                         <ul className="search-result-query-tags-list">
@@ -216,10 +201,10 @@ class ResultsShow extends React.Component {
                                         { watch.brand }
                                     </div>
                                     <div className="watch-list-photo-detail">
-                                        <div>{watch.model}</div>
+                                        { watch.model }
                                     </div>
                                     <div className="watch-list-photo-detail">
-                                        ${watch.price}
+                                        ${ watch.price }
                                     </div>
                                 </li>
                             )) }
