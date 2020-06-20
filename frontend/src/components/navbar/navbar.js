@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { withRouter } from "react-router-dom";
 import { Link } from 'react-router-dom';
 import { openModal, closeModal } from '../../actions/modal_actions';
 import { logout } from '../../actions/session_actions';
@@ -21,10 +22,9 @@ class Navbar extends React.Component {
         this.props.openModal('signup')
     }
 
-    logout (e) {
+    logout(e) {
         this.props.logout();
     }
-
 
     /* When the user clicks on the button,
     toggle between hiding and showing the dropdown content */
@@ -77,15 +77,18 @@ class Navbar extends React.Component {
                             <div>
                                 <button className="dropdown-item" onClick={this.openLoginModal}>LOG IN</button>
                                 <button className="dropdown-item" onClick={this.openSignupModal}>SIGN UP</button>
+                                { (window.location.hash !== "#/") ? <button className="dropdown-item" onClick={ () => this.props.history.push(`/`) }>NEW SEARCH</button> : null }
                             </div>
                         : 
                             <div>
                                 <button className="dropdown-item" onClick={this.logout}>SIGN OUT</button>
-                                { (window.location.hash !== "#/profile") ? <Link to='/profile'><button className="dropdown-item">PROFILE</button></Link> : null }
+                                {/* { (window.location.hash !== "#/profile") ? <Link to='/profile'><button className="dropdown-item">PROFILE</button></Link> : null } */}
+                                { (window.location.hash !== "#/profile") ? <button className="dropdown-item" onClick={ () => this.props.history.push(`/profile`) }>PROFILE</button> : null }
+                                { (window.location.hash !== "#/") ? <button className="dropdown-item" onClick={ () => this.props.history.push(`/`) }>NEW SEARCH</button> : null }
                             </div>
                     }
                     <div>
-                        { (window.location.hash !== "#/") ? <Link to='/'><button className="dropdown-item">NEW SEARCH</button></Link> : null }
+                        {/* { (window.location.hash !== "#/") ? <button className="dropdown-item" onClick={ () => this.props.history.push(`/`) }>NEW SEARCH</button> : null } */}
                     </div>
                 </div>
             </div>
@@ -118,4 +121,4 @@ const mapDispatchToProps = dispatch => ({
     logout: () => dispatch(logout())
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Navbar));
