@@ -101,7 +101,7 @@ class ResultsShow extends React.Component {
             (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser)
             ?
                 <div className="search-result-save-container">
-                    <input className="search-result-save-input" type="text" placeholder="Log in to save this search" value={ this.state.searchLabel } onChange={ this.update("searchLabel") } ></input>
+                    <input className="search-result-save-input" type="text" placeholder="Log in to save search" value={ this.state.searchLabel } onChange={ this.update("searchLabel") } ></input>
                     <button className="search-result-save-button" onClick={ this.handleSubmit }>
                         SAVE SEARCH
                     </button>
@@ -109,7 +109,7 @@ class ResultsShow extends React.Component {
         
             :
                 <div className="search-result-save-container">
-                    <input className="search-result-save-input" type="text" placeholder="Add a label to save this search" value={ this.state.searchLabel } onChange={ this.update("searchLabel") } ></input>
+                    <input className="search-result-save-input" type="text" placeholder="Add a label to save search" value={ this.state.searchLabel } onChange={ this.update("searchLabel") } ></input>
                     <button className="search-result-save-button" onClick={ this.handleSubmit }>
                         SAVE SEARCH
                     </button>
