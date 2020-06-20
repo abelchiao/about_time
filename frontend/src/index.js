@@ -31,6 +31,7 @@ import { createReview, updateReview, deleteReview } from './actions/review_actio
 import "./styles/reset.scss";
 import "./styles/search_main_page.scss";
 import "./styles/search_results.scss";
+import "./styles/navbar.scss";
 import "./styles/session.scss";
 import "./styles/watch_show_modal.scss";
 import "./styles/profile.scss";

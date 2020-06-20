@@ -1,0 +1,312 @@
+@import "colors";
+
+.navbar {
+    align-self: flex-start;
+    background-color: transparent;
+    display: flex;
+    justify-content: flex-start;
+}
+
+
+/* Dropdown Button */
+.dropbtn {
+  /* background-color: #3498DB; */
+  /* color: white; */
+//   padding: 0em;
+//   margin: 0em;
+  /* font-size: 16px; */
+  /* border: none; */
+  /* cursor: pointer; */
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  /* background-color: #2980B9; */
+}
+
+
+.dropbtn {
+    background-color: transparent;
+    cursor: pointer;
+    /* padding: 4px 10px; */
+    /* margin: 5px 5px; */
+    /* border: 1px solid #1D2731; */
+    /* border-radius: 5px; */
+    font-size: 1em;
+    /* font-weight: 800; */
+    color: ivory;
+    /* transition-duration: 0.3s; */
+    /* border: 1px solid #1D2731; */
+    border: none;
+
+    padding: 0em;
+    transition-duration: 0.3s;
+}
+
+.dropbtn:hover {
+    background-color: transparent;
+    color: #D9B310;
+    border: none;
+    /* outline-color: #D9B310;
+    outline-style: solid;
+    outline-width: 2px; */
+    /* border: 1px solid #D9B310; */
+}
+
+.dropbtn:focus {
+    /* border: 1px solid #D9B310; */
+    /* background-color: #328CC1; */
+    /* color: #1D2731; */
+
+    /* color: #263d5f; */
+    outline: none;
+    background-color: transparent;
+    /* TODO on click toggle */
+    /* border: 1px solid #D9B310; */
+
+}
+
+.dropbtn-svg {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+    background: transparent;
+  /* position: relative; */
+  /* display: inline-block; */
+  align-self: flex-start;
+
+  /* overflow: hidden; */
+  position: fixed;
+  top: 0; 
+  display: block;
+  margin: .75em 0em 0em .75em;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  /* background-color: #f1f1f1; */
+  min-width: 11em;
+  /* box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); */
+  z-index: 100;
+  opacity: .90;
+  border: 1px solid ivory;
+  border-radius: .25em;
+}
+
+.dropdown-content:hover {
+    border-color: $color-2;
+}
+
+/* Links inside the dropdown */
+// .dropdown-content button {
+  /* color: black; */
+  /* padding: 12px 16px; */
+  /* text-decoration: none; */
+//   display: block;
+//   margin: .25em 0em;
+// }
+
+.dropdown-content div {
+  /* color: black; */
+  /* padding: 12px 16px; */
+  /* text-decoration: none; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+// .dropdown-content div button {
+//   margin: .25em 0em;
+// }
+
+.dropdown-content .dropdown-item:first-of-type {
+    // background-color: red;
+    margin-top: 0px;
+    border-radius: .25em .25em 0em 0em;
+    border-top: none;
+}
+
+.dropdown-content .dropdown-item:last-of-type {
+    // background-color: green;
+    margin-bottom: 0px;
+    border-radius: 0em 0em .25em .25em;
+    border-bottom: none;
+}
+
+.dropdown-item {
+    // margin: .25em 0em;
+    background-color: #1D2731;
+    cursor: pointer;
+    padding: 1em 1em;
+    // margin: .1em 0px;
+    border: 1px solid #1D2731;
+    // border-radius: .25em;
+    font-size: 1em;
+    color: ivory;
+    transition-duration: 0.3s;
+    // border-top: 1px solid ivory;
+    // border-bottom: 1px solid ivory;
+}
+
+.dropdown-item:hover {
+    background-color: #0B3C5D;
+    color: #D9B310;
+    // border: 1px solid #D9B310;
+    border-top: 1px solid #D9B310;
+    border-bottom: 1px solid #D9B310;
+    border-left: 1px solid #0B3C5D;
+    border-right: 1px solid #0B3C5D;
+}
+
+.dropdown-item:focus {
+    outline: none;
+}
+
+.dropdown-content * {
+    width: 100%;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content button:hover {
+    /* background-color: #ddd */
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {
+    display:block;
+}
+
+#myBtn {
+  display: none;
+  position: fixed;
+  bottom: 0em;
+  right: 0em;
+  z-index: 99;
+  border: none;
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: ivory;
+  cursor: pointer;
+  padding: 0em;
+  margin: 0em .75em .75em 0em;
+
+  border-radius: 5px;
+  font-size: 1em;
+  transition-duration: 0.3s;
+}
+
+#myBtn:hover {
+  color: #D9B310;
+}
+
+.myBtn_icon {
+    width: 2.5em;
+    height: 2.5em;
+}
+
+.alert {
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: $color-2;
+    color: $color-5;
+    position: fixed;
+    top: 0em;
+    left: 0em;
+    width: 100%;
+    height: 3vh;
+    padding: 1em 0em;
+    font-size: 2em;
+    font-weight: bold;
+    opacity: .90;
+    z-index: 999;
+}
+
+.alert-text {
+    opacity: .99;
+}
+
+.alert-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.alert-close:hover {
+    color: $color-1;
+}
+
+.alert-close-icon {
+    color: $color-5;
+    width: 1.5em;
+    height: 1.5em;
+}
+
+.alert-close-icon:hover {
+    color: $color-1;
+}
+
+.hidden {
+    display: none;
+}
+
+@media only screen and ( min-width:802px ) and ( max-width: 1699px ) {
+    .watch-photo {
+        width: 15em;
+        height: 22.5em;
+    }
+
+    .top-three-row li {
+        max-width: 15em;
+    }
+
+    .watch-list-photo-detail  {
+        font-size: .85em;
+    }
+
+    .alert {
+      font-size: 1.75em;
+    }
+}
+
+@media only screen and (max-width: 801px) {
+    .watch-photo {
+        width: 12em;
+        height: 18em;
+    }
+
+    .top-three-row li {
+        max-width: 12em;
+    }
+
+    .watch-list-photo-detail  {
+        font-size: .8em;
+    }
+
+    .alert {
+      height: 6vh;
+      font-size: 1.25em;
+    }
+
+    .search-result-query-tags-list-sort-button {
+        width: 75%;
+    }
+
+    .search-result-query-tags, .search-result-query-tags-sort {
+        width: 100%;
+    }
+
+    .search-result-query-tags-list-sort {
+        width: 90%;
+    }
+}
