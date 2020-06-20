@@ -1,10 +1,8 @@
 const mongoose = require("mongoose");
-
 const passport = require("passport");
-
 const express = require("express");
-const app = express();
 
+const app = express();
 const path = require("path");
 
 if (process.env.NODE_ENV === "production") {
@@ -12,20 +10,16 @@ if (process.env.NODE_ENV === "production") {
   app.get("/", (req, res) => {
     res.sendFile(path.resolve(__dirname, "frontend", "build", "index.html"));
   });
-}
+};
 
 const bodyParser = require("body-parser");
-
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
 const db = require("./config/keys").mongoURI;
-
-mongoose
-.connect(db, { useNewUrlParser: true })
-.then(() => console.log("Connected to MongoDB successfully"))
-.catch(err => console.log(err));
-
+mongoose.connect(db, { useNewUrlParser: true })
+        .then( () => console.log("Connected to MongoDB successfully") )
+        .catch( err => console.log(err) );
 mongoose.set('useFindAndModify', false);
 
 const users = require("./routes/api/users");
@@ -35,7 +29,6 @@ const searches = require("./routes/api/searches");
 
 const Watch = require("./models/Watch");
 const User = require("./models/User");
-
 
 
 // NOTE: seedfiles must remain in single line format, with valid JSON for each line
@@ -75,8 +68,6 @@ const User = require("./models/User");
 // });
 
 
-
-// app.get("/", (req, res) => res.send("Hello World0"));
 app.use(passport.initialize());
 require("./config/passport")(passport);
 
@@ -85,15 +76,7 @@ app.use('/api/watches', watches);
 app.use('/api/reviews', reviews);
 app.use("/api/searches", searches);
 
-
-// path under which assets are available
 app.use(express.static('public'));
 
 const port = process.env.PORT || 5000;
-
 app.listen(port, () => console.log(`Server is running on port ${port}`));
-
-
-
-
-
