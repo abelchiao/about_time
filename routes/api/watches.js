@@ -90,20 +90,11 @@ router.post("/search", (req, res) => {
     query["$and"].push(newOptions);
   };
 
-  // if (req.body.brand) query.brand = req.body.brand;
-  // // if (req.body.model) query.model = req.body.model;
-  // if (req.body.style) query.style = {'$regex': req.body.style, '$options': 'i'};
-  // if (req.body.gender) query.gender = {'$regex': req.body.gender, '$options': 'i'};
-  // if (req.body.movement) query.movement = {'$regex': req.body.movement, '$options': 'i'};
-  // if (req.body.case) query.case = {'$regex': req.body.case, '$options': 'i'};
-  // // if (req.body.waterResistance) query.waterResistance = req.body.waterResistance;
-  // // if (req.body.price) query.price = req.body.price;
-  // if (req.body.price === "$100-300") {query.price = { $gte: 100, $lte: 300 }}
-  // else if (req.body.price === "$300-500") {query.price = { $gte: 300, $lte: 500 }}
-  // else if (req.body.price === "$500-1000") {query.price = { $gte: 500, $lte: 1000 }}
-  // else if (req.body.price === "$1000+") {query.price = { $gte: 1000 }}
+  if (query["$and"].length === 0) {
+    query = {};
+  };
 
-  // console.log(query)
+  // console.log("QUERY IN WATCHES MODEL :::>>>:::", query)
   // const util = require("util");
   // console.log(util.inspect(query, false, null, true /* enable colors */))
 

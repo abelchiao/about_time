@@ -1,6 +1,5 @@
 import React from 'react'; 
-import { Tab, Tabs, TabList, TabPanel } from 'react-tabs'
-import { Redirect, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class SearchForm extends React.Component {
     constructor(props) {
@@ -51,14 +50,11 @@ class SearchForm extends React.Component {
 
     render() {
 
-        let optionListGenerator = optionsArr => (
+        let optionCheckboxGenerator = optionsArr => (
             eval(optionsArr + "Options").length > 0 &&
             eval(optionsArr + "Options").map((singleOption, i) => (
                 <label key={ singleOption.value }>{ singleOption.value }
-                    {/* { (!this.state[optionsArr].includes(singleOption)) */}
                         <input type="checkbox" id={ singleOption.value } name={ singleOption.value } value={ singleOption.value } onChange={ this.update(optionsArr) }/>
-                        {/* : <input type="checkbox" id={ singleOption.value } name={ singleOption.value } value={ singleOption.value } onChange={ this.update(optionsArr) } checked/> */}
-                    {/* } */}
                 </label>
             ))
         );
@@ -115,28 +111,15 @@ class SearchForm extends React.Component {
         return (
             <div className="search-transparent">
                 <h1>Start your search:</h1>
-                    { properties.map( property => (
-                        <div key={ property }>
-                            { capitalize(property) }
-                            <br/>
-                            { optionListGenerator(property) }
-                            <br/>
-                            <br/>
-                        </div>
-                    )) }
-
-                {/* <Tabs>
-                    <TabList>
-                        { properties.map( property => (
-                            <Tab key={ property }>{ capitalize(property) }</Tab>
-                        )) }
-                    </TabList>
-                    { properties.map( property => (
-                        <TabPanel className={ property + " input" } id={ property } key={ property }>
-                            { optionListGenerator(property) }
-                        </TabPanel>
-                    )) }
-                </Tabs> */}
+                { properties.map( property => (
+                    <div key={ property }>
+                        { capitalize(property) }
+                        <br/>
+                        { optionCheckboxGenerator(property) }
+                        <br/>
+                        <br/>
+                    </div>
+                )) }
                 <form className="splash-form" onSubmit={ this.handleSubmit }>
                     <input type="submit" value="Submit" className="splash-form-submit"/>
                 </form>
