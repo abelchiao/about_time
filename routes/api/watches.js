@@ -48,10 +48,10 @@ router.post("/search", (req, res) => {
   if (req.body.case) query.case = {'$regex': req.body.case, '$options': 'i'};
   // if (req.body.waterResistance) query.waterResistance = req.body.waterResistance;
   // if (req.body.price) query.price = req.body.price;
-  if (req.body.price === "100-300") {query.price = { $gte: 100, $lte: 300 }}
-  else if (req.body.price === "300-500") {query.price = { $gte: 300, $lte: 500 }}
-  else if (req.body.price === "500-1000") {query.price = { $gte: 500, $lte: 1000 }}
-  else if (req.body.price === "1000+") {query.price = { $gte: 1000 }}
+  if (req.body.price === "$100-300") {query.price = { $gte: 100, $lte: 300 }}
+  else if (req.body.price === "$300-500") {query.price = { $gte: 300, $lte: 500 }}
+  else if (req.body.price === "$500-1000") {query.price = { $gte: 500, $lte: 1000 }}
+  else if (req.body.price === "$1000+") {query.price = { $gte: 1000 }}
 
   // console.log(query)
   Watch.find( query )

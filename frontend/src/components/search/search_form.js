@@ -36,20 +36,17 @@ class SearchForm extends React.Component {
     };
 
     render() {
-
       
         let optionListGenerator = optionsArr => (
             optionsArr.length > 0 &&
             optionsArr.map((option, i) => {
-              return (
-                <option key={i} value={option.value}>
-                  {option.value}
-                </option>
-              );
+                return (
+                    <option key={ i } value={ option.value }>{ option.value }</option>
+                );
             })
         );
 
-        const brands = [
+        const brandOptions = [
             { id: 1, value: "Baume&Mercier" },
             { id: 2, value: "Citizen" },
             { id: 3, value: "Movado" },
@@ -58,25 +55,37 @@ class SearchForm extends React.Component {
             { id: 6, value: "Tissot" }
         ];
 
-        const styles = [
+        const styleOptions = [
             { id: 1, value: 'Casual' },
             { id: 2, value: 'Classic' },
             { id: 3, value: 'Formal' },
             { id: 4, value: 'Sporty' }
         ];
 
-        const cases = [
+        const caseOptions = [
            { id: 1, value: "Gold" },
            { id: 2, value: "Polished" },
            { id: 3, value: "Stainless Steel" },
            { id: 4, value: "Titanium" }
         ];
 
+        const movementOptions = [
+           { id: 1, value: "Automatic" },
+           { id: 2, value: "Quartz" },
+           { id: 3, value: "Mechanical" }
+        ];
+
+        const priceOptions = [
+           { id: 1, value: "$100-300" },
+           { id: 2, value: "$300-500" },
+           { id: 3, value: "$500-1000" },
+           { id: 4, value: "$1000+" }
+        ];
+
 
         return (
             <div className="search-transparent">
                 <h1>Start your search:</h1>
-
                 <Tabs>
                     <TabList>
                         <Tab>Price</Tab>
@@ -85,73 +94,37 @@ class SearchForm extends React.Component {
                         <Tab>Style</Tab>
                         <Tab>Case</Tab>
                     </TabList>
-
                     <TabPanel className="price input" id="price">
-                        <div className="radio-inputs">
-                            <label>
-                                <input type="radio" name="tier0" value="100-300" checked={ this.state.price === "100-300" } onChange={ this.update('price') }/>
-                                $100 - 300
-                            </label>
-
-                            <label>
-                                <input type="radio" name="tier1" value="300-500" checked={ this.state.price === "300-500" } onChange={ this.update('price') }/>
-                                $300 - 500
-                            </label>
-
-                            <label>
-                                <input type="radio" name="tier2" value="500-1000" checked={ this.state.price === "500-1000" } onChange={ this.update('price') }/>
-                                $500 - 1000
-                            </label>
-
-                            <label>
-                                <input type="radio" name="tier3" value="1000+" checked={ this.state.price === "1000+" } onChange={ this.update('price') }/>
-                                $1000 +
-                            </label>
-                        </div>
+                        <select className="price-list input-select" value={ this.state.price } onChange={ this.update('price') }>
+                            <option value="none" hidden>Price</option>
+                            { optionListGenerator(priceOptions) }
+                        </select>
                     </TabPanel>
-
                     <TabPanel className="movement input" id="movement">
-                        <div className="radio-inputs">
-                            <label>
-                                <input type="radio" name="movement0" value="Automatic" checked={ this.state.movement === "Automatic" } onChange={ this.update('movement') }/>
-                                Automatic
-                            </label>
-
-                            <label>
-                                <input type="radio" name="movement1" value="Quartz" checked={ this.state.movement === "Quartz" } onChange={ this.update('movement') }/>
-                                Quartz
-                            </label>
-
-                            <label>
-                                <input type="radio" name="movement2" checked={ this.state.movement === "Mechanical" } onChange={ this.update('movement') }/>
-                                Mechanical
-                            </label>
-                        </div>
+                        <select className="movement-list input-select" value={ this.state.movement } onChange={ this.update('movement') }>
+                            <option value="none" hidden>Movement</option>
+                            { optionListGenerator(movementOptions) }
+                        </select>
                     </TabPanel>
-
                     <TabPanel className="brand input">
                         <select className="brand-list input-select" value={ this.state.brand } onChange={ this.update('brand') }>
                             <option value="none" hidden>Brand</option>
-                            { optionListGenerator(brands) }
+                            { optionListGenerator(brandOptions) }
                         </select>
                     </TabPanel>
-
                     <TabPanel className="style input">
                         <select className="style-list input-select" value={ this.state.style } onChange={ this.update('style') }>
                             <option value="none" hidden>Style</option>
-                            { optionListGenerator(styles) }
+                            { optionListGenerator(styleOptions) }
                         </select>
                     </TabPanel>
-
                     <TabPanel className="case input">
                         <select className="case-list input-select" value={ this.state.case } onChange={ this.update('case') }>
                             <option value="none" hidden>Case</option>
-                            { optionListGenerator(cases) }
+                            { optionListGenerator(caseOptions) }
                         </select>
                     </TabPanel>
-
                 </Tabs>
-
                 <form className="splash-form" onSubmit={ this.handleSubmit }>
                     <input type="submit" value="Submit" className="splash-form-submit"/>
                 </form>
