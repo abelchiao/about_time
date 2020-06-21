@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
-import ProfilePage from "./profile_page";
-import { fetchUserSearches, deleteSearch } from '../../actions/search_actions';
 import { fetchWatches } from '../../actions/watch_actions';
-// import { STATES } from "mongoose";
+import { fetchUserSearches, deleteSearch } from '../../actions/search_actions';
 import { confirmDataLoad, resetDataLoad } from '../../actions/data_load_actions'
+import ProfilePage from "./profile_page";
 
 const mapStateToProps = state => ({
     currentUser: state.session.user,

@@ -19,8 +19,8 @@ class ProfilePage extends React.Component {
 
     handleLabelClick(e, query) {
         e.preventDefault();
-        this.props.fetchWatches(query)
-        // .then( () => this.props.confirmDataLoad() );
+
+        this.props.fetchWatches(query);
         this.props.history.push(`/watches/search`);
     };
 
@@ -46,18 +46,16 @@ class ProfilePage extends React.Component {
                         <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> 
                     </div>
                 </div>
-            )
+            );
         } else {
             let searches =
                 ((this.props.searches.all.length === undefined) || (this.props.searches.all.length === 0))
-                    ?
-                        <div className="search-item-parent">
+                    ?   <div className="search-item-parent">
                             <div className="search-item-header">
                                 No saved searches
                             </div>
                         </div>
-                    :
-                        this.props.searches.all.map( (search, idx) => (
+                    :   this.props.searches.all.map( (search, idx) => (
                                 <div className="search-item-parent" key={ idx } onClick={ e => this.handleLabelClick(e, search.query) }>
                                     <div className="search-item-header">
                                         <div className="profile-search-label">
@@ -72,8 +70,8 @@ class ProfilePage extends React.Component {
                                             { Object.keys(search.query)
                                                     .map( search_prop => (
                                                         (search.query[search_prop] !== "")
-                                                            ? <li className="search-item-details-list-item" key={ search_prop }> { (search_prop.toUpperCase() + ": " + search.query[search_prop] + " ") } </li>
-                                                            : null
+                                                            ?   <li className="search-item-details-list-item" key={ search_prop }> { (search_prop.toUpperCase() + ": " + search.query[search_prop] + " ") } </li>
+                                                            :   null
                                                         )
                                                     )
                                             }
@@ -84,45 +82,25 @@ class ProfilePage extends React.Component {
                         );
 
             return (
-                (!this.props.currentUser.handle)
-                    ?
-                        <div className="profile-page-container">
-                            <Navbar />
-                            <div className="profile-page-intro-text">
-                                Please log in to see your profile page.
-                            </div>
-                        </div>
-                    :
-                        <div className="profile-page-container">
-                            <Navbar />
-                            <div className="profile-page-intro-text">
-                                Welcome, { this.props.currentUser.handle }!
-                            </div>
-                            <div className="search-items-container">
+                <div className="profile-page-container">
+                    <Navbar />
+                    <div className="profile-page-intro-text">
+                        { (!this.props.currentUser.handle)
+                            ?   "Please log in to see your profile pages."
+                            :   "Welcome, " + this.props.currentUser.handle + "!"
+                        }
+                    </div>
+                    { (this.props.currentUser.handle)
+                        ?   <div className="search-items-container">
                                 <div className="search-items-header">Saved searches</div>
                                 <div className="search-items-index">{ searches }</div>
                             </div>
-                        </div>
+                        :   null
+                    }
+                </div>
             );
-        }
-    }
-}
+        };
+    };
+};
 
 export default ProfilePage;
-
-
-
-// DONE TODO add saved searches to global state OR pull searches from DB on open of profile page
-// TODO iterate across reviews for all watches to show any from the user
-// DONE TODO profile page should reflect only logged in OR any user
-// DONE TODO add check for data loaded before render
-// DONE TODO initial styling for profile page/test
-// DONE TODO add link from search label to hit search api
-// DONE TODO delete button for label
-// TODO component for search item
-// DONE TODO add navbar to profile page
-// DONE TODO return link to main search page
-
-// DONE TODO reorg search item panel to combined layout
-// DONE TODO add query parameters to search label
-// DONE TODO loading icon

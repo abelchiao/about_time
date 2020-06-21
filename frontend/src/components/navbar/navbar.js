@@ -52,7 +52,7 @@ class Navbar extends React.Component {
             };
         };
 
-        return(
+        return (
             <div className="dropdown">
                 <div className="alert" >
                     <div className="alert-text"></div>
