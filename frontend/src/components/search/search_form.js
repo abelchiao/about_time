@@ -36,6 +36,19 @@ class SearchForm extends React.Component {
     };
 
     render() {
+
+      
+        let optionListGenerator = optionsArr => (
+            optionsArr.length > 0 &&
+            optionsArr.map((option, i) => {
+              return (
+                <option key={i} value={option.value}>
+                  {option.value}
+                </option>
+              );
+            })
+        );
+
         const brands = [
             { id: 1, value: "Baume&Mercier" },
             { id: 2, value: "Citizen" },
@@ -45,15 +58,6 @@ class SearchForm extends React.Component {
             { id: 6, value: "Tissot" }
         ];
 
-        const brandsList = (brands.length > 0)
-            && brands.map((brand, i) => {
-                return (
-                    <option key={i} value={ brand.value }>
-                        { brand.value }
-                    </option>
-                );
-            }, this);
-
         const styles = [
             { id: 1, value: 'Casual' },
             { id: 2, value: 'Classic' },
@@ -61,30 +65,12 @@ class SearchForm extends React.Component {
             { id: 4, value: 'Sporty' }
         ];
 
-        const stylesList = (styles.length > 0)
-            && styles.map((style, i) => {
-                return (
-                    <option key={ i } value={ style.value }>
-                        { style.value }
-                    </option>
-                );
-            }, this);
-
-        const caseType = [
+        const cases = [
            { id: 1, value: "Gold" },
            { id: 2, value: "Polished" },
            { id: 3, value: "Stainless Steel" },
            { id: 4, value: "Titanium" }
         ];
-
-        const caseTypeList = caseType.length > 0
-            && caseType.map((caseType, i) => {
-                return (
-                    <option key={ i } value={ caseType.value }>
-                        { caseType.value }
-                    </option>
-                );
-            }, this);
 
 
         return (
@@ -146,21 +132,21 @@ class SearchForm extends React.Component {
                     <TabPanel className="brand input">
                         <select className="brand-list input-select" value={ this.state.brand } onChange={ this.update('brand') }>
                             <option value="none" hidden>Brand</option>
-                            { brandsList }
+                            { optionListGenerator(brands) }
                         </select>
                     </TabPanel>
 
                     <TabPanel className="style input">
                         <select className="style-list input-select" value={ this.state.style } onChange={ this.update('style') }>
                             <option value="none" hidden>Style</option>
-                            { stylesList }
+                            { optionListGenerator(styles) }
                         </select>
                     </TabPanel>
 
                     <TabPanel className="case input">
                         <select className="case-list input-select" value={ this.state.case } onChange={ this.update('case') }>
                             <option value="none" hidden>Case</option>
-                            { caseTypeList }
+                            { optionListGenerator(cases) }
                         </select>
                     </TabPanel>
 
