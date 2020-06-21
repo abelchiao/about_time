@@ -7,25 +7,39 @@ class SearchForm extends React.Component {
         super(props);
 
         this.state = {
-            price: "",
-            brand: "",
-            style: "",
-            case: "",
-            movement: ""
+            price: [],
+            brand: [],
+            style: [],
+            case: [],
+            movement: []
         };
 
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
     update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+        return e => {
+            let newSearchStateProperty = Object.assign({}, this.state)[field];
+            let existsInSearchState = this.state[field].includes(e.currentTarget.value);
+            if ((e.currentTarget.checked) && (!existsInSearchState)) {
+                newSearchStateProperty.push(e.currentTarget.value);
+            } else {
+                newSearchStateProperty = newSearchStateProperty.filter( singleOption  => singleOption !== e.currentTarget.value);
+            }
+
+            this.setState({
+                [field]: newSearchStateProperty
+            });
+        }
     };
 
     componentDidMount() {
         this.props.resetDataLoad();
     };
+
+    componentDidUpdate() {
+        console.log("CURR STATE", this.state)
+    }
 
     handleSubmit(e) {
         e.preventDefault();
@@ -36,11 +50,16 @@ class SearchForm extends React.Component {
     };
 
     render() {
-      
+
         let optionListGenerator = optionsArr => (
-            eval(optionsArr).length > 0 &&
-            eval(optionsArr).map((option, i) => (
-                    <option key={ i } value={ option.value }>{ option.value }</option>
+            eval(optionsArr + "Options").length > 0 &&
+            eval(optionsArr + "Options").map((singleOption, i) => (
+                <label key={ singleOption.value }>{ singleOption.value }
+                    {/* { (!this.state[optionsArr].includes(singleOption)) */}
+                        <input type="checkbox" id={ singleOption.value } name={ singleOption.value } value={ singleOption.value } onChange={ this.update(optionsArr) }/>
+                        {/* : <input type="checkbox" id={ singleOption.value } name={ singleOption.value } value={ singleOption.value } onChange={ this.update(optionsArr) } checked/> */}
+                    {/* } */}
+                </label>
             ))
         );
 
@@ -84,7 +103,7 @@ class SearchForm extends React.Component {
            { id: 4, value: "$1000+" }
         ];
 
-        const options = [
+        const properties = [
           "price",
           "movement",
           "brand",
@@ -96,21 +115,28 @@ class SearchForm extends React.Component {
         return (
             <div className="search-transparent">
                 <h1>Start your search:</h1>
-                <Tabs>
+                    { properties.map( property => (
+                        <div key={ property }>
+                            { capitalize(property) }
+                            <br/>
+                            { optionListGenerator(property) }
+                            <br/>
+                            <br/>
+                        </div>
+                    )) }
+
+                {/* <Tabs>
                     <TabList>
-                        { options.map( singleOption => (
-                            <Tab key={ singleOption }>{ capitalize(singleOption) }</Tab>
+                        { properties.map( property => (
+                            <Tab key={ property }>{ capitalize(property) }</Tab>
                         )) }
                     </TabList>
-                    { options.map( singleOption => (
-                        <TabPanel className={ singleOption + " input" } id={ singleOption } key={ singleOption }>
-                            <select className={ singleOption + "-list input-select" } value={ this.state.price } onChange={ this.update(singleOption) }>
-                                <option value="none" hidden>{ capitalize(singleOption) }</option>
-                                { optionListGenerator(singleOption + "Options") }
-                            </select>
+                    { properties.map( property => (
+                        <TabPanel className={ property + " input" } id={ property } key={ property }>
+                            { optionListGenerator(property) }
                         </TabPanel>
                     )) }
-                </Tabs>
+                </Tabs> */}
                 <form className="splash-form" onSubmit={ this.handleSubmit }>
                     <input type="submit" value="Submit" className="splash-form-submit"/>
                 </form>
