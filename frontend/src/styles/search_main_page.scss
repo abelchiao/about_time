@@ -4,12 +4,9 @@ body{
     display: block;
     background-repeat: no-repeat;
     background-color: #414348;
-    font-family: haboro-serif, serif;
-    /* font-family: 'Roboto', sans-serif; */
-    font-style: normal;
-    font-weight: 300;
     min-width: 100%;
     min-height: 100vh;
+    font: normal 300 haboro-serif, serif;
 }
 
 #app {
@@ -18,40 +15,18 @@ body{
 
 .splash-background {
     background-image: url("/img/background/omega_wallpaper_1920.jpg");
-    min-width: 100%;
-    min-height: 100vh;
     background-size: cover;
     top: 0;
     left: 0;
+    min-height: 100vh;
+    min-width: 100%;
     padding-bottom: 20px;
 }
 
 a {
+    color: ivory;
     text-decoration: none;
-    color: ivory;
 }
-
-/* button {
-    background-color: #1D2731;
-    cursor: pointer;
-    padding: 4px 10px;
-    margin: 5px 5px;
-    border: 1px solid #1D2731;
-    border-radius: 5px;
-    font-size: 1em;
-    color: ivory;
-    transition-duration: 0.3s;
-} */
-
-/* button:hover {
-    background-color: #0B3C5D;
-    color: #D9B310;
-    border: 1px solid #D9B310;
-} */
-
-/* button:focus {
-    outline: none;
-} */
 
 footer {
     text-align: right;
@@ -61,105 +36,97 @@ footer {
 form .input {
     padding: 0 1em 0 1em;
     font-size: 1.2rem;
-
 }
 
 h1 {
-  font-size: 2.0rem;
-  font-weight: 600;
-  padding: 1em 0;
+    padding: 1em 0;
+    font-size: 2.0rem;
+    font-weight: 600;
 }
 
 h2 {
-  font-size: 1.5rem;
-  font-weight: 650;
-  padding: 1em;
+    padding: 1em;
+    font-size: 1.5rem;
+    font-weight: 650;
 }
 
 input[type="radio"] {
-    margin: 0 8px 0 25px;
     width: 1.4em;
     height: 1.4em;
+    margin: 0 8px 0 25px;
 }
 
 input[type="submit"] {
     font-size: 1.2rem;
 }
 
-/* .back-to-search {
-    font-size: 1.5rem;
-    margin: 1em;
-} */
-
 .banner h1 {
     display: block;
-    font-size: 4.8rem;
-    letter-spacing: 0;
-    line-height: 0.8;
-    text-transform: uppercase;
-    font-weight: 900;
     color: #0B3C5D;
     text-align: right;
     padding: 0.4em 0 0.6em;
+    line-height: 0.8;
+    letter-spacing: 0;
+    font-size: 4.8rem;
+    font-weight: 900;
+    text-transform: uppercase;
 }
 
 .hidden {
-  display: none;
+    display: none;
 }
 
 .input-select {
+    width: 50%;
     max-width: 40%;
     padding: 5px;
-    font-size: 1.0rem;
-    width: 50%;
     margin-top: 10px;
     margin-bottom: 10px;
+    font-size: 1.0rem;
 }
 
 .intro {
-    padding-left: 25%;
     padding: 0 10% 3em 30%;
 }
-
 
 .radio-inputs {
     display: flex;
     justify-content: space-around;
-    font-size: 1.5rem;
     padding: 1em;
+    font-size: 1.5rem;
 }
 
 .splash > h1 {
-    font-size: 2.2rem;
     text-align: left;
+    font-size: 2.2rem;
 }
 
 .splash-form {
     padding: 1em;
-}  
+}
 
 .splash-form-submit {
-  box-shadow:inset 0px 1px 0px 0px #ffffff;
-	background:linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-	border-radius:2px;
-	border:1px solid #dcdcdc;
 	display: inline-block;
-	cursor: pointer;
+    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
 	color: #0B3C5D;
-	font-weight:bold;
-	padding:4px 18px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px gray;
+	padding: 4px 18px;
+	border: 1px solid #dcdcdc;
+	border-radius: 2px;
+    box-shadow: inset 0px 1px 0px 0px #ffffff;
+	font-weight: bold;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px gray;
+	cursor: pointer;
 }
 
 .splash-form-submit:hover {
-  background:linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-	background-color:#dfdfdf;
+    background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+	background-color: #dfdfdf;
 }
 
 .splash-form-submit:active {
-    position:relative;
-	top:1px;
+    position: relative;
+	top: 1px;
 }
 
 .splash-search-box {
@@ -171,26 +138,26 @@ input[type="submit"] {
 
 .splash-search-transparent {
     background-color: lightgray;
-    margin: 2em auto;
-    border: 2px solid #1D2731;
-    opacity: 0.95;
     text-align: center;
-    max-width: 60%;
     min-width: 700px;
+    max-width: 60%;
     min-height: 385px;
+    border: 2px solid #1D2731;
     border-radius: 6px;
+    margin: 2em auto;
+    opacity: 0.95;
 }
 
 .summary {
-  min-width: 900px;
+    min-width: 900px;
 }
 
 .summary p {
-    text-transform: uppercase;
+    text-align: right;
+    text-shadow: 0px 1px 0px gray;
+    line-height: 1.6;
     letter-spacing: 0.1em;
     font-size: 1.8rem;
     font-weight: 300;
-    line-height: 1.6;
-    text-align: right;
-    text-shadow:0px 1px 0px gray;
+    text-transform: uppercase;
 }
