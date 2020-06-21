@@ -69,11 +69,12 @@ class ProfilePage extends React.Component {
                                         <ul className="search-item-details-list">
                                             { Object.keys(search.query)
                                                     .map( search_prop => (
-                                                        (search.query[search_prop] !== "")
-                                                            ?   <li className="search-item-details-list-item" key={ search_prop }> { (search_prop.toUpperCase() + ": " + search.query[search_prop] + " ") } </li>
-                                                            :   null
-                                                        )
-                                                    )
+                                                        (search.query[search_prop].length !== 0)
+                                                        ?   search.query[search_prop].map( singleOption => (
+                                                                <li className="search-item-details-list-item" key={ singleOption }> { singleOption } </li>
+                                                            ))
+                                                        :   null
+                                                    ))
                                             }
                                         </ul>
                                     </div>
