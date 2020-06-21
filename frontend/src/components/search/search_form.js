@@ -38,14 +38,16 @@ class SearchForm extends React.Component {
     render() {
       
         let optionListGenerator = optionsArr => (
-            optionsArr.length > 0 &&
-            optionsArr.map((option, i) => {
-                return (
+            eval(optionsArr).length > 0 &&
+            eval(optionsArr).map((option, i) => (
                     <option key={ i } value={ option.value }>{ option.value }</option>
-                );
-            })
+            ))
         );
 
+        let capitalize = str => (
+            str[0].toUpperCase() + str.slice(1)
+        );
+      
         const brandOptions = [
             { id: 1, value: "Baume&Mercier" },
             { id: 2, value: "Citizen" },
@@ -82,48 +84,32 @@ class SearchForm extends React.Component {
            { id: 4, value: "$1000+" }
         ];
 
+        const options = [
+          "price",
+          "movement",
+          "brand",
+          "style",
+          "case"
+        ];
+
 
         return (
             <div className="search-transparent">
                 <h1>Start your search:</h1>
                 <Tabs>
                     <TabList>
-                        <Tab>Price</Tab>
-                        <Tab>Movement</Tab>
-                        <Tab>Brand</Tab>
-                        <Tab>Style</Tab>
-                        <Tab>Case</Tab>
+                        { options.map( singleOption => (
+                            <Tab key={ singleOption }>{ capitalize(singleOption) }</Tab>
+                        )) }
                     </TabList>
-                    <TabPanel className="price input" id="price">
-                        <select className="price-list input-select" value={ this.state.price } onChange={ this.update('price') }>
-                            <option value="none" hidden>Price</option>
-                            { optionListGenerator(priceOptions) }
-                        </select>
-                    </TabPanel>
-                    <TabPanel className="movement input" id="movement">
-                        <select className="movement-list input-select" value={ this.state.movement } onChange={ this.update('movement') }>
-                            <option value="none" hidden>Movement</option>
-                            { optionListGenerator(movementOptions) }
-                        </select>
-                    </TabPanel>
-                    <TabPanel className="brand input">
-                        <select className="brand-list input-select" value={ this.state.brand } onChange={ this.update('brand') }>
-                            <option value="none" hidden>Brand</option>
-                            { optionListGenerator(brandOptions) }
-                        </select>
-                    </TabPanel>
-                    <TabPanel className="style input">
-                        <select className="style-list input-select" value={ this.state.style } onChange={ this.update('style') }>
-                            <option value="none" hidden>Style</option>
-                            { optionListGenerator(styleOptions) }
-                        </select>
-                    </TabPanel>
-                    <TabPanel className="case input">
-                        <select className="case-list input-select" value={ this.state.case } onChange={ this.update('case') }>
-                            <option value="none" hidden>Case</option>
-                            { optionListGenerator(caseOptions) }
-                        </select>
-                    </TabPanel>
+                    { options.map( singleOption => (
+                        <TabPanel className={ singleOption + " input" } id={ singleOption } key={ singleOption }>
+                            <select className={ singleOption + "-list input-select" } value={ this.state.price } onChange={ this.update(singleOption) }>
+                                <option value="none" hidden>{ capitalize(singleOption) }</option>
+                                { optionListGenerator(singleOption + "Options") }
+                            </select>
+                        </TabPanel>
+                    )) }
                 </Tabs>
                 <form className="splash-form" onSubmit={ this.handleSubmit }>
                     <input type="submit" value="Submit" className="splash-form-submit"/>
