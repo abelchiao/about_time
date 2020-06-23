@@ -16,15 +16,17 @@ class SearchForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
     };
 
-    update(field) {
+    update(field, targetSingleOption) {
         return e => {
             let newSearchStateProperty = Object.assign({}, this.state)[field];
-            let existsInSearchState = this.state[field].includes(e.currentTarget.value);
-            if ((e.currentTarget.checked) && (!existsInSearchState)) {
-                newSearchStateProperty.push(e.currentTarget.value);
+            let existsInSearchState = this.state[field].includes(targetSingleOption);
+            if (!existsInSearchState) {
+                newSearchStateProperty.push(targetSingleOption);
             } else {
-                newSearchStateProperty = newSearchStateProperty.filter( singleOption  => singleOption !== e.currentTarget.value);
+                newSearchStateProperty = newSearchStateProperty.filter( singleOption  => singleOption !== targetSingleOption);
+
             }
+            e.target.classList.toggle("search-form-property-option-checkbox-text-checked");
 
             this.setState({
                 [field]: newSearchStateProperty
@@ -53,17 +55,10 @@ class SearchForm extends React.Component {
         let optionCheckboxGenerator = optionsArr => (
             eval(optionsArr + "Options").length > 0 &&
             eval(optionsArr + "Options").map((singleOption, i) => (
-                <label className="search-form-property-option-checkbox-container" key={ singleOption.value }>
-                        <div className="search-form-property-option-checkbox-text">{ singleOption.value }</div>
-                        <input type="checkbox" className="search-form-property-option-checkbox" id={ singleOption.value } name={ singleOption.value } value={ singleOption.value } onChange={ this.update(optionsArr) }/>
-                </label>
+                <li className="search-form-property-option-checkbox-text" key={ singleOption.value } onClick={ this.update(optionsArr, singleOption.value) }>{ singleOption.value }</li>
             ))
         );
 
-        // let capitalize = str => (
-        //     str[0].toUpperCase() + str.slice(1)
-        // );
-      
         const brandOptions = [
             { id: 1, value: "Baume&Mercier" },
             { id: 2, value: "Citizen" },
@@ -114,7 +109,7 @@ class SearchForm extends React.Component {
                 { properties.map( property => (
                     <div key={ property } className="search-form-property">
                         <div className="search-form-property-text">{ property.toUpperCase() }</div>
-                        <div className="search-form-property-options">{ optionCheckboxGenerator(property) }</div>
+                        <ul className="search-form-property-options">{ optionCheckboxGenerator(property) }</ul>
                     </div>
                 )) }
                 <div className="search-form-submit-button-container">

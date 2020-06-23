@@ -144,7 +144,7 @@ input[type="submit"] {
 // }
 
 .summary {
-    min-width: 900px;
+    // min-width: 900px;
 }
 
 .summary p {
@@ -184,10 +184,10 @@ input[type="submit"] {
     flex-direction: column;
     align-items: center;
     // background-color: $color-5;
-    background-color: ivory;
-    min-width: 66%;
-    max-width: 90%;
-    border: .25em solid $color-5;
+    background-color: $color-0;
+    min-width: 45%;
+    max-width: 75%;
+    border: .1em solid $color-5;
     border-radius: 6px;
     opacity: 0.95;
 }
@@ -231,18 +231,25 @@ input[type="submit"] {
     background-color: $color-5;
     color: $color-1;
     padding: .25em .5em;
-    border: 1px solid $color-5;
+    border: .1em solid $color-5;
     border-radius: .25em;
-    margin: .25em 0em;
+    // margin: .25em 0em;
+    margin: .25em;
     font-size: 1em;
     transition-duration: 0.3s;
     cursor: pointer;
 }
 
+.search-form-property-option-checkbox-text-checked {
+    background-color: $color-4;
+    color: $color-2;
+    border: .1em solid $color-2;
+}
+
 .search-form-property-option-checkbox-text:hover {
     background-color: $color-4;
     color: $color-2;
-    border: 1px solid $color-2;
+    border: .1em solid $color-2;
 }
 
 .search-form-property-option-checkbox {
