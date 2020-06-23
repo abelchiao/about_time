@@ -15,7 +15,7 @@ body{
 
 .splash-background {
     background-image: url("/img/background/omega_wallpaper_1920.jpg");
-    background-size: cover;
+    background-size: contain;
     top: 0;
     left: 0;
     min-height: 100vh;
@@ -101,52 +101,47 @@ input[type="submit"] {
     font-size: 2.2rem;
 }
 
-.splash-form {
-    padding: 1em;
-}
+// .splash-form {
+//     padding: 1em;
+// }
 
-.splash-form-submit {
-	display: inline-block;
-    background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
-	color: #0B3C5D;
-	padding: 4px 18px;
-	border: 1px solid #dcdcdc;
-	border-radius: 2px;
-    box-shadow: inset 0px 1px 0px 0px #ffffff;
-	font-weight: bold;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px gray;
-	cursor: pointer;
-}
+// .splash-form-submit {
+// 	// display: inline-block;
+//     // background: linear-gradient(to bottom, #ededed 5%, #dfdfdf 100%);
+// 	// color: #0B3C5D;
+// 	// padding: 4px 18px;
+// 	// border: 1px solid #dcdcdc;
+// 	// border-radius: 2px;
+//     // box-shadow: inset 0px 1px 0px 0px #ffffff;
+// 	// font-weight: bold;
+// 	// text-decoration: none;
+// 	// text-shadow: 0px 1px 0px gray;
+//     // cursor: pointer;
+    
+//     background-color: $color-5;
+//     color: $color-1;
+//     padding: 4px 10px;
+//     border: 1px solid $color-5;
+//     border-radius: 5px;
+//     margin: .1em 0em;
+//     font-size: 1em;
+//     transition-duration: 0.3s;
+//     cursor: pointer;
+// }
 
-.splash-form-submit:hover {
-    background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
-	background-color: #dfdfdf;
-}
+// .splash-form-submit:hover {
+//     // background: linear-gradient(to bottom, #dfdfdf 5%, #ededed 100%);
+//     // background-color: #dfdfdf;
+    
+//     background-color: $color-4;
+//     color: $color-2;
+//     border: 1px solid $color-2;
+// }
 
-.splash-form-submit:active {
-    position: relative;
-	top: 1px;
-}
-
-.splash-search-box {
-    display: inline;
-    text-align: center;
-    max-width: 90%;
-    margin: 5px;
-}
-
-.splash-search-transparent {
-    background-color: lightgray;
-    text-align: center;
-    min-width: 700px;
-    max-width: 60%;
-    min-height: 385px;
-    border: 2px solid #1D2731;
-    border-radius: 6px;
-    margin: 2em auto;
-    opacity: 0.95;
-}
+// .splash-form-submit:active {
+//     // position: relative;
+// 	// top: 1px;
+// }
 
 .summary {
     min-width: 900px;
@@ -160,4 +155,123 @@ input[type="submit"] {
     font-size: 1.8rem;
     font-weight: 300;
     text-transform: uppercase;
+}
+
+
+
+.splash-search-transparent {
+    background-color: transparent;
+    // text-align: center;
+    // min-width: 700px;
+    // max-width: 60%;
+    // min-height: 385px;
+    // border: 2px solid #1D2731;
+    // border-radius: 6px;
+    // margin: 2em auto;
+    // opacity: 0.95;
+}
+
+.splash-search-box {
+    display: flex;
+    justify-content: center;
+    // text-align: center;
+    // max-width: 90%;
+    // margin: 5px;
+}
+
+.search-form-transparent {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    // background-color: $color-5;
+    background-color: ivory;
+    min-width: 66%;
+    max-width: 90%;
+    border: .25em solid $color-5;
+    border-radius: 6px;
+    opacity: 0.95;
+}
+
+.search-form-property {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: ivory;
+    width: 90%
+}
+
+.search-form-property-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $color-5;
+    color: ivory;
+    width: 100%;
+    padding: .25em 0px;
+    border: 1px solid $color-5;
+    border-radius: .25em;
+    margin: 3em 0em 0em;
+}
+
+.search-form-property-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    color: ivory;
+    margin: 1em 0em 0em;
+}
+
+.search-form-property-option-checkbox-container {
+    display: flex;
+    align-items: center;
+    padding: 0em 1em 0em 0em;
+}
+
+.search-form-property-option-checkbox-text {
+    background-color: $color-5;
+    color: $color-1;
+    padding: .25em .5em;
+    border: 1px solid $color-5;
+    border-radius: .25em;
+    margin: .25em 0em;
+    font-size: 1em;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.search-form-property-option-checkbox-text:hover {
+    background-color: $color-4;
+    color: $color-2;
+    border: 1px solid $color-2;
+}
+
+.search-form-property-option-checkbox {
+
+}
+
+.search-form-submit-button-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1.5em 0em 1.5em;
+    border-top: 1px solid $color-5;
+    margin: 3em 0em 0em;
+}
+
+.search-form-submit-button {
+    background-color: $color-5;
+    color: $color-1;
+    padding: .25em .5em;
+    border: 1px solid $color-5;
+    border-radius: .25em;
+    margin: .25em;
+    font-size: 1em;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.search-form-submit-button:hover {
+    background-color: $color-4;
+    color: $color-2;
+    border: 1px solid $color-2;
 }

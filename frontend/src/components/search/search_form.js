@@ -53,15 +53,16 @@ class SearchForm extends React.Component {
         let optionCheckboxGenerator = optionsArr => (
             eval(optionsArr + "Options").length > 0 &&
             eval(optionsArr + "Options").map((singleOption, i) => (
-                <label key={ singleOption.value }>{ singleOption.value }
-                        <input type="checkbox" id={ singleOption.value } name={ singleOption.value } value={ singleOption.value } onChange={ this.update(optionsArr) }/>
+                <label className="search-form-property-option-checkbox-container" key={ singleOption.value }>
+                        <div className="search-form-property-option-checkbox-text">{ singleOption.value }</div>
+                        <input type="checkbox" className="search-form-property-option-checkbox" id={ singleOption.value } name={ singleOption.value } value={ singleOption.value } onChange={ this.update(optionsArr) }/>
                 </label>
             ))
         );
 
-        let capitalize = str => (
-            str[0].toUpperCase() + str.slice(1)
-        );
+        // let capitalize = str => (
+        //     str[0].toUpperCase() + str.slice(1)
+        // );
       
         const brandOptions = [
             { id: 1, value: "Baume&Mercier" },
@@ -109,20 +110,18 @@ class SearchForm extends React.Component {
 
 
         return (
-            <div className="search-transparent">
-                <h1>Start your search:</h1>
+            <div className="search-form-transparent">
                 { properties.map( property => (
-                    <div key={ property }>
-                        { capitalize(property) }
-                        <br/>
-                        { optionCheckboxGenerator(property) }
-                        <br/>
-                        <br/>
+                    <div key={ property } className="search-form-property">
+                        <div className="search-form-property-text">{ property.toUpperCase() }</div>
+                        <div className="search-form-property-options">{ optionCheckboxGenerator(property) }</div>
                     </div>
                 )) }
-                <form className="splash-form" onSubmit={ this.handleSubmit }>
-                    <input type="submit" value="Submit" className="splash-form-submit"/>
-                </form>
+                <div className="search-form-submit-button-container">
+                    <button className="search-form-submit-button" onClick={ this.handleSubmit }>
+                        SEARCH
+                    </button>
+                </div>
             </div>
         );
     };
