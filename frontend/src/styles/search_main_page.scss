@@ -23,21 +23,6 @@ body{
     padding-bottom: 20px;
 }
 
-// a {
-//     color: ivory;
-//     text-decoration: none;
-// }
-
-// footer {
-//     text-align: right;
-//     padding: 0 10% 1em 10%;
-// }
-
-// form .input {
-//     padding: 0 1em 0 1em;
-//     font-size: 1.2rem;
-// }
-
 h1 {
     padding: 1em 0;
     font-size: 2.0rem;
@@ -49,16 +34,6 @@ h2 {
     font-size: 1.5rem;
     font-weight: 650;
 }
-
-// input[type="radio"] {
-//     width: 1.4em;
-//     height: 1.4em;
-//     margin: 0 8px 0 25px;
-// }
-
-// input[type="submit"] {
-//     font-size: 1.2rem;
-// }
 
 .banner {
     display: flex;
@@ -81,32 +56,16 @@ h2 {
     display: none;
 }
 
-// .input-select {
-//     width: 50%;
-//     max-width: 40%;
-//     padding: 5px;
-//     margin-top: 10px;
-//     margin-bottom: 10px;
-//     font-size: 1.0rem;
-// }
-
 .intro {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // padding: 0 10% 3em 30%;
     padding: 0 3em 3em;
 }
 
 .summary {
-    // display: flex;
     width: 45%;
 }
-
-// .splash > h1 {
-//     text-align: left;
-//     font-size: 2.2rem;
-// }
 
 .summary p {
     text-align: center;
@@ -118,32 +77,19 @@ h2 {
     text-transform: uppercase;
 }
 
-
 .splash-search-transparent {
     background-color: transparent;
-    // text-align: center;
-    // min-width: 700px;
-    // max-width: 60%;
-    // min-height: 385px;
-    // border: 2px solid #1D2731;
-    // border-radius: 6px;
-    // margin: 2em auto;
-    // opacity: 0.95;
 }
 
 .splash-search-box {
     display: flex;
     justify-content: center;
-    // text-align: center;
-    // max-width: 90%;
-    // margin: 5px;
 }
 
 .search-form-transparent {
     display: flex;
     flex-direction: column;
     align-items: center;
-    // background-color: $color-5;
     background-color: $color-0;
     min-width: 45%;
     max-width: 75%;
@@ -193,7 +139,6 @@ h2 {
     padding: .25em .5em;
     border: .1em solid $color-5;
     border-radius: .25em;
-    // margin: .25em 0em;
     margin: .25em;
     font-size: 1em;
     transition-duration: 0.3s;
@@ -210,10 +155,6 @@ h2 {
     background-color: $color-4;
     color: $color-2;
     border: .1em solid $color-2;
-}
-
-.search-form-property-option-checkbox {
-
 }
 
 .search-form-submit-button-container {
