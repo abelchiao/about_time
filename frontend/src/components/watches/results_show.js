@@ -16,7 +16,7 @@ class ResultsShow extends React.Component {
         this.loadMoreWatches = this.loadMoreWatches.bind(this);
     };
 
-    componentWillMount() {
+    componentDidMount() {
         window.addEventListener('scroll', this.loadMoreWatches);
     };
 

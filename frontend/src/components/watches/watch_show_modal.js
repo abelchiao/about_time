@@ -2,9 +2,9 @@ import React from 'react';
 import ReviewIndexContainer from '../reviews/review_index_container';
 
 class WatchShowModal extends React.Component {
-  constructor(props) {
-    super(props)
-  };
+  // constructor(props) {
+  //   super(props)
+  // };
 
   render() {
     // debugger
@@ -21,7 +21,7 @@ class WatchShowModal extends React.Component {
               <div className='watch-model'>{this.props.currentWatch.model}</div>
             </div>
             <div className='watch-price'>
-              <a className='retail-link' href={this.props.currentWatch.retailURL} target='_blank'>
+              <a className='retail-link' href={this.props.currentWatch.retailURL} rel="noopener noreferrer" target='_blank'>
                 {`$${this.props.currentWatch.price.toLocaleString()}`}
               </a>
             </div>

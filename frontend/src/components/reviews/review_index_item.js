@@ -26,7 +26,7 @@ class ReviewIndexItem extends React.Component {
 
     let modalChild = document.getElementsByClassName('modal-child')
     modalChild[0].onclick = () => dropdown.classList.remove('show')
-    let editButton = document.getElementById(`edit-button-${this.props.review._id}`)
+    // let editButton = document.getElementById(`edit-button-${this.props.review._id}`)
     dropdown.onclick = () => dropdown.classList.remove('show')
   }
 

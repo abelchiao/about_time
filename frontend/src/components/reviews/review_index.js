@@ -1,7 +1,7 @@
 import React from 'react';
 import ReviewIndexItem from './review_index_item';
-import { openModal } from '../../actions/modal_actions';
-import { fetchWatch } from '../../actions/watch_actions';
+// import { openModal } from '../../actions/modal_actions';
+// import { fetchWatch } from '../../actions/watch_actions';
 
 class ReviewIndex extends React.Component {
   constructor(props) {
