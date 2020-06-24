@@ -74,9 +74,6 @@ class SignupForm extends React.Component {
   render() {
     return (
       <div className='session-form-parent'>
-        <div className='session-form-title'>SIGN UP</div>
-        <button onClick={this.demoLogin} className='demo-login-button'>DEMO LOGIN</button>
-        <div className='or-separator'>Or</div>
         <form className='session-form-main' onSubmit={this.handleSubmit}>
           {this.renderErrors()}
 
@@ -102,7 +99,6 @@ class SignupForm extends React.Component {
               />
             </div>
           </div>
-
           <div className='session-input-group'>
             <div className='session-input-item'>
               <label className='session-input-label' htmlFor="login-password">Password</label>
@@ -125,9 +121,11 @@ class SignupForm extends React.Component {
               />
             </div>
           </div>
-          <button className="dropdown-item">SIGN UP</button>
+          <div className="session-form-buttons-container">
+              <button onClick={this.demoLogin} className="session-button">DEMO LOGIN</button>
+              <button className="session-button">SIGN UP</button>
+          </div>
         </form>
-        
       </div>
     );
   };
