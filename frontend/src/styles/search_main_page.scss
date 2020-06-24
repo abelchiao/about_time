@@ -60,6 +60,11 @@ h2 {
 //     font-size: 1.2rem;
 // }
 
+.banner {
+    display: flex;
+    justify-content: center;
+}
+
 .banner h1 {
     display: block;
     color: #0B3C5D;
@@ -95,7 +100,7 @@ h2 {
 
 .summary {
     // display: flex;
-    width: 66%;
+    width: 45%;
 }
 
 // .splash > h1 {

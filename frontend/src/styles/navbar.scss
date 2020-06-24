@@ -202,6 +202,10 @@
     .search-form-transparent {
         min-width: 54%;
     }
+
+    .summary {
+        width: 54%;
+    }
 }
 
 @media only screen and (max-width: 801px) {
@@ -236,10 +240,22 @@
     }
 
     .intro {
-        padding: 0em;
+        padding: 0em 0em 1.5em;
+    }
+
+    .banner {
+        width: 75%;
+    }
+
+    .banner h1 {
+        font-size: 3.5rem;
     }
 
     .summary {
-        width: 100%;
+        width: 75%;
+    }
+
+    .summary p {
+        font-size: 1.2rem;
     }
 }
