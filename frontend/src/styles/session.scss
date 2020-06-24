@@ -1,89 +1,111 @@
+@import './colors';
+
 .session-form-parent {
-  background: #fff;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  min-width: 420px;
-  width: 40%;
-  max-width: 580px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 20px;
-  font-family: 'Roboto', sans-serif;
-}
+    display: flex;
+    justify-content: center;
+    background: $color-0;
+    padding: 1em;
+    border: 1px solid $color-5;
+    border-radius: .25em;
+    font-family: 'Roboto', sans-serif;
+  }
 
-.session-form-title {
-  font-size: 24px;
-  margin-bottom: 10px;
-}
-
-.or-separator {
-  font-size: 20px;
-  margin-top: 16px;
-}
-
+// TODO
 .session-errors {
-  padding: 0 20px;
-  font-size: 16px;
-  line-height: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  background: #0B3C5D;
-  color: white;
-  border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color-2;
+    color: $color-5;
+    padding: 0 1em;
+    // border: 1px solid $color-5;
+    border-radius: .25em;
 }
 
 .session-error-item:first-of-type {
-  padding-top: 10px;
+    padding-top: 10px;
 }
 
 .session-error-item:last-of-type {
-  padding-bottom: 10px;
+    padding-bottom: 10px;
 }
 
 .session-form-main {
-  display: flex;
-  flex-direction: column;
-  margin-top: 10px;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    max-width: 66%;
+    padding: 3em 0em;
 }
 
 .session-input-group {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  /* align-items: space-between; */
-  margin: 10px;
+    display: flex;
+    width: 100%;
 }
 
 .session-input-item {
-  display: flex;
-  flex-direction: column;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width: 100%;
+    margin: 1em 0em 0em;
 }
 
 .session-input-label {
-  margin-bottom: 5px;
-  font-weight: 400;
+    color: $color-1;
+    padding: 0em 0em 0em 0em;
+    font-size: 1em;
 }
 
 .session-input-field {
-  font-size: 14px;
-  width: 180px;
-  border: 1px solid gray;
-  border-radius: 4px;
-  padding: 6px;
+    background-color: $color-5;
+    color: $color-1;
+    padding: .25em 1em;
+    border: 1px solid $color-5;
+    border-radius: .25em;
+    margin: 1em 0em 0em;
+    transition-duration: 0.3s;
+    font-size: 1em;
 }
 
-/* .login-form-main {
-  display: flex;
-  flex-direction: column;
+.session-input-field:hover{
+    background-color: $color-4;
+    color: $color-2;
+    border-color: $color-2;
 }
 
-.signup-form-main {
-  display: flex;
-  flex-direction: column;
-} */
+.session-input-field:focus  {
+    background-color: $color-4;
+    color: $color-2;
+    border-color: $color-2;
+    outline: none;
+}
+
+.session-form-buttons-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin: 3em 0em 0em;
+}
+
+.session-button {
+    background-color: $color-5;
+    color: $color-1;
+    padding: .75em 1em;
+    border: 1px solid $color-5;
+    border-radius: .25em;
+    margin: .5em;
+    font-size: 1em;
+    transition-duration: 0.3s;
+    cursor: pointer;
+}
+
+.session-button:hover {
+    background-color: #0B3C5D;
+    color: #D9B310;
+    border: 1px solid #D9B310;
+}
+
+.session-button:focus {
+    outline: none;
+}

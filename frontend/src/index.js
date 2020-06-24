@@ -9,10 +9,11 @@ import { logout } from './actions/session_actions';
 import "./styles/reset.scss";
 import "./styles/search_main_page.scss";
 import "./styles/search_results.scss";
-import "./styles/navbar.scss";
+import "./styles/modal.scss";
 import "./styles/session.scss";
 import "./styles/watch_show_modal.scss";
 import "./styles/profile.scss";
+import "./styles/navbar.scss";
 import "./styles/loading_spinner.scss";
 
 document.addEventListener('DOMContentLoaded', () => {
