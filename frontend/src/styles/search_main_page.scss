@@ -114,7 +114,7 @@ h2 {
     background-color: $color-5;
     color: ivory;
     width: 100%;
-    padding: .25em 0px;
+    padding: .30em 0px;
     border: 1px solid $color-5;
     border-radius: .25em;
     margin: 3em 0em 0em;
@@ -141,6 +141,7 @@ h2 {
     border: .1em solid $color-5;
     border-radius: .25em;
     margin: .25em;
+    text-align: center;
     font-size: 1em;
     transition-duration: 0.3s;
     cursor: pointer;
@@ -184,4 +185,8 @@ h2 {
     background-color: $color-4;
     color: $color-2;
     border: 1px solid $color-2;
+}
+
+.search-form-submit-button:focus {
+    outline: none;
 }
