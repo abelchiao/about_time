@@ -12,7 +12,7 @@ router.post("/", passport.authenticate("jwt", { session: false }), (req, res) =>
     let error
     if (reviews.length !== 0) {
       reviews.forEach(review => {
-        console.log(review)
+        // console.log(review)
         if ((review.length !== 0) && (review.userId.toString() === req.user.id)) {
           error = "You have already reviewed this watch"
           // return res.status(403).json("You have already reviewed this watch");

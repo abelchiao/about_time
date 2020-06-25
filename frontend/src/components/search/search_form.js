@@ -39,7 +39,7 @@ class SearchForm extends React.Component {
     };
 
     componentDidUpdate() {
-        console.log("CURR STATE", this.state)
+        // console.log("CURR STATE", this.state)
     }
 
     handleSubmit(e) {
