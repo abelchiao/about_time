@@ -8,16 +8,18 @@ import ResultsShowContainer from './watches/results_show_container';
 import SearchFormContainer from './search/search_container';
 
 import {ProtectedRoute} from '../util/route_util';
+import Navbar from "../components/navbar/navbar";
 
 const App = () => (
     <div id="app">
         <ScrollUp />
         <Modal />
+        <Navbar />
         <Switch>
-        <ProtectedRoute exact path="/profile" component={ProfilePageContainer} />
-        <Route exact path="/" component={MainPage} />
-        <Route exact path="/search" component={SearchFormContainer} />
-        <Route exact path="/watches/search" component={ResultsShowContainer} />
+            <ProtectedRoute exact path="/profile" component={ProfilePageContainer} />
+            <Route exact path="/" component={MainPage} />
+            <Route exact path="/search" component={SearchFormContainer} />
+            <Route exact path="/watches/search" component={ResultsShowContainer} />
         </Switch>
     </div>
 );

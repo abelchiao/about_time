@@ -41,7 +41,7 @@ class ProfilePage extends React.Component {
         if (this.state.loaded === false) {
             return (
                 <div className="profile-page-container">
-                    <Navbar />
+                    {/* <Navbar /> */}
                     <div className="profile-page-intro-text">
                         <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> 
                     </div>
@@ -84,7 +84,7 @@ class ProfilePage extends React.Component {
 
             return (
                 <div className="profile-page-container">
-                    <Navbar />
+                    {/* <Navbar /> */}
                     <div className="profile-page-intro-text">
                         { (!this.props.currentUser.handle)
                             ?   "Please log in to see your profile pages."

@@ -97,7 +97,7 @@ class ResultsShow extends React.Component {
         if (!dataLoad) {
             return (
                 <div className="results-background">
-                    <Navbar />
+                    {/* <Navbar /> */}
                     <div className="lds-spinner"><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div></div> 
                 </div>
             );
@@ -167,7 +167,7 @@ class ResultsShow extends React.Component {
 
         return (
             <div className="results-background">
-                <Navbar />
+                {/* <Navbar /> */}
                 <div className="search-result-show">
                     <div className="search-result-nav-container">
                         <div className="search-result-save-container">

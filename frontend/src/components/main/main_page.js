@@ -7,7 +7,7 @@ class MainPage extends React.Component {
     render() {
         return (
             <div className="splash-background">
-                <Navbar />
+                {/* <Navbar /> */}
                 <section className="intro">
                     <header className="banner">
                         <h1>About Time</h1>
