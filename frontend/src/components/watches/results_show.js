@@ -88,6 +88,11 @@ class ResultsShow extends React.Component {
 
 
     render() {
+
+        if (window.performance.navigation.type === 1) {
+            this.props.history.push(`/`);
+        };
+
         const { dataLoad } = this.props;
         if (!dataLoad) {
             return (

@@ -7,12 +7,14 @@ import MainPage from './main/main_page';
 import ResultsShowContainer from './watches/results_show_container';
 import SearchFormContainer from './search/search_container';
 
+import {ProtectedRoute} from '../util/route_util';
+
 const App = () => (
     <div id="app">
         <ScrollUp />
         <Modal />
         <Switch>
-        <Route exact path="/profile" component={ProfilePageContainer} />
+        <ProtectedRoute exact path="/profile" component={ProfilePageContainer} />
         <Route exact path="/" component={MainPage} />
         <Route exact path="/search" component={SearchFormContainer} />
         <Route exact path="/watches/search" component={ResultsShowContainer} />
