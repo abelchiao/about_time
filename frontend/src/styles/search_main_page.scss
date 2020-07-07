@@ -15,7 +15,7 @@ body{
 }
 
 .splash-background {
-    background-image: url("/img/background/omega_wallpaper_1920.jpg");
+    background-image: url("/img/background/casio-gshock.jpg");
     background-size: contain;
     top: 0;
     left: 0;
@@ -43,13 +43,12 @@ h2 {
 
 .banner h1 {
     display: block;
-    color: #0B3C5D;
+    color: $color-1;
     text-align: center;
-    padding: 0.4em 0 0.6em;
+    padding: 1.5em 0 0.6em;
     line-height: 0.8;
     letter-spacing: 0;
-    font-size: 4.8rem;
-    font-weight: 900;
+    font-size: 3.5rem;
     text-transform: uppercase;
 }
 
