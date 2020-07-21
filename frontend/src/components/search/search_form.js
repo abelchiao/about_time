@@ -106,6 +106,11 @@ class SearchForm extends React.Component {
 
         return (
             <div className="search-form-transparent">
+                <div className="search-form-header-container">
+                    <div className="search-form-header-text">
+                        SELECT ANY OPTIONS
+                    </div>
+                </div>
                 { properties.map( property => (
                     <div key={ property } className="search-form-property">
                         <div className="search-form-property-text">{ property.toUpperCase() }</div>

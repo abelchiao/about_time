@@ -68,6 +68,7 @@ h2 {
 }
 
 .summary p {
+    color: $color-1;
     text-align: center;
     text-shadow: 0px 1px 0px gray;
     line-height: 1.6;
@@ -98,11 +99,33 @@ h2 {
     opacity: 0.95;
 }
 
+.search-form-header-container {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    padding: 1.5em 0em 1.5em;
+    border-bottom: 1px solid $color-5;
+    // margin: 3em 0em 0em;
+}
+
+.search-form-header-text {
+    background-color: $color-5;
+    color: $color-1;
+    width: 90%;
+    padding: .75em .75em;
+    border: 1px solid $color-5;
+    border-radius: .1em;
+    margin: .25em;
+    font-size: 1.2em;
+    transition-duration: 0.3s;
+    text-align: center;
+}
+
 .search-form-property {
     display: flex;
     flex-direction: column;
     align-items: center;
-    color: ivory;
+    color: $color-1;
     width: 90%
 }
 
@@ -111,19 +134,21 @@ h2 {
     flex-direction: column;
     align-items: center;
     background-color: $color-5;
-    color: ivory;
-    width: 100%;
+    color: $color-1;
+    width: 90%;
     padding: .30em 0px;
     border: 1px solid $color-5;
-    border-radius: .25em;
+    border-radius: .1em;
     margin: 3em 0em 0em;
+    font-size: 1.1em;
 }
 
 .search-form-property-options {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    color: ivory;
+    color: $color-1;
+    width: 90%;
     margin: 1em 0em 0em;
 }
 
@@ -137,7 +162,7 @@ h2 {
     background-color: $color-5;
     color: $color-1;
     padding: .25em .5em;
-    border: .1em solid $color-5;
+    border: 1px solid $color-5;
     border-radius: .25em;
     margin: .25em;
     text-align: center;
@@ -149,13 +174,13 @@ h2 {
 .search-form-property-option-checkbox-text-checked {
     background-color: $color-4;
     color: $color-2;
-    border: .1em solid $color-2;
+    border: 1px solid $color-2;
 }
 
 .search-form-property-option-checkbox-text:hover {
     background-color: $color-4;
     color: $color-2;
-    border: .1em solid $color-2;
+    border: 1px solid $color-2;
 }
 
 .search-form-submit-button-container {
@@ -175,7 +200,7 @@ h2 {
     border: 1px solid $color-5;
     border-radius: .25em;
     margin: .25em;
-    font-size: 1em;
+    font-size: 1.2em;
     transition-duration: 0.3s;
     cursor: pointer;
 }

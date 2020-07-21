@@ -12,9 +12,9 @@ class MainPage extends React.Component {
                     <header className="banner">
                         <h1>About Time</h1>
                     </header>
-                    {/* <div className="summary">
-                        <p>A tool for searching watches</p>
-                    </div> */}
+                    <div className="summary">
+                        <p>Find your next watch</p>
+                    </div>
                 </section>
                 <footer>
                     {/* footer */}
