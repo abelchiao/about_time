@@ -32,25 +32,25 @@ class LoginForm extends React.Component {
   };
 
 
+// Demo login with auto typing
+
+  typeNext(stateVar) {
+    const demoUser = { email: 'demoUser@demo.net', password: 'demodemo' };
+    let cursorPos = this.state[stateVar].length;
+    setTimeout(
+      () => this.setState({ [stateVar]: (this.state[stateVar] + demoUser[stateVar][cursorPos]) },
+        () => { this.typeWriter(); }
+      ),
+      150
+    );
+  };
+
   typeWriter() {
     const demoUser = { email: 'demoUser@demo.net', password: 'demodemo' };
-
     if (this.state.email !== demoUser.email) {
-      let cursorPos = this.state.email.length;
-      setTimeout(
-        () => this.setState({ email: (this.state.email + demoUser.email[cursorPos]) },
-          () => { this.typeWriter(); }
-        ), 
-        150
-      );
+      this.typeNext("email");
     } else if (this.state.password !== demoUser.password) {
-      let cursorPos = this.state.password.length;
-      setTimeout(
-        () => this.setState( { password: (this.state.password + demoUser.password[cursorPos]) },
-          () => { this.typeWriter(); }
-        ),
-        150
-      );
+      this.typeNext("password");
     } else {
       this.props.login(demoUser);
     };
