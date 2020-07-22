@@ -25,46 +25,34 @@ class SignupForm extends React.Component {
   };
 
 
-  typeWriter() {
-    const demoUser = { email: 'demoUser@demo.net', password: 'demodemo', handle: 'demoUser' };
+  // Demo login with auto typing
 
+  typeNext(stateVar) {
+    const demoUser = { handle: 'demoUser', email: 'demoUser@demo.net', password: 'demodemo', password2: 'demodemo' };
+    let cursorPos = this.state[stateVar].length;
+    setTimeout(
+      () => this.setState({ [stateVar]: (this.state[stateVar] + demoUser[stateVar][cursorPos]) },
+        () => { this.typeWriter(); }
+      ),
+      150
+    );
+  };
+
+  typeWriter() {
+    const demoUser = { handle: 'demoUser', email: 'demoUser@demo.net', password: 'demodemo', password2: 'demodemo' };
     if (this.state.handle !== demoUser.handle) {
-      let cursorPos = this.state.handle.length;
-      setTimeout(
-        () => this.setState({ handle: (this.state.handle + demoUser.handle[cursorPos]) },
-          () => { this.typeWriter(); }
-        ),
-        150
-      );
+      this.typeNext("handle");
     } else if (this.state.email !== demoUser.email) {
-      let cursorPos = this.state.email.length;
-      setTimeout(
-        () => this.setState({ email: (this.state.email + demoUser.email[cursorPos]) },
-          () => { this.typeWriter(); }
-        ),
-        150
-      );
+      this.typeNext("email");
     } else if (this.state.password !== demoUser.password) {
-      let cursorPos = this.state.password.length;
-      setTimeout(
-        () => this.setState({ password: (this.state.password + demoUser.password[cursorPos]) },
-          () => { this.typeWriter(); }
-        ),
-        150
-      );
-    } else if (this.state.password2 !== demoUser.password) {
-      let cursorPos = this.state.password2.length;
-      setTimeout(
-        () => this.setState({ password2: (this.state.password2 + demoUser.password[cursorPos]) },
-          () => { this.typeWriter(); }
-        ),
-        150
-      );
+      this.typeNext("password");
+    } else if (this.state.password2 !== demoUser.password2) {
+      this.typeNext("password2");
     } else {
       this.props.login(demoUser);
     };
   };
-
+ 
   demoLogin(e) {
     e.preventDefault();
     this.setState({ email: "", password: "", password2: "", handle: "" },
