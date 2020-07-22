@@ -31,12 +31,39 @@ class LoginForm extends React.Component {
       // .then(this.props.closeModal())
   };
 
+
+  typeWriter() {
+    const demoUser = { email: 'demoUser@demo.net', password: 'demodemo' };
+
+    if (this.state.email !== demoUser.email) {
+      let cursorPos = this.state.email.length;
+      setTimeout(
+        () => this.setState({ email: (this.state.email + demoUser.email[cursorPos]) },
+          () => { this.typeWriter(); }
+        ), 
+        150
+      );
+    } else if (this.state.password !== demoUser.password) {
+      let cursorPos = this.state.password.length;
+      setTimeout(
+        () => this.setState( { password: (this.state.password + demoUser.password[cursorPos]) },
+          () => { this.typeWriter(); }
+        ),
+        150
+      );
+    } else {
+      this.props.login(demoUser);
+    };
+  };
+ 
   demoLogin(e) {
     e.preventDefault();
-    const demoUser = { email: 'demoUser@demo.net', password: 'demodemo' };
-    this.props.login(demoUser)
-  }
-  
+    this.setState( { email: "", password: "" },
+      () => { this.typeWriter(); }
+    );
+  };
+
+
   renderErrors() {
     return (
       <div className='session-errors'>
