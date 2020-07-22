@@ -24,11 +24,54 @@ class SignupForm extends React.Component {
       this.setState({ [field]: e.currentTarget.value });
   };
 
+
+  typeWriter() {
+    const demoUser = { email: 'demoUser@demo.net', password: 'demodemo', handle: 'demoUser' };
+
+    if (this.state.handle !== demoUser.handle) {
+      let cursorPos = this.state.handle.length;
+      setTimeout(
+        () => this.setState({ handle: (this.state.handle + demoUser.handle[cursorPos]) },
+          () => { this.typeWriter(); }
+        ),
+        150
+      );
+    } else if (this.state.email !== demoUser.email) {
+      let cursorPos = this.state.email.length;
+      setTimeout(
+        () => this.setState({ email: (this.state.email + demoUser.email[cursorPos]) },
+          () => { this.typeWriter(); }
+        ),
+        150
+      );
+    } else if (this.state.password !== demoUser.password) {
+      let cursorPos = this.state.password.length;
+      setTimeout(
+        () => this.setState({ password: (this.state.password + demoUser.password[cursorPos]) },
+          () => { this.typeWriter(); }
+        ),
+        150
+      );
+    } else if (this.state.password2 !== demoUser.password) {
+      let cursorPos = this.state.password2.length;
+      setTimeout(
+        () => this.setState({ password2: (this.state.password2 + demoUser.password[cursorPos]) },
+          () => { this.typeWriter(); }
+        ),
+        150
+      );
+    } else {
+      this.props.login(demoUser);
+    };
+  };
+
   demoLogin(e) {
     e.preventDefault();
-    const demoUser = { email: "demoUser@demo.net", password: "demodemo" };
-    this.props.login(demoUser);
+    this.setState({ email: "", password: "", password2: "", handle: "" },
+      () => { this.typeWriter(); }
+    );
   };
+
 
   handleSubmit(e) {
     e.preventDefault();
