@@ -2,7 +2,7 @@ import React from 'react';
 
 class SignupForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       handle: '',
       email: '',
@@ -49,7 +49,6 @@ class SignupForm extends React.Component {
             });
         };
       })
-      // .catch(err => console.log("ERR", err));
   };
 
 
@@ -112,7 +111,6 @@ class SignupForm extends React.Component {
       <div className='session-form-parent'>
         <form className='session-form-main' onSubmit={this.handleSubmit}>
           {this.renderErrors()}
-
           <div className='session-input-group'>
             <div className='session-input-item'>
               <label className='session-input-label' htmlFor="login-handle">Username</label>
@@ -158,7 +156,7 @@ class SignupForm extends React.Component {
             </div>
           </div>
           <div className="session-form-buttons-container">
-              <button onClick={this.demoLogin} className="session-button">DEMO LOGIN</button>
+              <button type="button" onClick={this.demoLogin} className="session-button">DEMO LOGIN</button>
               <button className="session-button">SIGN UP</button>
           </div>
         </form>

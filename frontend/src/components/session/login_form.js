@@ -2,11 +2,11 @@ import React from 'react';
 
 class LoginForm extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
     this.state = {
       email: '',
       password: '',
-    }
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
@@ -89,8 +89,8 @@ class LoginForm extends React.Component {
           </div>
         ))}
       </div>
-    )
-  }
+    );
+  };
 
   render() {
     return (
@@ -126,7 +126,7 @@ class LoginForm extends React.Component {
             </div>
           </div>
           <div className="session-form-buttons-container">
-            <button onClick={this.demoLogin} className="session-button">
+            <button type="button" onClick={this.demoLogin} className="session-button">
               DEMO LOGIN
             </button>
             <button className="session-button">LOG IN</button>
@@ -135,6 +135,6 @@ class LoginForm extends React.Component {
       </div>
     );
   };
-}
+};
 
 export default LoginForm;
