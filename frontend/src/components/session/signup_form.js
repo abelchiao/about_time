@@ -8,20 +8,48 @@ class SignupForm extends React.Component {
       email: '',
       password: '',
       password2: '',
-      errors: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   };
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ errors: nextProps.errors })
+  componentDidMount() {
+    if (Object.keys(this.props.errors).length) { this.props.clearErrors(); };
   };
 
   update(field) {
-    return e =>
+    return e => {
+      if (Object.keys(this.props.errors).length) { this.props.clearErrors(); };
       this.setState({ [field]: e.currentTarget.value });
+    };
+  };
+
+  handleSubmit(e) {
+    e.preventDefault();
+    let user = {
+      email: this.state.email,
+      handle: this.state.handle,
+      password: this.state.password,
+      password2: this.state.password2
+    };
+    this.props.signup(user)
+      .then( () => {
+        if ( !Object.keys(this.props.errors).length ) {
+          this.props.login({
+            email: this.state.email,
+            password: this.state.password
+          })
+            .then( () => {
+              if ( !Object.keys(this.props.errors).length ) {
+                let alertText = document.getElementsByClassName("alert-text")[0];
+                alertText.innerHTML = "SIGNED UP AND LOGGED IN!";
+                document.getElementsByClassName("alert")[0].style.display = "flex";
+              };
+            });
+        };
+      })
+      // .catch(err => console.log("ERR", err));
   };
 
 
@@ -66,46 +94,18 @@ class SignupForm extends React.Component {
   };
 
 
-  handleSubmit(e) {
-    e.preventDefault();
-    let user = {
-      email: this.state.email,
-      handle: this.state.handle,
-      password: this.state.password,
-      password2: this.state.password2
-    };
-
-    this.props.clearErrors()
-    this.props.signup(user)
-      .then(() => {
-        if (!Object.keys(this.props.errors).length) {
-          this.props.login({
-            email: this.state.email,
-            password: this.state.password
-          })
-        }
-      })
-      .catch(err => console.log(err))
-
-    // this.props.signup(user)
-    //   .then(() => this.props.login({
-    //     email: this.state.email,
-    //     password: this.state.password
-    //   }))
-    //   .catch(err => console.log(err))
-  };
 
   renderErrors() {
     return (
       <div className='session-errors'>
-        {Object.keys(this.state.errors).map((error, idx) => (
-          <div 
-            className='session-error-item'
-            key={`error-${idx}`}>{this.state.errors[error]}</div>
-        ))}
+        { Object.keys(this.props.errors).map( (error, idx) => (
+          <div className='session-error-item' key={ `error-${ idx }` }>
+            { this.props.errors[error] }
+          </div>
+        )) }
       </div>
-    )
-  }
+    );
+  };
 
   render() {
     return (
