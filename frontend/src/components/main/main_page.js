@@ -8,14 +8,14 @@ class MainPage extends React.Component {
         return (
             <div className="splash-background">
                 {/* <Navbar /> */}
-                <section className="intro">
-                    <header className="banner">
+                {/* <section className="intro"> */}
+                    {/* <header className="banner">
                         <h1>About Time</h1>
-                    </header>
-                    <div className="summary">
+                    </header> */}
+                    {/* <div className="summary">
                         <p>Find your next watch</p>
-                    </div>
-                </section>
+                    </div> */}
+                {/* </section> */}
                 <footer>
                     {/* footer */}
                 </footer>

@@ -8,6 +8,8 @@
 }
 
 .dropbtn {
+    display: flex;
+    align-items: center;
     background-color: transparent;
     color: ivory;
     padding: 0em;
@@ -15,6 +17,11 @@
     font-size: 1em;
     transition-duration: 0.3s;
     cursor: pointer;
+}
+
+.dropbtnText {
+    font-size: 2.1em;
+    padding: 0em 0em 0em .25em;
 }
 
 .dropbtn:hover {
