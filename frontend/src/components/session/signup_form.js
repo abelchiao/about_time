@@ -49,7 +49,12 @@ class SignupForm extends React.Component {
     } else if (this.state.password2 !== demoUser.password2) {
       this.typeNext("password2");
     } else {
-      this.props.login(demoUser);
+      let alertText = document.getElementsByClassName("alert-text")[0];
+      alertText.innerHTML = "DEMO USER LOGGING IN...";
+      document.getElementsByClassName("alert")[0].style.display = "flex";
+      this.props.login(demoUser)
+        .then(() => alertText.innerHTML = "DEMO USER LOGGED IN!")
+        .catch(() => alertText.innerHTML = "ERROR: DEMO LOGIN FAILED!");
     };
   };
  
