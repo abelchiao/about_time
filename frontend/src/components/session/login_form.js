@@ -6,29 +6,37 @@ class LoginForm extends React.Component {
     this.state = {
       email: '',
       password: '',
-      errors: {}
     }
     this.handleSubmit = this.handleSubmit.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.demoLogin = this.demoLogin.bind(this);
   };
 
-  componentWillReceiveProps(nextProps) {
-    this.setState({ errors: nextProps.errors })
+  componentDidMount() {
+    if (Object.keys(this.props.errors).length) { this.props.clearErrors(); };
   };
 
   update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
+    return e => {
+      if (Object.keys(this.props.errors).length) { this.props.clearErrors(); };
+      this.setState({ [field]: e.currentTarget.value });
+    };
   };
 
   handleSubmit(e) {
-    e.preventDefault()
+    e.preventDefault();
     let user = {
       email: this.state.email,
       password: this.state.password
     };
     this.props.login(user)
-      // .then(this.props.closeModal())
+      .then( () => {
+        if ( !Object.keys(this.props.errors).length ) {
+          let alertText = document.getElementsByClassName("alert-text")[0];
+          alertText.innerHTML = "LOGGED IN!";
+          document.getElementsByClassName("alert")[0].style.display = "flex";
+        };
+      });
   };
 
 
@@ -72,12 +80,12 @@ class LoginForm extends React.Component {
   renderErrors() {
     return (
       <div className='session-errors'>
-        {Object.keys(this.state.errors).map((error, idx) => (
+        {Object.keys(this.props.errors).map((error, idx) => (
           <div 
             className='session-error-item' 
             key={`error-${idx}`}
           >
-            {this.state.errors[error]}
+            {this.props.errors[error]}
           </div>
         ))}
       </div>
