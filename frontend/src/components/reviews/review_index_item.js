@@ -56,7 +56,7 @@ class ReviewIndexItem extends React.Component {
       watchId: this.props.watchId,
       reviewId: this.props.review._id
     })
-      .then(() => this.props.fetchWatch(this.props.watchId))
+      .then(() => this.props.fetchWatches(this.props.query))
   }
 
   handleDelete(e) {
@@ -64,7 +64,7 @@ class ReviewIndexItem extends React.Component {
       reviewId: this.props.review._id,
       watchId: this.props.watchId
     })
-      .then(() => this.props.fetchWatch(this.props.watchId))
+      .then(() => this.props.fetchWatches(this.props.query))
   }
 
   render() {

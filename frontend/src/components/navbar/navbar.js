@@ -34,7 +34,7 @@ class Navbar extends React.Component {
     render() {
         window.onclick = function (event) {
             event.stopPropagation();
-console.log("HERE111")
+// console.log("HERE111")
             if (!event.target.matches('.dropbtn')) {
                 let dropdowns = document.getElementsByClassName("dropdown-content");
                 let i;

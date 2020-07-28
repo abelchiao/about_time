@@ -19,8 +19,9 @@ class ReviewIndex extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
+    const search = Object.assign({}, this.props.query);
     this.props.createReview(this.state)
-      .then(() => this.props.fetchWatch(this.props.watchId))
+      .then(() => this.props.fetchWatches(search))
   }
 
   render() {
@@ -62,6 +63,8 @@ class ReviewIndex extends React.Component {
                   updateReview={this.props.updateReview}
                   deleteReview={this.props.deleteReview}
                   fetchWatch={this.props.fetchWatch}
+                  fetchWatches={this.props.fetchWatches}
+                  query={this.props.query}
                 />
               )
             })
