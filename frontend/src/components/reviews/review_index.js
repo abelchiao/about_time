@@ -19,9 +19,25 @@ class ReviewIndex extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const search = Object.assign({}, this.props.query);
-    this.props.createReview(this.state)
-      .then(() => this.props.fetchWatches(search))
+    
+    let alertText = document.getElementsByClassName("alert-text")[0];
+    if (Object.entries(this.props.currentUser).length === 0 || !this.props.currentUser) {
+      alertText.innerHTML = "LOG IN TO WRITE A REVIEW";
+    } else {
+      if (this.state.text === "") {
+        alertText.innerHTML = "WRITE A REVIEW TO SUBMIT THE REVIEW";
+      } else {
+        const search = Object.assign({}, this.props.query);
+        alertText.innerHTML = "REVIEW SAVING...";
+        this.props.createReview(this.state)
+          .then(() => {
+            alertText.innerHTML = "REVIEW SAVED!"
+            this.props.fetchWatches(search)
+          })
+          .catch(() => alertText.innerHTML = "ERROR: REVIEW NOT SAVED!");
+      };
+    };
+    document.getElementsByClassName("alert")[0].style.display = "flex";
   }
 
   render() {
