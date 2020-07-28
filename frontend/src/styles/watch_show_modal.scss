@@ -186,7 +186,7 @@
 }
 
 .review-dropdown-icon {
-  fill: black;
+  fill: $color-5;
   height: 16px;
   width: 16px;
   position: relative;
@@ -195,7 +195,7 @@
 
 .review-dropdown-icon:hover {
   cursor: pointer;
-  fill: lightgray;
+  fill: $color-2;
 }
 
 .review-dropdown-parent {
@@ -269,8 +269,8 @@
 
 .update-review-button {
   padding: 2.5px 0;
-  background: lightgray;
-  border: 1px solid gray;
+  background: $color-5;
+  border: 1px solid $color-5;
   border-radius: 4px;
   margin-top: 10px;
   font-size: 14px;
@@ -278,16 +278,16 @@
 
   cursor: pointer;
   margin: 5px 5px;
-  color: ivory;
+  color: $color-1;
   transition-duration: 0.3s;
 }
 
 .update-review-button:hover {
   cursor: pointer;
-  background: rgb(168, 168, 168);
+  background: $color-4;
   
-  color: #D9B310;
-  border: 1px solid #D9B310;
+  color: $color-2;
+  border: 1px solid $color-2;
 }
 
 .update-review-button:focus {
