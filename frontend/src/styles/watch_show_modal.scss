@@ -1,3 +1,5 @@
+@import './colors';
+
 .watch-show-modal-parent {
   background: ivory;
   position: absolute;
@@ -106,7 +108,7 @@
 
 .new-review-button {
   padding: 2.5px 0;
-  border: 1px solid #414348;
+  border: 1px solid $color-5;
   border-radius: 4px;
   margin-top: 10px;
   font-size: 14px;
@@ -115,16 +117,17 @@
 
   cursor: pointer;
   margin: 5px 5px;
-  color: ivory;
+  background-color: $color-5;
+  color: $color-1;
   transition-duration: 0.3s;
 }
 
 .new-review-button:hover {
   cursor: pointer;
-  background: lightgray;
+  background-color: $color-4;
 
-  color: #D9B310;
-  border: 1px solid #D9B310;
+  color: $color-2;
+  border: 1px solid  $color-2;
 }
 
 .new-review-button:focus {

@@ -28,7 +28,7 @@ class ReviewIndex extends React.Component {
     // debugger
     let reviewForm = 
     <form onSubmit={this.handleSubmit}>
-      <div className='review-form-header'>Own this watch? Tell us what you think!</div>
+      <div className='review-form-header'>Write a new review:</div>
       <div className='review-form-body'>
         <textarea 
           value={this.state.text} 
@@ -49,7 +49,7 @@ class ReviewIndex extends React.Component {
         <div className='review-form-container'>
           {reviewForm}
         </div>
-        <div className='review-index-header'>Our community's thoughts</div>
+        <div className='review-index-header'>Reviews:</div>
         <div className='review-index-items'>
           {
             this.props.reviews.map(review => {
