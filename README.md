@@ -12,7 +12,7 @@ This project was a group exercise to explore a completely new backend stack, rei
 
 ## Features
 #### Search the curated watch database for recommendations matching your criteria.
-![Search demo](img/search.gif)
+![Search demo](img/aboutTime.png)
 
 #### Implementation:
 Regular Expressions and Express.js are used to create the watch search API endpoint.
@@ -37,7 +37,6 @@ module.exports = router;
 ```
 ___
 #### Didn't find what you wanted and want to repeat your search when new watches are added to the database? Search queries can be saved and re-run from the user profile page.
-![Saved search demo](img/save_search.gif)
 
 #### Implementation:
 
@@ -92,7 +91,6 @@ router.post(
 ```
 ___
 #### View watch details in a lightweight multi-purpose modal system that allows for a seamless browsing experience and enables non-disruptive user authentication.
-![Watch modal demo](img/watch_modal.gif)
 
 #### Implementation: 
 React Modal component is as follows:
@@ -143,9 +141,7 @@ const mapDispatchToProps = dispatch => {
   };
 };
 ```
-___
-#### Read, create, edit, and delete reviews on specific watch models.
-![Watch review demo](img/watch_review.gif)
+
 ___
 
 ## Technologies
