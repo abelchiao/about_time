@@ -8,7 +8,7 @@ About Time will take all of your criteria into account through a simple set of q
 
 This project was a group exercise to explore a completely new backend stack, reinforce our mastery of populer frontend frameworks, and learn to utilize Git as a team for group coordination and version control.
 
-[Check out the app here.](https://about-time-2020.herokuapp.com/)
+<!-- [Check out the app here.](https://about-time-2020.herokuapp.com/) -->
 
 ## Features
 #### Search the curated watch database for recommendations matching your criteria.
