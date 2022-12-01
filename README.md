@@ -1,7 +1,5 @@
 # About Time
 
-[Check out the app here.](https://about--time.herokuapp.com/)
-
 About Time is a web application which provides individualized watch curation, and generates recommendations based on user selected preferences.
 
 When searching for a watch, either for yourself or as a gift, there are several factors which go into the decision. The abundance of options on large online shopping sites can be overwhelming to go through. Additionally, articles written on watch websites usually take only one or two parameters into account, then list the writer's top choices, without involving any user selection.
